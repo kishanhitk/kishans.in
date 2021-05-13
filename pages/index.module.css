@@ -1,0 +1,30 @@
+.main {
+  max-width: 50rem;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.headerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.link {
+  text-decoration: dotted;
+  padding: 2rem;
+}
+.name {
+  padding: 2rem;
+  font-weight: bold;
+}
+.footer {
+  align-self: center;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  flex-shrink: 0;
+}
