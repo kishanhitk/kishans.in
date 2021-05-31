@@ -3,6 +3,7 @@ import React from "react";
 import { ColorModeSwitcher } from "../components/ColorModeSwitcher";
 import { Copyright } from "../components/Copyright";
 import Header from "../components/Header";
+import AboutPage from "../layouts/AboutPage";
 import classes from "./index.module.css";
 
 function Home() {
@@ -11,7 +12,6 @@ function Home() {
       <div className={classes.main}>
         <header className={classes.headerContainer}>
           <Link href="/" className={classes.name}>
-            {/* Kishan{" "} */}
             <Heading>Kishan</Heading>
           </Link>
           <div className={classes.navLinks}>
