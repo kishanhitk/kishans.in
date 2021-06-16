@@ -11,7 +11,7 @@ import {
   useColorMode,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { Routes } from "config";
+import { Routes } from "@config";
 import { SunIcon, MoonIcon } from "@chakra-ui/icons";
 
 interface NavLinkProps extends ButtonProps {

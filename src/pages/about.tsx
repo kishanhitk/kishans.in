@@ -1,8 +1,8 @@
 import React from "react";
-import { MainLayout } from "layouts";
+import { MainLayout } from "@layouts";
 import { NextSeo } from "next-seo";
 import { Box, Avatar, Heading, VStack, Text } from "@chakra-ui/react";
-import SocialLinks from "components/SocialLinks";
+import { SocialLinks } from "@components";
 
 const AboutPage = () => {
   return (

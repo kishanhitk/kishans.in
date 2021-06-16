@@ -3,7 +3,7 @@ import React from "react";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FiGithub, FiMail, FiTwitter } from "react-icons/fi";
 
-function SocialLinks() {
+export const SocialLinks = () => {
   return (
     <Box>
       <HStack>
@@ -43,6 +43,4 @@ function SocialLinks() {
       </HStack>
     </Box>
   );
-}
-
-export default SocialLinks;
+};

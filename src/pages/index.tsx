@@ -1,8 +1,8 @@
 import { Box, Button, Heading, Text, VStack } from "@chakra-ui/react";
 import NextLink from "next/link";
-import { MainLayout } from "layouts";
+import { MainLayout } from "@layouts";
 import React from "react";
-import SocialLinks from "components/SocialLinks";
+import { SocialLinks } from "@components";
 
 const HomePage = () => {
   return (
