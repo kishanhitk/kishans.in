@@ -19,14 +19,8 @@ class Document extends NextDocument {
         <Head>
           <link
             rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/hk-grotesk.min.css"
+            href="https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/metropolis.min.css"
           />
-          <script
-            async
-            defer
-            data-domain="kishans.in"
-            src="https://plausible.io/js/plausible.js"
-          ></script>
         </Head>
 
         <body>
