@@ -10,11 +10,11 @@ const HomePage = () => {
       <Box>
         <VStack align="flex-start" spacing={5}>
           <Heading as="h1" size="2xl" fontWeight="900">
-            Hey, I'm Kishan
+            Hey, I&apos;m Kishan
           </Heading>
           <Text>
-            I'm a self taught developer from India. I love building cool stuffs
-            for web and mobile using
+            I&apos;m a self taught developer from India. I love building cool
+            stuffs for web and mobile using
             <Box as="strong">: Javascript/Typescript</Box>,{" "}
             <Box as="strong"> ReactJS</Box>,<Box as="strong"> NodeJS, </Box>
             <Box as="strong">Flutter</Box>, and <Box as="strong">GraphQL</Box>.

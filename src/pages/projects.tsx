@@ -64,6 +64,7 @@ const BlogPage = () => {
                       src={img}
                       height="150px"
                       width="150px"
+                      alt={title}
                       placeholder="blur"
                     ></Image>
                   </Box>
@@ -92,7 +93,7 @@ const BlogPage = () => {
                     <Text>{summary}</Text>
                     <Wrap>
                       {tags.map((tag) => (
-                        <WrapItem>
+                        <WrapItem key={tag}>
                           <Box backgroundColor={tagBg} rounded="5px" px="10px">
                             #{tag}
                           </Box>
