@@ -31,11 +31,14 @@ const HomePage = () => {
             <Box as="strong">Flutter</Box>, and <Box as="strong">GraphQL</Box>.
           </Text>
           <SocialLinks />
-          <NextLink href="https://blog.kishans.in">
-            <Button margin="300px" colorScheme="blue">
-              Read My Blogs
-            </Button>
-          </NextLink>
+          <Button
+            as="a"
+            href="https://blog.kishans.in"
+            margin="300px"
+            colorScheme="blue"
+          >
+            Read My Blogs
+          </Button>
         </VStack>
       </Box>
     </MainLayout>
