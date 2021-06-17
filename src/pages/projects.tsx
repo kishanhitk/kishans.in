@@ -1,21 +1,28 @@
 import NextLink from "next/link";
 import {
   Box,
-  Button,
   Heading,
   VStack,
   Text,
-  Icon,
-  Input,
-  InputGroup,
-  InputRightElement,
+  HStack,
+  Button,
+  IconButton,
+  Spacer,
+  useColorModeValue,
+  Wrap,
+  WrapItem,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
-import { Search2Icon } from "@chakra-ui/icons";
 import { NextSeo } from "next-seo";
 import { MainLayout } from "@layouts";
-
+import { ProjectList } from "@data/project";
+import Image from "next/image";
+import JUMSReboot from "../../public/assets/jumsreboot.png";
+import { FiGithub } from "react-icons/fi";
+import { IoOpenOutline } from "react-icons/io5";
 const BlogPage = () => {
+  const cardBg = useColorModeValue("gray.100", "gray.700");
+  const tagBg = useColorModeValue("blue.200", "blue.800");
   return (
     <MainLayout>
       <NextSeo
@@ -40,36 +47,62 @@ const BlogPage = () => {
 
         <Box>
           <VStack spacing={8} align="flex-start">
-            {/* {posts
-              ?.sort(
-                (prevPost, nextPost) =>
-                  Number(new Date(nextPost.publishedAt)) -
-                  Number(new Date(prevPost.publishedAt))
-              )
-              .filter((frontMatter) =>
-                frontMatter.title
-                  .toLowerCase()
-                  .includes(searchValue.toLowerCase())
-              )
-              .map(({ title, slug, summary }) => (
-                <NextLink href={`/blog/${slug}`} key={slug}>
-                  <a>
-                    <VStack align="flex-start" spacing={3}>
-                      <Heading
-                        pos="relative"
-                        as="h3"
-                        size="md"
-                        _hover={{
-                          color: "green.500",
-                        }}
+            {ProjectList.sort(
+              (prev, next) => prev.priority - next.priority
+            ).map(({ title, slug, sourceUrl, liveUrl, summary, tags, img }) => (
+              <Box
+                key={slug}
+                backgroundColor={cardBg}
+                width="100%"
+                px="30px"
+                py="20px"
+                rounded="10px"
+              >
+                <VStack height="100%" width="100%">
+                  <Box minH="150px" minW="150px">
+                    <Image
+                      src={img}
+                      height="150px"
+                      width="150px"
+                      placeholder="blur"
+                    ></Image>
+                  </Box>
+                  <VStack alignItems="flex-start" alignSelf="flex-start">
+                    <HStack>
+                      <Heading size="md">{title}</Heading>
+                      <IconButton
+                        as="a"
+                        target="_blank"
+                        href={liveUrl}
+                        borderRadius="100%"
+                        aria-label="live"
                       >
-                        {title}
-                      </Heading>
-                      <Text>{summary}</Text>
-                    </VStack>
-                  </a>
-                </NextLink>
-              ))} */}
+                        <IoOpenOutline />
+                      </IconButton>
+                      <IconButton
+                        as="a"
+                        target="_blank"
+                        href={sourceUrl}
+                        borderRadius="100%"
+                        aria-label="source"
+                      >
+                        <FiGithub />
+                      </IconButton>
+                    </HStack>
+                    <Text>{summary}</Text>
+                    <Wrap>
+                      {tags.map((tag) => (
+                        <WrapItem>
+                          <Box backgroundColor={tagBg} rounded="5px" px="10px">
+                            #{tag}
+                          </Box>
+                        </WrapItem>
+                      ))}
+                    </Wrap>
+                  </VStack>
+                </VStack>
+              </Box>
+            ))}
           </VStack>
         </Box>
       </VStack>

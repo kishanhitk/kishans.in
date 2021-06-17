@@ -52,10 +52,9 @@ const AboutPage = () => {
           </Text>
 
           <Text mb={3}>
-            I love designing and developing apps for mobile and web. When I am
-            not writing code, I am reading an article or blog post to keep
-            myself updated with the latest happening in the world of tech. I
-            like to listen to Hindustani Classical instrumental music while
+            When I am not writing code, I am reading an article or blog post to
+            keep myself updated with the latest happening in the world of tech.
+            I like to listen to Hindustani Classical instrumental music while
             coding, mostly Sitar of Pandit Ravi Shankar.
           </Text>
 

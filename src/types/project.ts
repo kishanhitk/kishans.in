@@ -2,9 +2,11 @@ export type Project = {
   title: string;
   slug: string;
   summary: string;
-  photoUrl: string;
   sourceUrl: string;
   liveUrl: string;
+  tags: string[];
+  img: StaticImageData;
+  priority: number;
 };
 
 export type Projects = Project[];
