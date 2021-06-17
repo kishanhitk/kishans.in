@@ -13,7 +13,8 @@ import {
 } from "@chakra-ui/react";
 import { Routes } from "@config";
 import { SunIcon, MoonIcon } from "@chakra-ui/icons";
-
+import KishanLogo from "../../public/assets/kishanlogo.png";
+import Image from "next/image";
 interface NavLinkProps extends ButtonProps {
   url: string;
   children: ReactNode;
@@ -44,6 +45,11 @@ export const Header = () => {
         <NextLink href={Routes.home}>
           <Link _hover={{ textDecor: "none" }}>
             <Box
+              _hover={{
+                boxShadow: "3px 3px 5px rgba(0, 0, 0, 0.3)",
+                rotate: "350deg",
+                transform: "rotate(360deg)",
+              }}
               as="span"
               display="flex"
               justifyContent="center"
@@ -51,21 +57,12 @@ export const Header = () => {
               bg="gray.900"
               color="white"
               w="45px"
+              transition="transform 0.7s ease-in-out"
               h="45px"
-              border="5px solid"
-              borderColor="blue.500"
-              borderRadius="45px"
-              fontWeight="bold"
-              boxShadow="0 0 5px rgba(0, 0, 0, 0.3)"
+              borderRadius="100%"
+              boxShadow="1px 1px 5px rgba(0, 0, 0, 0.3)"
             >
-              <Box
-                as="span"
-                fontFamily="inherit"
-                fontWeight="bold"
-                fontSize="10px"
-              >
-                KK
-              </Box>
+              <Image src={KishanLogo} alt="Kishan"></Image>
             </Box>
           </Link>
         </NextLink>
@@ -75,7 +72,6 @@ export const Header = () => {
       <Box as="nav">
         <HStack>
           <HStack>
-            <NavLink url={Routes.home}>Home</NavLink>
             <NavLink url={Routes.projects}>Projects</NavLink>
             <NavLink url={Routes.aboutMe}>About me</NavLink>
           </HStack>
