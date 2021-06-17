@@ -55,15 +55,14 @@ const BlogPage = () => {
                 backgroundColor={cardBg}
                 width="100%"
                 px="30px"
-                py="20px"
+                py="30px"
                 rounded="10px"
               >
                 <VStack height="100%" width="100%">
-                  <Box minH="150px" minW="150px">
+                  <Box rounded="20px">
                     <Image
                       src={img}
-                      height="150px"
-                      width="150px"
+                      layout="intrinsic"
                       alt={title}
                       placeholder="blur"
                     ></Image>

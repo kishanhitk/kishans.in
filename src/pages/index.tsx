@@ -3,10 +3,21 @@ import NextLink from "next/link";
 import { MainLayout } from "@layouts";
 import React from "react";
 import { SocialLinks } from "@components";
+import { NextSeo } from "next-seo";
 
 const HomePage = () => {
   return (
     <MainLayout>
+      <NextSeo
+        title="Kishan Kumar - Full Stack Developer"
+        description="Blogs and Projects by Kishan"
+        canonical="https://kishans.in"
+        openGraph={{
+          url: "https://kishans.in",
+          title: "Kishan Kumar - Full Stack Developer",
+          description: "Blogs and Projects by Kishan",
+        }}
+      />
       <Box>
         <VStack align="flex-start" spacing={5}>
           <Heading as="h1" size="2xl" fontWeight="900">
