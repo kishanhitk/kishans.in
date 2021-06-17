@@ -62,7 +62,7 @@ export const Header = () => {
               borderRadius="100%"
               boxShadow="1px 1px 5px rgba(0, 0, 0, 0.3)"
             >
-              <Image src={KishanLogo} alt="Kishan"></Image>
+              <Image src={KishanLogo} placeholder="blur" alt="Kishan"></Image>
             </Box>
           </Link>
         </NextLink>
