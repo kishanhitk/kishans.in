@@ -37,7 +37,7 @@ const AboutPage = () => {
           <Avatar
             size="2xl"
             name="Kishan Kumar"
-            src="./assets/kishan.jpg"
+            src="./assets/kishan.webp"
             textAlign="center"
           />
         </Box>

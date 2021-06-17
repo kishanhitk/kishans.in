@@ -1,9 +1,10 @@
 import { Projects } from "@types";
-import JUMSRebootLogo from "../../../public/assets/jumsreboot.png";
-import JUMSBanner from "../../../public/assets/jumsbanner.png";
-import StrollBanner from "../../../public/assets/stroll.png";
-import S6Banner from "../../../public/assets/s6banner.jpg";
-
+import JUMSBanner from "../../../public/assets/jumsbanner.webp";
+import StrollBanner from "../../../public/assets/stroll.webp";
+import S6Banner from "../../../public/assets/s6banner.webp";
+import HMDBBanner from "../../../public/assets/hmdb.webp";
+import SafeChat from "../../../public/assets/safechat.webp";
+import GitGramBanner from "../../../public/assets/gitgram.webp";
 export const ProjectList: Projects = [
   {
     priority: 0,
@@ -14,7 +15,17 @@ export const ProjectList: Projects = [
     sourceUrl: "https://github.com/kishanhitk/jumsRebootFlutter",
     liveUrl:
       "https://play.google.com/store/apps/details?id=com.kishans.jumsRebootFlutter",
-    tags: ["Flutter", "Web-Scraping", "Express", "NodeJS", "Puppeteer"],
+    tags: [
+      "Flutter",
+      "Web-Scraping",
+      "Express",
+      "NodeJS",
+      "Puppeteer",
+      "Dart",
+      "JavaScript",
+      "Firebase",
+      "FCM",
+    ],
     img: JUMSBanner,
   },
   {
@@ -30,6 +41,46 @@ export const ProjectList: Projects = [
   },
   {
     priority: 2,
+    title: "HMDB",
+    slug: "hmdb",
+    summary:
+      "Get to know about latest movies trending in the hollywood, read summary and ratings.",
+    sourceUrl: "https://github.com/kishanhitk/hmdb-next",
+    liveUrl: "http://hmdb-next.vercel.app/",
+    tags: ["React", "Next.js", "TypeScript", "ChakraUI", "SSG"],
+    img: HMDBBanner,
+  },
+  {
+    priority: 3,
+    title: "GitGram",
+    slug: "gitgram",
+    summary:
+      "The Instagram for developers. Login with GitHub account and start sharing your code moments with your code buddies.",
+    sourceUrl: "https://github.com/kishanhitk/gitgram",
+    liveUrl: "https://git-gram.netlify.app/",
+    tags: ["React", "JavaScript", "MaterialUI", "Firebase", "Framer Motion"],
+    img: GitGramBanner,
+  },
+  {
+    priority: 4,
+    title: "Safe Chat",
+    slug: "safechat",
+    summary: "Community chat app made with Next.js and Firebase.",
+    sourceUrl: "https://github.com/kishanhitk/safechat_next",
+    liveUrl: "https://safechat-next.vercel.app/",
+    tags: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "ChakraUI",
+      "SSR",
+      "Firebase",
+      "Instant Messaging",
+    ],
+    img: SafeChat,
+  },
+  {
+    priority: 5,
     title: "S6 Chat",
     slug: "s6-chat",
     summary:

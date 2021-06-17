@@ -13,7 +13,7 @@ import {
 } from "@chakra-ui/react";
 import { Routes } from "@config";
 import { SunIcon, MoonIcon } from "@chakra-ui/icons";
-import KishanLogo from "../../public/assets/kishanlogo.png";
+import KishanLogo from "../../public/assets/kishanlogo.webp";
 import Image from "next/image";
 interface NavLinkProps extends ButtonProps {
   url: string;
