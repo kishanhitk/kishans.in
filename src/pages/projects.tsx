@@ -38,7 +38,8 @@ const BlogPage = () => {
             Projects
           </Heading>
           <Text>
-            {`I love learning new things everyday, and this list is a proof of work for the same.`}
+            I love learning new things everyday, and this list is a proof of
+            work for the same.
           </Text>
         </VStack>
 
@@ -56,7 +57,7 @@ const BlogPage = () => {
                 rounded="10px"
               >
                 <VStack height="100%" width="100%">
-                  <Box rounded="20px">
+                  <Box as="a" href={liveUrl} target="_blank" rounded="20px">
                     <Image
                       src={img}
                       layout="intrinsic"
