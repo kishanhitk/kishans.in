@@ -81,6 +81,7 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       posts,
     },
+    revalidate: 180,
   };
 };
 export default HomePage;
