@@ -1,5 +1,4 @@
 import { Box, Button, Heading, Text, VStack } from "@chakra-ui/react";
-import NextLink from "next/link";
 import { MainLayout } from "@layouts";
 import React from "react";
 import { SocialLinks } from "@components";
