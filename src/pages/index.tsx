@@ -1,10 +1,16 @@
-import { Box, Button, Heading, Text, VStack } from "@chakra-ui/react";
+import { Box, Heading, Text, VStack } from "@chakra-ui/react";
 import { MainLayout } from "@layouts";
 import React from "react";
 import { SocialLinks } from "@components";
 import { NextSeo } from "next-seo";
+import { gql } from "@apollo/client";
+import client from "../apollo-client";
+import { GetStaticProps, InferGetStaticPropsType } from "next";
+import { HashnodePost } from "@types";
 
-const HomePage = () => {
+const HomePage = ({
+  posts,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <MainLayout>
       <NextSeo
@@ -18,7 +24,7 @@ const HomePage = () => {
         }}
       />
       <Box>
-        <VStack align="flex-start" spacing={5}>
+        <VStack align="flex-start" spacing={8}>
           <Heading as="h1" size="2xl" fontWeight="900">
             Hey, I&apos;m Kishan
           </Heading>
@@ -30,18 +36,51 @@ const HomePage = () => {
             <Box as="strong">Flutter</Box>, and <Box as="strong">GraphQL</Box>.
           </Text>
           <SocialLinks />
-          <Button
-            as="a"
-            href="https://blog.kishans.in"
-            margin="300px"
-            colorScheme="blue"
-          >
-            Read My Blogs
-          </Button>
+
+          <Heading pt="10px" size="lg">
+            Recent Posts
+          </Heading>
+          {posts.map(({ cuid, title, brief, slug }) => (
+            <Box
+              mb="10px"
+              as="a"
+              href={`https://blog.kishans.in/${slug}`}
+              cursor="pointer"
+              key={cuid}
+            >
+              <Heading pb="7px" size="md">
+                {title}
+              </Heading>
+              <Text>{brief}</Text>
+            </Box>
+          ))}
         </VStack>
       </Box>
     </MainLayout>
   );
 };
-
+export const getStaticProps: GetStaticProps = async () => {
+  const { data } = await client.query({
+    query: gql`
+      query {
+        user(username: "kishanhitk") {
+          publication {
+            posts(page: 0) {
+              title
+              brief
+              slug
+              cuid
+            }
+          }
+        }
+      }
+    `,
+  });
+  const posts: HashnodePost[] = data.user.publication.posts;
+  return {
+    props: {
+      posts,
+    },
+  };
+};
 export default HomePage;
