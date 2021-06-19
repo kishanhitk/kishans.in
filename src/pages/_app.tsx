@@ -1,7 +1,6 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import React from "react";
-import "@fontsource/raleway/400.css";
-import "@fontsource/open-sans/700.css";
+import "@fontsource/inter/400.css";
 import theme from "@style/theme";
 
 function MyApp({ Component, pageProps }) {
