@@ -26,7 +26,7 @@ const HomePage = ({
       <Box>
         <VStack align="flex-start" spacing={8}>
           <Heading as="h1" size="2xl" fontWeight="900">
-            Hey, I&apos;m Kishan
+            Hi, I&apos;m Kishan
           </Heading>
           <Text>
             I&apos;m a self taught developer from India. I love building cool
