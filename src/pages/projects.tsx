@@ -1,25 +1,22 @@
-import NextLink from "next/link";
 import {
   Box,
   Heading,
   VStack,
   Text,
   HStack,
-  Button,
   IconButton,
-  Spacer,
   useColorModeValue,
   Wrap,
   WrapItem,
 } from "@chakra-ui/react";
-import React, { useState } from "react";
+import React from "react";
 import { NextSeo } from "next-seo";
 import { MainLayout } from "@layouts";
 import { ProjectList } from "@data/project";
 import Image from "next/image";
-import JUMSReboot from "../../public/assets/jumsreboot.png";
 import { FiGithub } from "react-icons/fi";
 import { IoOpenOutline } from "react-icons/io5";
+
 const BlogPage = () => {
   const cardBg = useColorModeValue("gray.100", "gray.700");
   const tagBg = useColorModeValue("blue.200", "blue.800");
@@ -41,7 +38,8 @@ const BlogPage = () => {
             Projects
           </Heading>
           <Text>
-            {`I love learning new things everyday, and this list is a proof of work for the same.`}
+            I love learning new things everyday, and this list is a proof of
+            work for the same.
           </Text>
         </VStack>
 
@@ -59,7 +57,7 @@ const BlogPage = () => {
                 rounded="10px"
               >
                 <VStack height="100%" width="100%">
-                  <Box rounded="20px">
+                  <Box as="a" href={liveUrl} target="_blank" rounded="20px">
                     <Image
                       src={img}
                       layout="intrinsic"

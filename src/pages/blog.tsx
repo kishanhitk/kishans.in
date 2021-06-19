@@ -1,5 +1,7 @@
+import { MainLayout } from "@layouts";
+
 function Blog() {
-  return <div>Blog</div>;
+  return <MainLayout>Coming Soon...</MainLayout>;
 }
 
 export default Blog;

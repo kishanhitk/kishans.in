@@ -13,7 +13,7 @@ import {
 } from "@chakra-ui/react";
 import { Routes } from "@config";
 import { SunIcon, MoonIcon } from "@chakra-ui/icons";
-import KishanLogo from "../../public/assets/kishanlogo.webp";
+import KishanLogo from "../../public/assets/kishanlogo.png";
 import Image from "next/image";
 interface NavLinkProps extends ButtonProps {
   url: string;
@@ -35,9 +35,9 @@ export const Header = () => {
       p={4}
       top="0"
       zIndex={10}
-      bg={useColorModeValue("rgba(255, 255, 255, 0.8)", "rgba(26, 32, 44,0.8)")}
+      bg={useColorModeValue("rgba(255, 255, 255, 0.5)", "rgba(26, 32, 44,0.8)")}
       style={{
-        backdropFilter: `saturate(180%) blur(20px)`,
+        backdropFilter: `saturate(180%) blur(10px)`,
         transition: "background-color 0.1 ease-in-out",
       }}
     >
@@ -62,7 +62,12 @@ export const Header = () => {
               borderRadius="100%"
               boxShadow="1px 1px 5px rgba(0, 0, 0, 0.3)"
             >
-              <Image src={KishanLogo} placeholder="blur" alt="Kishan"></Image>
+              <Image
+                priority={true}
+                src={KishanLogo}
+                placeholder="empty"
+                alt="Kishan"
+              ></Image>
             </Box>
           </Link>
         </NextLink>

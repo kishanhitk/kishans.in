@@ -1,10 +1,10 @@
 import React from "react";
 import NextDocument, {
   Html,
-  Head,
   Main,
   NextScript,
   DocumentContext,
+  Head,
 } from "next/document";
 import { ColorModeScript } from "@chakra-ui/react";
 
@@ -16,13 +16,7 @@ class Document extends NextDocument {
   render() {
     return (
       <Html lang="en">
-        <Head>
-          <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/metropolis.min.css"
-          />
-        </Head>
-
+        <Head />
         <body>
           <ColorModeScript />
           <Main />
