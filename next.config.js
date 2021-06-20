@@ -1,3 +1,4 @@
+const withMDX = require("@next/mdx")();
 module.exports = {
   async redirects() {
     return [
@@ -9,3 +10,5 @@ module.exports = {
     ];
   },
 };
+
+module.exports = withMDX();
