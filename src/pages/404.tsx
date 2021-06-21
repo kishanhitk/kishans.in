@@ -19,7 +19,7 @@ function Four04Page() {
       <MainLayout>
         <VStack>
           <Image src={img} alt="404 Image" placeholder="blur"></Image>
-          <Link href="/" passHref>
+          <Link href="/" passHref replace={true}>
             <Button variant="solid" colorScheme="messenger">
               Go Home
             </Button>
