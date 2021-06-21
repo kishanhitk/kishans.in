@@ -17,6 +17,21 @@ module.exports = {
           "https://play.google.com/store/apps/details?id=com.kishans.jumsRebootFlutter",
         permanent: false,
       },
+      {
+        source: "/linkedin",
+        destination: "https://www.linkedin.com/in/kishanju",
+        permanent: false,
+      },
+      {
+        source: "/github",
+        destination: "https://github.com/kishanhitk",
+        permanent: false,
+      },
+      {
+        source: "/twitter",
+        destination: "https://twitter.com/jst_kishan",
+        permanent: false,
+      },
     ];
   },
 };
