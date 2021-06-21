@@ -32,6 +32,12 @@ module.exports = {
         destination: "https://twitter.com/jst_kishan",
         permanent: false,
       },
+      {
+        source: "/resume",
+        destination:
+          "https://drive.google.com/file/d/1Ifcl2woa2leYe8oyv-541jN2N0_PIgOK/view?usp=sharing",
+        permanent: false,
+      },
     ];
   },
 };
