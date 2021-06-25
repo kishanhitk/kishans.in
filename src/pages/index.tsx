@@ -7,6 +7,7 @@ import { gql } from "@apollo/client";
 import client from "../apollo-client";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { HashnodePost } from "@types";
+import Link from "next/dist/client/link";
 
 const HomePage = ({
   posts,
@@ -41,18 +42,14 @@ const HomePage = ({
             Recent Posts
           </Heading>
           {posts.map(({ cuid, title, brief, slug }) => (
-            <Box
-              mb="10px"
-              as="a"
-              href={`https://blog.kishans.in/${slug}`}
-              cursor="pointer"
-              key={cuid}
-            >
-              <Heading pb="7px" size="md">
-                {title}
-              </Heading>
-              <Text>{brief}</Text>
-            </Box>
+            <Link href={`/blogs/${slug}`} passHref key={cuid}>
+              <Box mb="10px" cursor="pointer">
+                <Heading pb="7px" size="md">
+                  {title}
+                </Heading>
+                <Text>{brief}</Text>
+              </Box>
+            </Link>
           ))}
         </VStack>
       </Box>
