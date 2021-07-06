@@ -95,7 +95,7 @@ export const Header = () => {
 };
 
 const NavLink = ({ url, children }: NavLinkProps) => (
-  <NextLink href={url}>
+  <NextLink href={url} passHref>
     <Link _hover={{ textDecor: "none" }}>
       <Button
         bg="none"
