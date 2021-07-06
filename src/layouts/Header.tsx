@@ -27,7 +27,7 @@ export const Header = () => {
       as="header"
       position="sticky"
       justifyContent="space-between"
-      width="1024px"
+      width="924px"
       maxW="100%"
       m="0 auto"
       mb={8}

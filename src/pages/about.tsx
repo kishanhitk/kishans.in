@@ -1,7 +1,7 @@
 import React from "react";
 import { MainLayout } from "@layouts";
 import { NextSeo } from "next-seo";
-import { Box, Avatar, Heading, VStack, Text } from "@chakra-ui/react";
+import { Box, Avatar, Heading, VStack, Text, Link } from "@chakra-ui/react";
 import { SocialLinks } from "@components";
 
 const AboutPage = () => {
@@ -44,20 +44,21 @@ const AboutPage = () => {
 
         <Box>
           <Text mb={3}>
-            I&apos;m a self taught developer from India. I love building cool
-            stuffs for web and mobile using
-            <Box as="strong">: Javascript/Typescript</Box>,{" "}
+            I&apos;m a self-taught developer from India. I love building cool
+            stuff for web and mobile using:
+            <Box as="strong"> Javascript/Typescript</Box>,{" "}
             <Box as="strong"> ReactJS</Box>,<Box as="strong"> NodeJS, </Box>
             <Box as="strong">Flutter</Box>, and <Box as="strong">GraphQL</Box>.
           </Text>
 
           <Text mb={3}>
-            When I am not writing code, I am reading an article or blog post to
-            keep myself updated with the latest happening in the world of tech.
-            I like to listen to Hindustani Classical instrumental music while
-            coding, mostly Sitar of Pandit Ravi Shankar.
+            I document my journey through my <Link href="/blog">blogs</Link>.
+            When I am not writing code, I am reading books on life and startups.
+            I love listening to lofi while coding.
+            <br />
+            <Box as="strong">Are you working on something exciting?</Box> <br />
+            Let&#39;s talk 👇
           </Text>
-
           <SocialLinks />
         </Box>
       </VStack>
