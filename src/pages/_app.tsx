@@ -6,7 +6,7 @@ import "@fontsource/inter/500.css";
 import theme from "@style/theme";
 import "nprogress/nprogress.css";
 import dynamic from "next/dynamic";
-
+import { AnimatePresence } from "framer-motion";
 const TopProgressBar = dynamic(
   () => {
     return import("./../components/TopProgressBar");
@@ -17,7 +17,13 @@ function MyApp({ Component, pageProps }) {
   return (
     <ChakraProvider theme={theme}>
       <TopProgressBar />
-      <Component {...pageProps} />
+      <AnimatePresence
+        exitBeforeEnter
+        initial={false}
+        onExitComplete={() => window.scrollTo(0, 0)}
+      >
+        <Component {...pageProps} />
+      </AnimatePresence>
     </ChakraProvider>
   );
 }
