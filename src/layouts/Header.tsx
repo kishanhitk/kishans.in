@@ -42,7 +42,7 @@ export const Header = () => {
       }}
     >
       <Box>
-        <NextLink href={Routes.home}>
+        <NextLink href={Routes.home} passHref>
           <Link _hover={{ textDecor: "none" }}>
             <Box
               _hover={{

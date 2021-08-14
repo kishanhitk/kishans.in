@@ -17,9 +17,6 @@ import Image from "next/image";
 import { FiGithub } from "react-icons/fi";
 import { IoOpenOutline } from "react-icons/io5";
 
-export const config = {
-  unstable_runtimeJS: false,
-};
 
 const BlogPage = () => {
   const cardBg = useColorModeValue("gray.100", "gray.700");
