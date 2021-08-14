@@ -8,10 +8,6 @@ import client from "../apollo-client";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { HashnodePost } from "@types";
 
-export const config = {
-  unstable_runtimeJS: false,
-};
-
 const HomePage = ({
   posts,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
