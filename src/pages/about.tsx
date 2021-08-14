@@ -4,6 +4,10 @@ import { NextSeo } from "next-seo";
 import { Box, Avatar, Heading, VStack, Text, Link } from "@chakra-ui/react";
 import { SocialLinks } from "@components";
 
+export const config = {
+  unstable_runtimeJS: false,
+};
+
 const AboutPage = () => {
   return (
     <MainLayout>
