@@ -9,13 +9,13 @@ import { AnimatePresence } from "framer-motion";
 function MyApp({ Component, pageProps }) {
   return (
     <ChakraProvider theme={theme}>
-      <AnimatePresence
+      {/* <AnimatePresence
         exitBeforeEnter
         initial={false}
         onExitComplete={() => window.scrollTo(0, 0)}
-      >
+      > */}
         <Component {...pageProps} />
-      </AnimatePresence>
+      {/* </AnimatePresence> */}
     </ChakraProvider>
   );
 }
