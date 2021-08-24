@@ -7,7 +7,6 @@ import { gql } from "@apollo/client";
 import client from "../apollo-client";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { HashnodePost } from "@types";
-
 const HomePage = ({
   posts,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
