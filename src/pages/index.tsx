@@ -20,6 +20,12 @@ const HomePage = ({
           url: "https://kishans.in",
           title: "Kishan Kumar - Full Stack Developer",
           description: "Blogs and Projects by Kishan",
+          images: [
+            {
+              url: "https://kishans.in/assets/kishanlogo.webp",
+              alt: "Og Image Alt",
+            },
+          ],
         }}
       />
       <Box>
