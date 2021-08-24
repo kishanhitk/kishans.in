@@ -15,15 +15,16 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
     <Box>
       <Header />
       <Box w="650px" maxW="90%" m="0 auto" mb={20}>
-        <motion.main
+        {/* Disabled animation   */}
+        {/* <motion.main
           variants={variants} // Pass the variant object into Framer Motion
           initial="hidden" // Set the initial state to variants.hidden
           animate="enter" // Animated state to variants.enter
           exit="exit" // Exit state (used later) to variants.exit
           transition={{ transition: "easeInOut", duration: 0.3 }}
-        >
+        > */}
           {children}
-        </motion.main>
+        {/* </motion.main> */}
       </Box>
     </Box>
   );
