@@ -12,9 +12,10 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { Routes } from "@config";
-import { SunIcon, MoonIcon } from "@chakra-ui/icons";
 import KishanLogo from "../../public/assets/kishanlogo.png";
 import Image from "next/image";
+import { FiSun } from "react-icons/fi";
+import { FaMoon } from "react-icons/fa";
 interface NavLinkProps extends ButtonProps {
   url: string;
   children: ReactNode;
@@ -83,7 +84,7 @@ export const Header = () => {
           <IconButton
             onClick={toggleColorMode}
             aria-label="theme-switcher"
-            icon={colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+            icon={colorMode === "light" ? <FaMoon /> : <FiSun />}
             size="md"
             borderRadius="100px"
             bg="none"

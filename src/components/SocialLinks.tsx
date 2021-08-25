@@ -1,7 +1,8 @@
 import { Box, HStack, IconButton } from "@chakra-ui/react";
 import React from "react";
 import { FaLinkedinIn } from "react-icons/fa";
-import { FiGithub, FiMail, FiTwitter } from "react-icons/fi";
+import { FiGithub, FiMail, FiPlay, FiTwitter } from "react-icons/fi";
+import { IoLogoGooglePlaystore } from "react-icons/io5";
 
 export const SocialLinks = () => {
   return (
@@ -37,6 +38,13 @@ export const SocialLinks = () => {
             href="mailto:kishansharma1231@gmail.com"
             aria-label="Gmail"
             icon={<FiMail />}
+            borderRadius="100%"
+          />
+          <IconButton
+            as="a"
+            href="https://play.google.com/store/apps/dev?id=8407266026945909749"
+            aria-label="Google Play Store"
+            icon={<IoLogoGooglePlaystore />}
             borderRadius="100%"
           />
         </HStack>
