@@ -34,8 +34,7 @@ module.exports = {
       },
       {
         source: "/resume",
-        destination:
-          "https://drive.google.com/file/d/1Ifcl2woa2leYe8oyv-541jN2N0_PIgOK/view?usp=sharing",
+        destination: "https://kishanhitk.github.io/resume/",
         permanent: false,
       },
     ];
