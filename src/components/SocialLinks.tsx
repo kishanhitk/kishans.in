@@ -1,8 +1,8 @@
-import { Box, HStack, IconButton } from "@chakra-ui/react";
+import { Box, Button, HStack, IconButton } from "@chakra-ui/react";
 import React from "react";
 import { FaLinkedinIn } from "react-icons/fa";
-import { FiGithub, FiMail, FiPlay, FiTwitter } from "react-icons/fi";
-import { IoLogoGooglePlaystore } from "react-icons/io5";
+import { FiGithub, FiMail, FiTwitter } from "react-icons/fi";
+import { IoDocumentTextOutline, IoLogoGooglePlaystore } from "react-icons/io5";
 
 export const SocialLinks = () => {
   return (
@@ -47,6 +47,14 @@ export const SocialLinks = () => {
             icon={<IoLogoGooglePlaystore />}
             borderRadius="100%"
           />
+          <Button
+            as="a"
+            href="/resume"
+            leftIcon={<IoDocumentTextOutline />}
+            target="_blank"
+          >
+            Résumé
+          </Button>
         </HStack>
       </HStack>
     </Box>

@@ -1,4 +1,4 @@
-import { Box, Heading, Text, VStack } from "@chakra-ui/react";
+import { Box, Button, Heading, Link, Text, VStack } from "@chakra-ui/react";
 import { MainLayout } from "@layouts";
 import React from "react";
 import { SocialLinks } from "@components";
@@ -41,7 +41,7 @@ const HomePage = ({
             <Box as="strong">Flutter</Box>, and <Box as="strong">AWS</Box>.
           </Text>
           <SocialLinks />
-
+        
           <Heading pt="10px" size="lg">
             Recent Posts
           </Heading>
