@@ -10,9 +10,17 @@ const AboutPage = () => {
       <NextSeo
         title="About Me – Kishan"
         canonical="https://kishans.in/about"
+        description="About Kishan Kumar - Full Stack Developer"
         openGraph={{
           url: "https://kishans.in/about",
           title: "About Me – Kishan",
+          description: "About Kishan Kumar - Full Stack Developer",
+          images: [
+            {
+              url: "https://kishans.in/assets/kishanlogo.webp",
+              alt: "Og Image Alt",
+            },
+          ],
         }}
       />
 

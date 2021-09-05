@@ -17,7 +17,6 @@ import Image from "next/image";
 import { FiGithub } from "react-icons/fi";
 import { IoOpenOutline } from "react-icons/io5";
 
-
 const BlogPage = () => {
   const cardBg = useColorModeValue("gray.100", "gray.700");
   const tagBg = useColorModeValue("blue.200", "blue.800");
@@ -31,6 +30,12 @@ const BlogPage = () => {
           url: "https://kishans.in/projects",
           title: "Projects - Kishan",
           description: "Cool stuffs built by Kishan",
+          images: [
+            {
+              url: "https://kishans.in/assets/kishanlogo.webp",
+              alt: "Og Image Alt",
+            },
+          ],
         }}
       />
       <VStack spacing={8} align="stretch">
