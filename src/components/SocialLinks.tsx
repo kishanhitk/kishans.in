@@ -47,14 +47,13 @@ export const SocialLinks = () => {
             icon={<IoLogoGooglePlaystore />}
             borderRadius="100%"
           />
-          <Button
+          <IconButton
             as="a"
             href="/resume"
-            leftIcon={<IoDocumentTextOutline />}
-            target="_blank"
-          >
-            Résumé
-          </Button>
+            aria-label="Résumé"
+            icon={<IoDocumentTextOutline />}
+            borderRadius="100%"
+          />
         </HStack>
       </HStack>
     </Box>
