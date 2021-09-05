@@ -32,11 +32,6 @@ module.exports = {
         destination: "https://twitter.com/jst_kishan",
         permanent: false,
       },
-      {
-        source: "/resume",
-        destination: "https://kishanhitk.github.io/resume/",
-        permanent: false,
-      },
     ];
   },
   webpack: (config, { dev, isServer }) => {
