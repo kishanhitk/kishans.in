@@ -56,7 +56,7 @@ const AboutPage = () => {
             stuff for web and mobile using:
             <Box as="strong"> Javascript/Typescript</Box>,{" "}
             <Box as="strong"> ReactJS</Box>,<Box as="strong"> NodeJS, </Box>
-            <Box as="strong">Flutter</Box>, and <Box as="strong">GraphQL</Box>.
+            <Box as="strong">Flutter</Box>, and <Box as="strong">AWS</Box>.
           </Text>
 
           <Text mb={3}>
