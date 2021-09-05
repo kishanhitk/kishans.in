@@ -1,8 +1,20 @@
 import React from "react";
 import { MainLayout } from "@layouts";
 import { NextSeo } from "next-seo";
-import { Box, Avatar, Heading, VStack, Text, Link } from "@chakra-ui/react";
+import {
+  Box,
+  Avatar,
+  Heading,
+  VStack,
+  Text,
+  Link,
+  Center,
+  Container,
+  Flex,
+} from "@chakra-ui/react";
+import Image from "next/image";
 import { SocialLinks } from "@components";
+import KishanPhoto from "../../public/assets/profile-pic.png";
 
 const AboutPage = () => {
   return (
@@ -42,12 +54,15 @@ const AboutPage = () => {
           >
             About me
           </Heading>
-          <Avatar
-            size="2xl"
-            name="Kishan Kumar"
-            src="./assets/kishan.webp"
-            textAlign="center"
-          />
+          <Container bg="purple.400" p="0.5" w="180px" h="180px" rounded="full">
+            <Image
+              height="180px"
+              width="180px"
+              src={KishanPhoto}
+              placeholder="blur"
+              alt="Kishan Kumar Photo"
+            ></Image>
+          </Container>
         </Box>
 
         <Box>
