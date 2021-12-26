@@ -56,6 +56,7 @@ const AboutPage = () => {
           </Heading>
           <Container bg="purple.400" p="0.5" w="180px" h="180px" rounded="full">
             <Image
+              priority={true}
               height="180px"
               width="180px"
               src={KishanPhoto}
