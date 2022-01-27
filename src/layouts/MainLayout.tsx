@@ -1,4 +1,3 @@
-import { Box } from "@chakra-ui/react";
 import React, { ReactNode } from "react";
 import { Header } from "./Header";
 import { m } from "framer-motion";
@@ -12,9 +11,9 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
     exit: { opacity: 0, x: 0, y: -10 },
   };
   return (
-    <Box>
+    <div>
       <Header />
-      <Box w="650px" maxW="90%" m="0 auto" mb={20}>
+      <div className="mb-20 mx-auto w-[650px] max-w-[90%]">
         <m.main
           variants={variants} // Pass the variant object into Framer Motion
           initial="hidden" // Set the initial state to variants.hidden
@@ -24,7 +23,7 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
         >
           {children}
         </m.main>
-      </Box>
-    </Box>
+      </div>
+    </div>
   );
 };

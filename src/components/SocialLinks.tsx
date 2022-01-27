@@ -1,61 +1,68 @@
-import { Box, Button, HStack, IconButton } from "@chakra-ui/react";
 import React from "react";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FiGithub, FiMail, FiTwitter } from "react-icons/fi";
 import { IoDocumentTextOutline, IoLogoGooglePlaystore } from "react-icons/io5";
 
 export const SocialLinks = () => {
+  const links = [
+    {
+      icon: <FiGithub />,
+      url: "https://github.com/kishanhitk",
+      ariaLabel: "Github",
+    },
+    {
+      icon: <FiTwitter />,
+      url: "https://twitter.com/jst_kishan",
+      ariaLabel: "Twitter",
+    },
+    {
+      icon: <FaLinkedinIn />,
+      url: "https://www.linkedin.com/in/kishanju",
+      ariaLabel: "Linkedin",
+    },
+    {
+      icon: <FiMail />,
+      url: "mailto:kishansharma1231@gmai.com",
+      ariaLabel: "Email",
+    },
+    {
+      icon: <IoLogoGooglePlaystore />,
+      url: "https://play.google.com/store/apps/dev?id=8407266026945909749",
+      ariaLabel: "Google Play Store",
+    },
+    {
+      icon: <IoDocumentTextOutline />,
+      url: "/resume",
+      ariaLabel: "Résumé",
+    },
+  ];
   return (
-    <Box>
-      <HStack>
-        <HStack spacing={3}>
-          <IconButton
-            as="a"
-            href="https://github.com/kishanhitk"
-            aria-label="Github"
-            icon={<FiGithub />}
-            borderRadius="100%"
+    <div>
+      <div className="flex gap-3">
+        {links.map((link) => (
+          <SocialIcon
+            key={link.url}
+            icon={link.icon}
+            href={link.url}
+            aria={link.ariaLabel}
           />
-
-          <IconButton
-            as="a"
-            href="https://twitter.com/jst_kishan"
-            aria-label="Twitter"
-            borderRadius="100%"
-            icon={<FiTwitter />}
-          />
-
-          <IconButton
-            as="a"
-            href="https://www.linkedin.com/in/kishanju/"
-            aria-label="Twitter"
-            borderRadius="100%"
-            icon={<FaLinkedinIn />}
-          />
-
-          <IconButton
-            as="a"
-            href="mailto:kishansharma1231@gmail.com"
-            aria-label="Gmail"
-            icon={<FiMail />}
-            borderRadius="100%"
-          />
-          <IconButton
-            as="a"
-            href="https://play.google.com/store/apps/dev?id=8407266026945909749"
-            aria-label="Google Play Store"
-            icon={<IoLogoGooglePlaystore />}
-            borderRadius="100%"
-          />
-          <IconButton
-            as="a"
-            href="/resume"
-            aria-label="Résumé"
-            icon={<IoDocumentTextOutline />}
-            borderRadius="100%"
-          />
-        </HStack>
-      </HStack>
-    </Box>
+        ))}
+      </div>
+    </div>
   );
 };
+
+const SocialIcon = ({ icon, href, aria: ariaLabel }) => {
+  return (
+    <button
+      className="rounded-full bg-white/10 p-3 hover:bg-white/20"
+      aria-label={ariaLabel}
+    >
+      <a href={href} target="_blank" rel="noreferrer">
+        {icon}
+      </a>
+    </button>
+  );
+};
+
+export default SocialLinks;
