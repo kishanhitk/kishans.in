@@ -8,6 +8,8 @@ import { AnimatePresence, LazyMotion } from "framer-motion";
 import { useRouter } from "next/router";
 import * as ga from "../utils/analytics";
 
+import "../style/global.css";
+
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
   const url = `https://kishans.in${router.route}`;
