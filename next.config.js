@@ -32,6 +32,11 @@ module.exports = {
         destination: "https://twitter.com/jst_kishan",
         permanent: false,
       },
+      {
+        source: "/cv",
+        destination: "https://drive.google.com/file/d/1pwXoDhTbHCIXZvDRXEPnmVboId8PceyI/view?usp=sharing",
+        permanent: false,
+      },
     ];
   },
   webpack: (config, { dev, isServer }) => {
