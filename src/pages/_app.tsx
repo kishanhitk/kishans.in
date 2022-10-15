@@ -1,8 +1,36 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import "../styles/globals.css";
+import type { AppProps } from "next/app";
+import { useRouter } from "next/router";
+import { LazyMotion, AnimatePresence } from "framer-motion";
+import { useEffect } from "react";
+import * as ga from "../utils/analytics";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
-}
+  const router = useRouter();
+  const url = `https://kishans.in${router.route}`;
+  const loadFeatures = () =>
+    import("../utils/features").then((res) => res.default);
 
-export default MyApp
+  useEffect(() => {
+    const handleRouteChange = (url: string) => {
+      ga.pageview(url);
+    };
+    router.events.on("routeChangeComplete", handleRouteChange);
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, [router.events]);
+
+  return (
+    <LazyMotion features={loadFeatures}>
+      <AnimatePresence
+        mode="wait"
+        initial={false}
+        onExitComplete={() => window.scrollTo(0, 0)}
+      >
+        <Component {...pageProps} key={url} />
+      </AnimatePresence>
+    </LazyMotion>
+  );
+}
+export default MyApp;
