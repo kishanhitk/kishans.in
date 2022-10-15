@@ -26,7 +26,7 @@ const Home = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
         }}
       />
       <div className="flex flex-col items-start gap-8">
-        <h1 className="text-5xl font-bold">Hi, I&apos;m Kishan</h1>
+        <h1 className="text-4xl md:text-5xl font-bold">Hi, I&apos;m Kishan</h1>
         <p className="text-md">
           I&apos;m a self-taught developer from India. I love building cool
           stuff for web and mobile using
@@ -43,7 +43,7 @@ const Home = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
             href={`https://blog.kishans.in/${post.slug}`}
           >
             <h3 className="font-bold text-xl mb-1">{post.title}</h3>
-            <p>{post.brief}</p>
+            <p className="font-light">{post.brief}</p>
           </a>
         ))}
       </div>

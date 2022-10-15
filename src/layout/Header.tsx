@@ -40,7 +40,7 @@ export const Header = () => {
 const NavLink = ({ url, children }: NavLinkProps) => (
   <Link href={url} passHref scroll={false}>
     <button
-      className="font-normal transition-all ease-in-out duration-200 rounded-md px-5 py-2 
+      className="font-normal transition-all ease-in-out duration-200 rounded-md px-4
     hover:bg-blue-100 hover:text-blue-700 active:bg-blue-200"
     >
       {children}
