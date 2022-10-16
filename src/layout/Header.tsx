@@ -1,8 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { ReactNode } from "react";
+import { useTheme } from "next-themes";
 import { Routes } from "../config";
 import KishanLogo from "../../public/assets/kishanlogo.png";
+import { FiSun } from "react-icons/fi";
+import { FaMoon } from "react-icons/fa";
+import { IconButton } from "@components/IconButton";
 
 interface NavLinkProps {
   url: string;
@@ -11,7 +15,7 @@ interface NavLinkProps {
 
 export const Header = () => {
   return (
-    <header className="flex sticky backdrop-brightness-110 backdrop-blur-md top-0 max-w-full w-[924px] mx-auto mb-8 p-4 justify-between align-middle z-10">
+    <header className="flex sticky backdrop-blur-md top-0 max-w-full w-[924px] mx-auto mb-8 p-4 justify-between align-middle z-10">
       <Link href={Routes.home}>
         <div
           className="cursor-pointer span flex justify-center items-center 
@@ -27,11 +31,11 @@ export const Header = () => {
         </div>
       </Link>
       <div className="flex ">
-        <div className="flex">
+        <div className="flex gap-3">
           <NavLink url={Routes.projects}>Projects</NavLink>
           <NavLink url={Routes.aboutMe}>About Me</NavLink>
+          <ThemeSwitcherButton />
         </div>
-        <button>O</button>
       </div>
     </header>
   );
@@ -47,3 +51,14 @@ const NavLink = ({ url, children }: NavLinkProps) => (
     </button>
   </Link>
 );
+
+const ThemeSwitcherButton = () => {
+  const { resolvedTheme, setTheme } = useTheme();
+  return (
+    <button
+      onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
+    >
+      {resolvedTheme === "dark" ? <FiSun /> : <FaMoon />}
+    </button>
+  );
+};

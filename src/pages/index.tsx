@@ -26,7 +26,9 @@ const Home = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
         }}
       />
       <div className="flex flex-col items-start gap-8">
-        <h1 className="text-4xl md:text-5xl font-bold">Hi, I&apos;m Kishan</h1>
+        <h1 className="text-4xl md:text-5xl font-bold dark:text-white">
+          Hi, I&apos;m Kishan
+        </h1>
         <p className="text-md">
           I&apos;m a self-taught developer from India. I love building cool
           stuff for web and mobile using

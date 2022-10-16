@@ -12,7 +12,7 @@ interface ProjectCardProps {
 export const ProjectCard = ({ project }: ProjectCardProps) => {
   const { title, sourceUrl, liveUrl, summary, tags, img } = project;
   return (
-    <div className="p-8 rounded-xl bg-gray-100">
+    <div className="p-8 rounded-xl bg-gray-100 dark:bg-gray-800">
       <div className="flex flex-col gap-3 items-start">
         <a href={liveUrl} target="_blank" rel="noreferrer">
           <Image
@@ -39,7 +39,10 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
         <p>{summary}</p>
         <div className="flex flex-wrap gap-2">
           {tags.map((tag) => (
-            <div key={tag} className="rounded-md px-2 bg-blue-300">
+            <div
+              key={tag}
+              className="rounded-md px-2 bg-blue-300 dark:bg-gray-700 "
+            >
               #{tag}
             </div>
           ))}

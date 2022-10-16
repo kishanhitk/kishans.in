@@ -2,6 +2,7 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import { LazyMotion, AnimatePresence } from "framer-motion";
+import { ThemeProvider } from "next-themes";
 import { useEffect } from "react";
 import * as ga from "../utils/analytics";
 import "@fontsource/inter/300.css";
@@ -27,15 +28,17 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, [router.events]);
 
   return (
-    <LazyMotion features={loadFeatures}>
-      <AnimatePresence
-        mode="wait"
-        initial={false}
-        onExitComplete={() => window.scrollTo(0, 0)}
-      >
-        <Component {...pageProps} key={url} />
-      </AnimatePresence>
-    </LazyMotion>
+    <ThemeProvider attribute="class">
+      <LazyMotion features={loadFeatures}>
+        <AnimatePresence
+          mode="wait"
+          initial={false}
+          onExitComplete={() => window.scrollTo(0, 0)}
+        >
+          <Component {...pageProps} key={url} />
+        </AnimatePresence>
+      </LazyMotion>
+    </ThemeProvider>
   );
 }
 export default MyApp;

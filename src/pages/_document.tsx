@@ -32,7 +32,7 @@ class Document extends NextDocument {
           }}
         />
         <Head />
-        <body>
+        <body className="bg-white dark:bg-[#1A1F2E] text-black dark:text-white">
           <Main />
           <NextScript />
         </body>
