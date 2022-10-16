@@ -20,7 +20,7 @@ export const SocialLinks = () => {
 
       <IconButton
         href="https://www.linkedin.com/in/kishanju/"
-        ariaLabel="Twitter"
+        ariaLabel="LinkedIn"
         icon={<FaLinkedinIn />}
       />
 

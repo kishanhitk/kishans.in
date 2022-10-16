@@ -55,6 +55,7 @@ const ThemeSwitcherButton = () => {
   const { resolvedTheme, setTheme } = useTheme();
   return (
     <button
+      aria-label="Switch Theme"
       onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
     >
       {resolvedTheme === "dark" ? <FiSun /> : <FaMoon />}
