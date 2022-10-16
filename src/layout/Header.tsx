@@ -6,7 +6,6 @@ import { Routes } from "../config";
 import KishanLogo from "../../public/assets/kishanlogo.png";
 import { FiSun } from "react-icons/fi";
 import { FaMoon } from "react-icons/fa";
-import { IconButton } from "@components/IconButton";
 
 interface NavLinkProps {
   url: string;
@@ -20,7 +19,7 @@ export const Header = () => {
         <div
           className="cursor-pointer span flex justify-center items-center 
         bg-gray-900 rounded-full h-[45px] w-[45px] hover:rotate-[360deg] 
-        duration-700 ease-real-in-out transition-all"
+        duration-700 ease-real-in-out transition-all shadow-2xl shadow-gray-500"
         >
           <Image
             priority={true}
