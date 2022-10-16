@@ -11,7 +11,7 @@ interface NavLinkProps {
 
 export const Header = () => {
   return (
-    <header className="flex sticky max-w-full w-[924px] mx-auto mb-8 p-4 justify-between align-middle z-10">
+    <header className="flex sticky backdrop-brightness-110 backdrop-blur-md top-0 max-w-full w-[924px] mx-auto mb-8 p-4 justify-between align-middle z-10">
       <Link href={Routes.home}>
         <div
           className="cursor-pointer span flex justify-center items-center 
