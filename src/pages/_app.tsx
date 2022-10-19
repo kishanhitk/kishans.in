@@ -1,21 +1,24 @@
-import { ChakraProvider } from "@chakra-ui/react";
-import React, { useEffect } from "react";
-import "@fontsource/inter/400.css";
-import "@fontsource/inter/700.css";
-import "@fontsource/inter/500.css";
-import theme from "@style/theme";
-import { AnimatePresence, LazyMotion } from "framer-motion";
+import "../styles/globals.css";
+import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
+import { LazyMotion, AnimatePresence } from "framer-motion";
+import { ThemeProvider } from "next-themes";
+import { useEffect } from "react";
 import * as ga from "../utils/analytics";
+import "@fontsource/inter/300.css";
+import "@fontsource/inter/400.css";
+import "@fontsource/inter/500.css";
+import "@fontsource/inter/600.css";
+import "@fontsource/inter/700.css";
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const url = `https://kishans.in${router.route}`;
   const loadFeatures = () =>
     import("../utils/features").then((res) => res.default);
 
   useEffect(() => {
-    const handleRouteChange = (url) => {
+    const handleRouteChange = (url: string) => {
       ga.pageview(url);
     };
     router.events.on("routeChangeComplete", handleRouteChange);
@@ -25,18 +28,17 @@ function MyApp({ Component, pageProps }) {
   }, [router.events]);
 
   return (
-    <ChakraProvider theme={theme} cssVarsRoot={undefined}>
+    <ThemeProvider attribute="class">
       <LazyMotion features={loadFeatures}>
         <AnimatePresence
-          exitBeforeEnter={true}
+          mode="wait"
           initial={false}
           onExitComplete={() => window.scrollTo(0, 0)}
         >
           <Component {...pageProps} key={url} />
         </AnimatePresence>
       </LazyMotion>
-    </ChakraProvider>
+    </ThemeProvider>
   );
 }
-
 export default MyApp;

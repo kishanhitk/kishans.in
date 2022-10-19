@@ -1,25 +1,10 @@
-import {
-  Box,
-  Heading,
-  VStack,
-  Text,
-  HStack,
-  IconButton,
-  useColorModeValue,
-  Wrap,
-  WrapItem,
-} from "@chakra-ui/react";
-import React from "react";
-import { NextSeo } from "next-seo";
-import { MainLayout } from "@layouts";
+import { ProjectCard } from "@components/ProjectCard";
 import { ProjectList } from "@data/project";
-import Image from "next/image";
-import { FiGithub } from "react-icons/fi";
-import { IoOpenOutline } from "react-icons/io5";
+import { MainLayout } from "@layout";
+import { NextSeo } from "next-seo";
+import React from "react";
 
-const BlogPage = () => {
-  const cardBg = useColorModeValue("gray.100", "gray.700");
-  const tagBg = useColorModeValue("blue.200", "blue.800");
+const ProjectsPage = () => {
   return (
     <MainLayout>
       <NextSeo
@@ -38,80 +23,22 @@ const BlogPage = () => {
           ],
         }}
       />
-      <VStack spacing={8} align="stretch">
-        <VStack align="stretch" spacing={5}>
-          <Heading as="h2" size="xl" fontWeight="900">
-            Projects
-          </Heading>
-          <Text>
-            I love learning new things everyday, and this list is a proof of
-            work for the same.
-          </Text>
-        </VStack>
-
-        <Box>
-          <VStack spacing={8} align="flex-start">
-            {ProjectList.sort(
-              (prev, next) => prev.priority - next.priority
-            ).map(({ title, slug, sourceUrl, liveUrl, summary, tags, img }) => (
-              <Box
-                key={slug}
-                backgroundColor={cardBg}
-                width="100%"
-                px="30px"
-                py="30px"
-                rounded="10px"
-              >
-                <VStack height="100%" width="100%">
-                  <Box as="a" href={liveUrl} target="_blank" rounded="20px">
-                    <Image
-                      src={img}
-                      layout="intrinsic"
-                      alt={title}
-                      placeholder="blur"
-                    ></Image>
-                  </Box>
-                  <VStack alignItems="flex-start" alignSelf="flex-start">
-                    <HStack>
-                      <Heading size="md">{title}</Heading>
-                      <IconButton
-                        as="a"
-                        target="_blank"
-                        href={liveUrl}
-                        borderRadius="100%"
-                        aria-label="live"
-                      >
-                        <IoOpenOutline />
-                      </IconButton>
-                      <IconButton
-                        as="a"
-                        target="_blank"
-                        href={sourceUrl}
-                        borderRadius="100%"
-                        aria-label="source"
-                      >
-                        <FiGithub />
-                      </IconButton>
-                    </HStack>
-                    <Text>{summary}</Text>
-                    <Wrap>
-                      {tags.map((tag) => (
-                        <WrapItem key={tag}>
-                          <Box backgroundColor={tagBg} rounded="5px" px="10px">
-                            #{tag}
-                          </Box>
-                        </WrapItem>
-                      ))}
-                    </Wrap>
-                  </VStack>
-                </VStack>
-              </Box>
-            ))}
-          </VStack>
-        </Box>
-      </VStack>
+      <div className="flex flex-col gap-5 justify-center items-start max-w-[700px] mb-4">
+        <h1 className="font-bold text-3xl">Projects</h1>
+        <p>
+          I love learning new things everyday, and this list is a proof of work
+          for the same.
+        </p>
+        <div className="flex flex-col item-start gap-6">
+          {ProjectList.sort((prev, next) => prev.priority - next.priority).map(
+            (project) => (
+              <ProjectCard key={project.slug} project={project} />
+            )
+          )}
+        </div>
+      </div>
     </MainLayout>
   );
 };
 
-export default BlogPage;
+export default ProjectsPage;

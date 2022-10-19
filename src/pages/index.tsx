@@ -1,15 +1,12 @@
-import { Box, Button, Heading, Link, Text, VStack } from "@chakra-ui/react";
-import { MainLayout } from "@layouts";
-import React from "react";
-import { SocialLinks } from "@components";
-import { NextSeo } from "next-seo";
 import { gql } from "@apollo/client";
+import type { GetStaticProps, InferGetStaticPropsType } from "next";
+import { NextSeo } from "next-seo";
 import client from "../apollo-client";
-import { GetStaticProps, InferGetStaticPropsType } from "next";
-import { HashnodePost } from "@types";
-const HomePage = ({
-  posts,
-}: InferGetStaticPropsType<typeof getStaticProps>) => {
+import { SocialLinks } from "../components/SocialLinks";
+import { MainLayout } from "../layout";
+import { HashnodePost } from "../types";
+
+const Home = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <MainLayout>
       <NextSeo
@@ -28,42 +25,34 @@ const HomePage = ({
           ],
         }}
       />
-      <Box>
-        <VStack align="flex-start" spacing={8}>
-          <Heading as="h1" size="2xl" fontWeight="900">
-            Hi, I&apos;m Kishan
-          </Heading>
-          <Text>
-            I&apos;m a self-taught developer from India. I love building cool
-            stuff for web and mobile using
-            <Box as="strong">: Javascript/Typescript</Box>,{" "}
-            <Box as="strong"> ReactJS</Box>,<Box as="strong"> NodeJS, </Box>
-            <Box as="strong">Flutter</Box>, and <Box as="strong">AWS</Box>.
-          </Text>
-          <SocialLinks />
-        
-          <Heading pt="10px" size="lg">
-            Recent Posts
-          </Heading>
-          {posts.map(({ cuid, title, brief, slug }) => (
-            <Box
-              mb="10px"
-              as="a"
-              href={`https://blog.kishans.in/${slug}`}
-              cursor="pointer"
-              key={cuid}
-            >
-              <Heading pb="7px" size="md">
-                {title}
-              </Heading>
-              <Text>{brief}</Text>
-            </Box>
-          ))}
-        </VStack>
-      </Box>
+      <div className="flex flex-col items-start gap-8">
+        <h1 className="text-4xl md:text-5xl font-bold dark:text-white">
+          Hi, I&apos;m Kishan
+        </h1>
+        <p className="text-md">
+          I&apos;m a self-taught developer from India. I love building cool
+          stuff for web and mobile using
+          <strong>: Javascript/Typescript</strong>, <strong> ReactJS</strong>,{" "}
+          <strong> NodeJS</strong>, <strong> Flutter</strong>, and
+          <strong> AWS</strong>.
+        </p>
+        <SocialLinks />
+        <h2 className="text-3xl font-bold">Recent Posts</h2>
+        {posts.map((post: HashnodePost) => (
+          <a
+            key={post.slug}
+            className="mb-10px cursor-pointer"
+            href={`https://blog.kishans.in/${post.slug}`}
+          >
+            <h3 className="font-bold text-xl mb-1">{post.title}</h3>
+            <p className="font-light">{post.brief}</p>
+          </a>
+        ))}
+      </div>
     </MainLayout>
   );
 };
+
 export const getStaticProps: GetStaticProps = async () => {
   const { data } = await client.query({
     query: gql`
@@ -89,4 +78,5 @@ export const getStaticProps: GetStaticProps = async () => {
     revalidate: 180,
   };
 };
-export default HomePage;
+
+export default Home;

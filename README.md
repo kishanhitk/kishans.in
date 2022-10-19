@@ -12,7 +12,7 @@
 My personal website built with
 
 * Next.js
-* ChakraUI
+* tailwindcss
 * TypeScript
 * GraphQL
 
