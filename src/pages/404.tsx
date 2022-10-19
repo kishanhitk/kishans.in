@@ -9,9 +9,7 @@ import Head from "next/head";
 import { useTheme } from "next-themes";
 
 function Four04Page() {
-  //   const img = useColorModeValue(F04Img, F04ImgDark);
   const { resolvedTheme } = useTheme();
-  //   TODO: Switch between light and dark images based on mode
   return (
     <>
       <Head>
