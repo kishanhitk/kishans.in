@@ -6,9 +6,11 @@ import F04ImgDark from "../../public/assets/404Dark.png";
 import Link from "next/link";
 
 import Head from "next/head";
+import { useTheme } from "next-themes";
 
 function Four04Page() {
   //   const img = useColorModeValue(F04Img, F04ImgDark);
+  const { resolvedTheme } = useTheme();
   //   TODO: Switch between light and dark images based on mode
   return (
     <>
@@ -17,7 +19,11 @@ function Four04Page() {
       </Head>
       <MainLayout>
         <div className="flex flex-col">
-          <Image src={F04Img} alt="404 Image" placeholder="blur"></Image>
+          <Image
+            src={resolvedTheme == "dark" ? F04ImgDark : F04Img}
+            alt="404 Image"
+            placeholder="blur"
+          ></Image>
           <Link href="/" passHref replace={true}>
             <button>Go Home</button>
           </Link>
