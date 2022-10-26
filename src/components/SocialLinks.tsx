@@ -1,61 +1,44 @@
-import { Box, Button, HStack, IconButton } from "@chakra-ui/react";
 import React from "react";
+import { IconButton } from "./IconButton";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FiGithub, FiMail, FiTwitter } from "react-icons/fi";
 import { IoDocumentTextOutline, IoLogoGooglePlaystore } from "react-icons/io5";
-
 export const SocialLinks = () => {
   return (
-    <Box>
-      <HStack>
-        <HStack spacing={3}>
-          <IconButton
-            as="a"
-            href="https://github.com/kishanhitk"
-            aria-label="Github"
-            icon={<FiGithub />}
-            borderRadius="100%"
-          />
+    <div className="flex gap-3">
+      <IconButton
+        href="https://github.com/kishanhitk"
+        ariaLabel="Github"
+        icon={<FiGithub />}
+      />
 
-          <IconButton
-            as="a"
-            href="https://twitter.com/jst_kishan"
-            aria-label="Twitter"
-            borderRadius="100%"
-            icon={<FiTwitter />}
-          />
+      <IconButton
+        href="https://twitter.com/jst_kishan"
+        ariaLabel="Twitter"
+        icon={<FiTwitter />}
+      />
 
-          <IconButton
-            as="a"
-            href="https://www.linkedin.com/in/kishanju/"
-            aria-label="Twitter"
-            borderRadius="100%"
-            icon={<FaLinkedinIn />}
-          />
+      <IconButton
+        href="https://www.linkedin.com/in/kishanju/"
+        ariaLabel="LinkedIn"
+        icon={<FaLinkedinIn />}
+      />
 
-          <IconButton
-            as="a"
-            href="mailto:kishansharma1231@gmail.com"
-            aria-label="Gmail"
-            icon={<FiMail />}
-            borderRadius="100%"
-          />
-          <IconButton
-            as="a"
-            href="https://play.google.com/store/apps/dev?id=8407266026945909749"
-            aria-label="Google Play Store"
-            icon={<IoLogoGooglePlaystore />}
-            borderRadius="100%"
-          />
-          <IconButton
-            as="a"
-            href="/resume"
-            aria-label="Résumé"
-            icon={<IoDocumentTextOutline />}
-            borderRadius="100%"
-          />
-        </HStack>
-      </HStack>
-    </Box>
+      <IconButton
+        href="mailto:kishansharma1231@gmail.com"
+        ariaLabel="Gmail"
+        icon={<FiMail />}
+      />
+      <IconButton
+        href="https://play.google.com/store/apps/dev?id=8407266026945909749"
+        ariaLabel="Google Play Store"
+        icon={<IoLogoGooglePlaystore />}
+      />
+      <IconButton
+        href="/resume"
+        ariaLabel="Résumé"
+        icon={<IoDocumentTextOutline />}
+      />
+    </div>
   );
 };

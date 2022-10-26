@@ -1,22 +1,12 @@
-import React from "react";
-import { MainLayout } from "@layouts";
 import { NextSeo } from "next-seo";
-import {
-  Box,
-  Avatar,
-  Heading,
-  VStack,
-  Text,
-  Link,
-  Center,
-  Container,
-  Flex,
-} from "@chakra-ui/react";
 import Image from "next/image";
-import { SocialLinks } from "@components";
+import React from "react";
+import { MainLayout } from "../layout";
 import KishanPhoto from "../../public/assets/profile-pic.png";
+import Link from "next/link";
+import { SocialLinks } from "../components/SocialLinks";
 
-const AboutPage = () => {
+export const AboutPage = () => {
   return (
     <MainLayout>
       <NextSeo
@@ -35,57 +25,41 @@ const AboutPage = () => {
           ],
         }}
       />
-
-      <VStack
-        as="main"
-        spacing={8}
-        justifyContent="center"
-        alignItems="flex-start"
-        m="0 auto 4rem auto"
-        maxWidth="700px"
-      >
-        <Box textAlign="center" width="100%">
-          <Heading
-            letterSpacing="tight"
-            mb={2}
-            as="h1"
-            size="2xl"
-            fontWeight={900}
-          >
-            About me
-          </Heading>
-          <Container bg="purple.400" p="0.5" w="180px" h="180px" rounded="full">
-            <Image
-              priority={true}
-              height="180px"
-              width="180px"
-              src={KishanPhoto}
-              placeholder="blur"
-              alt="Kishan Kumar Photo"
-            ></Image>
-          </Container>
-        </Box>
-
-        <Box>
-          <Text mb={3}>
-            I&apos;m a self-taught developer from India. I love building cool
-            stuff for web and mobile using:
-            <Box as="strong"> Javascript/Typescript</Box>,{" "}
-            <Box as="strong"> ReactJS</Box>,<Box as="strong"> NodeJS, </Box>
-            <Box as="strong">Flutter</Box>, and <Box as="strong">AWS</Box>.
-          </Text>
-
-          <Text mb={3}>
-            I document my journey through my <Link href="/blog">blogs</Link>.
-            When I am not writing code, I am reading books on life and startups.
-            I love listening to lofi while coding.
-            <br />
-            <Box as="strong">Are you working on something exciting?</Box> <br />
-            Let&#39;s talk 👇
-          </Text>
-          <SocialLinks />
-        </Box>
-      </VStack>
+      <div className="flex flex-col gap-6 justify-center items-start max-w-[700px] mb-4">
+        <div className="w-full text-center">
+          <h1 className="text-4xl md:text-5xl font-bold">About Me</h1>
+        </div>
+        <div className="rounded-full self-center bg-purple-500 h-[180px] w-[180px] p-[1px]">
+          <Image
+            className="border border-blue-800"
+            priority={true}
+            height="180px"
+            width="180px"
+            src={KishanPhoto}
+            placeholder="blur"
+            alt="Kishan Kumar Photo"
+          ></Image>
+        </div>
+        <p className="text-md">
+          I&apos;m a self-taught developer from India. I love building cool
+          stuff for web and mobile using
+          <strong>: Javascript/Typescript</strong>, <strong> ReactJS</strong>,{" "}
+          <strong> NodeJS</strong>, <strong> Flutter</strong>, and
+          <strong> AWS</strong>.
+        </p>
+        <p className="text-md">
+          I document my journey through my{" "}
+          <a href="/blog" className="hover:underline">
+            blogs
+          </a>
+          . When I am not writing code, I am reading books on life and startups.
+          I love listening to lofi while coding.
+          <br />
+          <strong>Are you working on something exciting?</strong> <br />
+          Let&#39;s talk 👇
+        </p>
+        <SocialLinks />
+      </div>
     </MainLayout>
   );
 };

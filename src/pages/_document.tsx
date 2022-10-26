@@ -6,8 +6,6 @@ import NextDocument, {
   DocumentContext,
   Head,
 } from "next/document";
-import { ColorModeScript } from "@chakra-ui/react";
-import theme from "@style/theme";
 
 class Document extends NextDocument {
   static getInitialProps(ctx: DocumentContext) {
@@ -17,7 +15,7 @@ class Document extends NextDocument {
   render() {
     return (
       <Html lang="en">
-        <script
+        {/* <script
           async
           src={`https://www.googletagmanager.com/gtag/js?id=G-6P9QCW850Y`}
         />
@@ -32,10 +30,9 @@ class Document extends NextDocument {
                                 });
                             `,
           }}
-        />
+        /> */}
         <Head />
-        <body>
-          <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+        <body className="bg-white dark:bg-[#1A1F2E] text-black dark:text-white">
           <Main />
           <NextScript />
         </body>

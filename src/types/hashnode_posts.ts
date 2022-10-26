@@ -1,7 +1,7 @@
 export type HashnodePost = {
   title: string;
   slug: string;
-  summary: string;
+  brief: string;
   url: string;
 };
 
