@@ -30,7 +30,7 @@ export const Header = () => {
         </div>
       </Link>
       <div className="flex ">
-        <div className="flex gap-3">
+        <div className="flex gap-3 items-center">
           <NavLink url={Routes.projects}>Projects</NavLink>
           <NavLink url={Routes.aboutMe}>About Me</NavLink>
           <ThemeSwitcherButton />
@@ -43,7 +43,7 @@ export const Header = () => {
 const NavLink = ({ url, children }: NavLinkProps) => (
   <Link href={url} passHref scroll={false}>
     <button
-      className="font-normal transition-all ease-in-out duration-200 rounded-md px-4
+      className="font-normal transition-all ease-in-out duration-200 rounded-md px-4 py-2
     hover:bg-blue-100 hover:text-blue-700 active:bg-blue-200"
     >
       {children}

@@ -3,7 +3,6 @@ import Image from "next/image";
 import React from "react";
 import { MainLayout } from "../layout";
 import KishanPhoto from "../../public/assets/profile-pic.png";
-import Link from "next/link";
 import { SocialLinks } from "../components/SocialLinks";
 
 export const AboutPage = () => {
@@ -29,14 +28,11 @@ export const AboutPage = () => {
         <div className="w-full text-center">
           <h1 className="text-4xl md:text-5xl font-bold">About Me</h1>
         </div>
-        <div className="rounded-full self-center bg-purple-500 h-[180px] w-[180px] p-[1px]">
+        <div className="rounded-full self-center bg-purple-500 h-[181px] w-[181px] p-[1px]">
           <Image
-            className="border border-blue-800"
+            className="h-[180px] w-[180px]"
             priority={true}
-            height="180px"
-            width="180px"
             src={KishanPhoto}
-            placeholder="blur"
             alt="Kishan Kumar Photo"
           ></Image>
         </div>
