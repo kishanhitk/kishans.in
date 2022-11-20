@@ -19,7 +19,7 @@ const Home = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
           description: "Blogs and Projects by Kishan",
           images: [
             {
-              url: "https://kishans.in/assets/kishanlogo.webp",
+              url: "https://kishans.in/assets/kishanlogo.png",
               alt: "Og Image Alt",
             },
           ],

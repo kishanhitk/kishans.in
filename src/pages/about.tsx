@@ -19,7 +19,7 @@ export const AboutPage = () => {
           description: "About Kishan Kumar - Full Stack Developer",
           images: [
             {
-              url: "https://kishans.in/assets/kishanlogo.webp",
+              url: "https://kishans.in/assets/kishanlogo.png",
               alt: "Og Image Alt",
             },
           ],

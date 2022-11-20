@@ -17,7 +17,7 @@ const ProjectsPage = () => {
           description: "Cool stuffs built by Kishan",
           images: [
             {
-              url: "https://kishans.in/assets/kishanlogo.webp",
+              url: "https://kishans.in/assets/kishanlogo.png",
               alt: "Og Image Alt",
             },
           ],
