@@ -12,41 +12,35 @@ interface ProjectCardProps {
 export const ProjectCard = ({ project }: ProjectCardProps) => {
   const { title, sourceUrl, liveUrl, summary, tags, img } = project;
   return (
-    <div className="p-8 rounded-xl bg-gray-100 dark:bg-gray-800">
-      <div className="flex flex-col gap-3 items-start">
-        <a href={liveUrl} target="_blank" rel="noreferrer">
-          <Image
-            className="rounded-xl"
-            src={img}
-            layout="intrinsic"
-            alt={title}
-            placeholder="blur"
-          ></Image>
-        </a>
-        <div className="flex items-center gap-2">
-          <h3 className="font-bold text-xl">{title}</h3>
-          <IconButton
-            href={liveUrl}
-            ariaLabel={title}
-            icon={<IoOpenOutline />}
-          />
-          <IconButton
-            href={sourceUrl}
-            ariaLabel={`${title} Source Code`}
-            icon={<FiGithub />}
-          />
-        </div>
-        <p>{summary}</p>
-        <div className="flex flex-wrap gap-2">
-          {tags.map((tag) => (
-            <div
-              key={tag}
-              className="rounded-md px-2 bg-blue-300 dark:bg-gray-700 "
-            >
-              #{tag}
-            </div>
-          ))}
-        </div>
+    <div className="p-8 rounded-xl bg-gray-100 dark:bg-gray-800 space-y-3 flex flex-col items-stretch">
+      <a href={liveUrl} target="_blank" rel="noreferrer">
+        <Image
+          className="rounded-xl"
+          src={img}
+          layout="responsive"
+          alt={title}
+          placeholder="blur"
+        ></Image>
+      </a>
+      <div className="flex items-center gap-2">
+        <h3 className="font-bold text-xl">{title}</h3>
+        <IconButton href={liveUrl} ariaLabel={title} icon={<IoOpenOutline />} />
+        <IconButton
+          href={sourceUrl}
+          ariaLabel={`${title} Source Code`}
+          icon={<FiGithub />}
+        />
+      </div>
+      <p>{summary}</p>
+      <div className="flex flex-wrap gap-2">
+        {tags.map((tag) => (
+          <div
+            key={tag}
+            className="rounded-md px-2 bg-blue-300 dark:bg-gray-700 "
+          >
+            #{tag}
+          </div>
+        ))}
       </div>
     </div>
   );

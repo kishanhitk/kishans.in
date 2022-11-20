@@ -5,9 +5,9 @@ __metadata:
   version: 6
   cacheKey: 8
 
-"@apollo/client@npm:^3.7.0":
-  version: 3.7.0
-  resolution: "@apollo/client@npm:3.7.0"
+"@apollo/client@npm:^3.7.1":
+  version: 3.7.1
+  resolution: "@apollo/client@npm:3.7.1"
   dependencies:
     "@graphql-typed-document-node/core": ^3.1.1
     "@wry/context": ^0.7.0
@@ -37,7 +37,7 @@ __metadata:
       optional: true
     subscriptions-transport-ws:
       optional: true
-  checksum: e6e2fb6c4f05509a0ec1c632fc8eeae7bd4831dbafd2db243bad1412b3c024476a3efb838e31568888cf6b07bd8833467343edac2309e58d60c7bf50f67d449c
+  checksum: 95bb1f226fa8771a3e1a782743a31d76c42c470e4105cd023d7d3925a99c8d49f3a453995e6591a9cb960c42ce7baf8d168eded1c8dc9430a1765898ebbe6290
   languageName: node
   linkType: hard
 
@@ -93,10 +93,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fontsource/inter@npm:^4.5.13":
-  version: 4.5.13
-  resolution: "@fontsource/inter@npm:4.5.13"
-  checksum: 427ff437d6b46c008537d2b09e324e6dc542220c72b1dcdecc6c3efd7a3f56ab99c9bf6ecdd6592c8409d53b8400c0b3c59c07bf5fbf17b44521f3f76b41fc13
+"@fontsource/inter@npm:^4.5.14":
+  version: 4.5.14
+  resolution: "@fontsource/inter@npm:4.5.14"
+  checksum: 4e2eb9e54f8de0025bca7ad8e0822549f1873c5d9a634b8f99630d7bba750b1c86263229bae99375fc82489daa38df41e0304c77c3efda2d9a2f78d0eba3ec56
   languageName: node
   linkType: hard
 
@@ -1609,9 +1609,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"framer-motion@npm:^7.5.3":
-  version: 7.5.3
-  resolution: "framer-motion@npm:7.5.3"
+"framer-motion@npm:^7.6.7":
+  version: 7.6.7
+  resolution: "framer-motion@npm:7.6.7"
   dependencies:
     "@emotion/is-prop-valid": ^0.8.2
     "@motionone/dom": 10.13.1
@@ -1626,7 +1626,7 @@ __metadata:
   dependenciesMeta:
     "@emotion/is-prop-valid":
       optional: true
-  checksum: 5b038ecb44e355916cef2310a1f0df7937f7e38e36b91e35a1dc0425b7717f8e5dd76b5cbf0acd38b81027ba0d8fc33d9148d901ecee7017adc76e2ae466bfea
+  checksum: aa19a79a7ae1c8b4c09b766902990f785586f02b3b706a0c7e564c429b8333204b0bc86955fa6746c80c4dfff66589b4ccdca4de44e7af8cce5ce0fe7eeafae6
   languageName: node
   linkType: hard
 
@@ -2264,8 +2264,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "kishans.in@workspace:."
   dependencies:
-    "@apollo/client": ^3.7.0
-    "@fontsource/inter": ^4.5.13
+    "@apollo/client": ^3.7.1
+    "@fontsource/inter": ^4.5.14
     "@types/node": 18.11.0
     "@types/nprogress": ^0.2.0
     "@types/react": 18.0.21
@@ -2273,10 +2273,10 @@ __metadata:
     autoprefixer: ^10.4.12
     eslint: 8.25.0
     eslint-config-next: 12.3.1
-    framer-motion: ^7.5.3
+    framer-motion: ^7.6.7
     graphql: ^16.6.0
     next: 12.3.1
-    next-seo: ^5.5.0
+    next-seo: ^5.14.1
     next-themes: ^0.2.1
     nprogress: ^0.2.0
     postcss: ^8.4.18
@@ -2553,14 +2553,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next-seo@npm:^5.5.0":
-  version: 5.5.0
-  resolution: "next-seo@npm:5.5.0"
+"next-seo@npm:^5.14.1":
+  version: 5.14.1
+  resolution: "next-seo@npm:5.14.1"
   peerDependencies:
     next: ^8.1.1-canary.54 || >=9.0.0
     react: ">=16.0.0"
     react-dom: ">=16.0.0"
-  checksum: 3202c4e84db533ad116d629482e766eb954053d5630275eb75c3e4234cf3ae354e4c2284a7659c0480570670f292b122ee3d11e9b2f23588030d0d5b1f9cb37d
+  checksum: 3cedc7b4af97721c29f938318df54a47ff14b3f695485d6cc35d0010490589ff4c6c60b2e4c71a515f2c539fcb230a1bf72dd3e0d945b818d837a74a27bef35f
   languageName: node
   linkType: hard
 
