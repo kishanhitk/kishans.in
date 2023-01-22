@@ -1,15 +1,19 @@
 import { MainLayout } from "@layout";
-import { Header } from "@layout/Header";
 import "../styles/globals.css";
 import { Providers } from "./providers";
+import { Inter } from "@next/font/google";
 
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+});
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={inter.className}>
       <head />
       <body className="bg-white dark:bg-[#1A1F2E] text-black dark:text-white">
         <Providers>
