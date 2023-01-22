@@ -6,7 +6,7 @@ type MainLayoutProps = {
 export const MainLayout = ({ children }: MainLayoutProps) => {
   return (
     <div>
-      <Header useAppDir />
+      <Header />
       <div className="mx-auto mb-20 w-[650px] max-w-[90%]">{children}</div>
     </div>
   );

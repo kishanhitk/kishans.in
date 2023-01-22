@@ -1,10 +1,10 @@
+import client from "@apollo-client";
 import { gql } from "@apollo/client";
+import { SocialLinks } from "@components/SocialLinks";
+import { MainLayout } from "@layout";
+import { HashnodePost } from "@types";
 import type { GetStaticProps, InferGetStaticPropsType } from "next";
 import { NextSeo } from "next-seo";
-import client from "../apollo-client";
-import { SocialLinks } from "../components/SocialLinks";
-import { MainLayout } from "../layout";
-import { HashnodePost } from "../types";
 
 const Home = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
