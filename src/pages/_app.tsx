@@ -3,7 +3,6 @@ import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import { LazyMotion, AnimatePresence } from "framer-motion";
 import { ThemeProvider } from "next-themes";
-import { useEffect } from "react";
 import "@fontsource/inter/300.css";
 import "@fontsource/inter/400.css";
 import "@fontsource/inter/500.css";
@@ -14,7 +13,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const url = `https://kishans.in${router.route}`;
   const loadFeatures = () =>
-    import("../../utils/features").then((res) => res.default);
+    import("../utils/features").then((res) => res.default);
 
   return (
     <ThemeProvider attribute="class">
