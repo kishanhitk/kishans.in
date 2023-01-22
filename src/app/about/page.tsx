@@ -10,7 +10,7 @@ export default function Page() {
     <PageWrapper>
       <NextSeo
         useAppDir={true}
-        title="About Me – Kishan"
+        title="About Me | Kishan Kumar - Full Stack Developer"
         canonical="https://kishans.in/about"
         description="About Kishan Kumar - Full Stack Developer"
         openGraph={{

@@ -10,7 +10,7 @@ const ProjectsPage = () => {
     <PageWrapper>
       <NextSeo
         useAppDir={true}
-        title="Projects – Kishan"
+        title="Projects | Kishan Kumar - Full Stack Developer"
         description="Cool stuffs built by Kishan"
         canonical="https://kishans.in/projects"
         openGraph={{

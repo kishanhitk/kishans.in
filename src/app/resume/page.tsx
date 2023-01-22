@@ -8,7 +8,7 @@ function ResumePage() {
     <PageWrapper>
       <NextSeo
         useAppDir={true}
-        title="Résumé – Kishan Kumar"
+        title="Résumé | Kishan Kumar - Full Stack Developer"
         description="Latest Résumé of Kishan Kumar"
         canonical="https://kishans.in/resume"
         openGraph={{
