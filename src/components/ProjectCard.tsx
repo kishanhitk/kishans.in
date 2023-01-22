@@ -14,8 +14,8 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
     <div className="p-8 rounded-xl bg-gray-100 dark:bg-gray-800">
       <div className="flex flex-col gap-3 items-start">
-        <a href={liveUrl} target="_blank" rel="noreferrer">
-          <Image className="rounded-xl" src={img} alt={title}></Image>
+        <a className="w-full" href={liveUrl} target="_blank" rel="noreferrer">
+          <Image className="rounded-xl mx-auto" src={img} alt={title}></Image>
         </a>
         <div className="flex items-center gap-2">
           <h3 className="font-bold text-xl">{title}</h3>
