@@ -1,25 +1,27 @@
 import Image from "next/image";
 import Link from "next/link";
-import React, { ReactNode, useEffect, useState } from "react";
-import { useTheme } from "next-themes";
+import React, { ReactNode } from "react";
 import { Routes } from "../config";
 import KishanLogo from "../../public/assets/kishanlogo.png";
-import { FiSun } from "react-icons/fi";
-import { FaMoon } from "react-icons/fa";
+import { ThemeSwitcherButton } from "@components/ThemeSwitcherButton";
 
 interface NavLinkProps {
   url: string;
   children: ReactNode;
 }
 
-export const Header = () => {
+interface HeaderProps {
+  useAppDir?: boolean;
+}
+
+export const Header = ({ useAppDir = false }: HeaderProps) => {
   return (
     <header className="flex sticky backdrop-blur-md top-0 max-w-full w-[924px] mx-auto mb-8 p-4 justify-between align-middle z-10">
       <Link
         className="cursor-pointer span flex justify-center items-center 
            bg-gray-900 rounded-full h-[45px] w-[45px] hover:rotate-[360deg] 
            duration-700 ease-real-in-out transition-all shadow-2xl shadow-gray-500"
-        href={Routes.home}
+        href={(useAppDir ? "/new" : "/").concat(Routes.home)}
       >
         <Image
           priority={true}
@@ -30,8 +32,12 @@ export const Header = () => {
       </Link>
       <div className="flex ">
         <div className="flex gap-3 items-center">
-          <NavLink url={Routes.projects}>Projects</NavLink>
-          <NavLink url={Routes.aboutMe}>About Me</NavLink>
+          <NavLink url={(useAppDir ? "/new" : "/").concat(Routes.projects)}>
+            Projects
+          </NavLink>
+          <NavLink url={(useAppDir ? "/new" : "/").concat(Routes.aboutMe)}>
+            About Me
+          </NavLink>
           <ThemeSwitcherButton />
         </div>
       </div>
@@ -50,25 +56,3 @@ const NavLink = ({ url, children }: NavLinkProps) => (
     {children}
   </Link>
 );
-
-const ThemeSwitcherButton = () => {
-  const { resolvedTheme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return null;
-  }
-
-  return (
-    <button
-      aria-label="Switch Theme"
-      onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
-    >
-      {resolvedTheme === "dark" ? <FiSun /> : <FaMoon />}
-    </button>
-  );
-};

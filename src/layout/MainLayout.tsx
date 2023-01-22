@@ -1,30 +1,14 @@
 import React, { ReactNode } from "react";
-import { m } from "framer-motion";
 import { Header } from "./Header";
 
 type MainLayoutProps = {
   children: ReactNode;
 };
 export const MainLayout = ({ children }: MainLayoutProps) => {
-  const variants = {
-    hidden: { opacity: 0, x: 0, y: 10 },
-    enter: { opacity: 1, x: 0, y: 0 },
-    exit: { opacity: 0, x: 0, y: -10 },
-  };
   return (
     <div>
       <Header />
-      <div className="w-[650px] max-w-[90%] mx-auto mb-20">
-        <m.main
-          variants={variants} // Pass the variant object into Framer Motion
-          initial="hidden" // Set the initial state to variants.hidden
-          animate="enter" // Animated state to variants.enter
-          exit="exit" // Exit state (used later) to variants.exit
-          transition={{ transition: "easeInOut", duration: 0.15 }}
-        >
-          {children}
-        </m.main>
-      </div>
+      <div className="w-[650px] max-w-[90%] mx-auto mb-20">{children}</div>
     </div>
   );
 };
