@@ -16,9 +16,10 @@ export const Four04Image = () => {
   }
   return (
     <Image
+      className="mx-auto"
       width={500}
       height={500}
-      src={resolvedTheme == "dark" ? "/assets/404dark.png" : "/assets/404.png"}
+      src={resolvedTheme == "dark" ? "/assets/404Dark.png" : "/assets/404.png"}
       alt="404 Image"
     ></Image>
   );

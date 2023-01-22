@@ -13,7 +13,7 @@ export default function Four04Page() {
       <MainLayout>
         <div className="flex flex-col">
           <Four04Image />
-          <Link href="/" passHref replace={true}>
+          <Link href="/" className="mx-auto" passHref replace={true}>
             Go Home
           </Link>
         </div>
