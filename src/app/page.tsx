@@ -1,4 +1,3 @@
-export const revalidate = 180;
 import client from "@apollo-client";
 import { gql } from "@apollo/client";
 import { NextSeo } from "next-seo";
