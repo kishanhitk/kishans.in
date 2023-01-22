@@ -1,10 +1,11 @@
 "use client";
+import PageWrapper from "@components/PageWrapper";
 import { NextSeo } from "next-seo";
 import React from "react";
 
 function ResumePage() {
   return (
-    <>
+    <PageWrapper>
       <NextSeo
         useAppDir={true}
         title="Résumé – Kishan Kumar"
@@ -23,7 +24,7 @@ function ResumePage() {
           height="100%"
         ></iframe>
       </div>
-    </>
+    </PageWrapper>
   );
 }
 

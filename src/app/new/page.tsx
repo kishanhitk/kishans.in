@@ -4,6 +4,7 @@ import { gql } from "@apollo/client";
 import { NextSeo } from "next-seo";
 import { SocialLinks } from "@components/SocialLinks";
 import { HashnodePost } from "@types";
+import PageWrapper from "@components/PageWrapper";
 
 const getPosts = async () => {
   const { data } = await client.query({
@@ -29,7 +30,7 @@ const getPosts = async () => {
 const Home = async () => {
   const posts = await getPosts();
   return (
-    <>
+    <PageWrapper>
       <NextSeo
         useAppDir={true}
         title="Kishan Kumar - Full Stack Developer"
@@ -71,7 +72,7 @@ const Home = async () => {
           </a>
         ))}
       </div>
-    </>
+    </PageWrapper>
   );
 };
 

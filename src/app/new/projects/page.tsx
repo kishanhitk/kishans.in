@@ -1,3 +1,4 @@
+import PageWrapper from "@components/PageWrapper";
 import { ProjectCard } from "@components/ProjectCard";
 import { ProjectList } from "@data/project";
 import { MainLayout } from "@layout";
@@ -6,7 +7,7 @@ import React from "react";
 
 const ProjectsPage = () => {
   return (
-    <>
+    <PageWrapper>
       <NextSeo
         useAppDir={true}
         title="Projects – Kishan"
@@ -38,7 +39,7 @@ const ProjectsPage = () => {
           )}
         </div>
       </div>
-    </>
+    </PageWrapper>
   );
 };
 

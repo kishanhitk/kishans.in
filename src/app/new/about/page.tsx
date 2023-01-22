@@ -1,3 +1,4 @@
+import PageWrapper from "@components/PageWrapper";
 import { SocialLinks } from "@components/SocialLinks";
 import { MainLayout } from "@layout";
 import { NextSeo } from "next-seo";
@@ -6,7 +7,7 @@ import React from "react";
 
 export default function Page() {
   return (
-    <>
+    <PageWrapper>
       <NextSeo
         useAppDir={true}
         title="About Me – Kishan"
@@ -57,6 +58,6 @@ export default function Page() {
         </p>
         <SocialLinks />
       </div>
-    </>
+    </PageWrapper>
   );
 }
