@@ -1,12 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { MainLayout } from "@layout";
-import Image from "next/image";
-import F04Img from "../../public/assets/404.png";
-import F04ImgDark from "../../public/assets/404Dark.png";
 import Link from "next/link";
-
 import Head from "next/head";
-import { useTheme } from "next-themes";
+import { Four04Image } from "@components/Four04Image";
 
 export default function Four04Page() {
   return (
@@ -18,30 +14,10 @@ export default function Four04Page() {
         <div className="flex flex-col">
           <Four04Image />
           <Link href="/" passHref replace={true}>
-            <button>Go Home</button>
+            Go Home
           </Link>
         </div>
       </MainLayout>
     </>
   );
 }
-
-export const Four04Image = () => {
-  const { resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return null;
-  }
-  return (
-    <Image
-      src={resolvedTheme == "dark" ? F04ImgDark : F04Img}
-      alt="404 Image"
-      placeholder="blur"
-    ></Image>
-  );
-};

@@ -1,10 +1,8 @@
+import { SocialLinks } from "@components/SocialLinks";
+import { MainLayout } from "@layout";
 import { NextSeo } from "next-seo";
 import Image from "next/image";
 import React from "react";
-import { MainLayout } from "../layout";
-import KishanPhoto from "../../public/assets/profile-pic.png";
-import Link from "next/link";
-import { SocialLinks } from "../components/SocialLinks";
 
 export const AboutPage = () => {
   return (
@@ -25,18 +23,16 @@ export const AboutPage = () => {
           ],
         }}
       />
-      <div className="flex flex-col gap-6 justify-center items-start max-w-[700px] mb-4">
+      <div className="mb-4 flex max-w-[700px] flex-col items-start justify-center gap-6">
         <div className="w-full text-center">
-          <h1 className="text-4xl md:text-5xl font-bold">About Me</h1>
+          <h1 className="text-4xl font-bold md:text-5xl">About Me</h1>
         </div>
-        <div className="rounded-full self-center bg-purple-500 h-[180px] w-[180px] p-[1px]">
+        <div className="h-[181px] w-[181px] self-center rounded-full bg-purple-500 p-[1px]">
           <Image
-            className="border border-blue-800"
+            height={180}
+            width={180}
             priority={true}
-            height="180px"
-            width="180px"
-            src={KishanPhoto}
-            placeholder="blur"
+            src="/assets/profile-pic.png"
             alt="Kishan Kumar Photo"
           ></Image>
         </div>

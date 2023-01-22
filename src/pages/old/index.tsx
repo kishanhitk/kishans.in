@@ -1,10 +1,10 @@
+import client from "@apollo-client";
 import { gql } from "@apollo/client";
+import { SocialLinks } from "@components/SocialLinks";
+import { MainLayout } from "@layout";
+import { HashnodePost } from "@types";
 import type { GetStaticProps, InferGetStaticPropsType } from "next";
 import { NextSeo } from "next-seo";
-import client from "../apollo-client";
-import { SocialLinks } from "../components/SocialLinks";
-import { MainLayout } from "../layout";
-import { HashnodePost } from "../types";
 
 const Home = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
@@ -26,7 +26,7 @@ const Home = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
         }}
       />
       <div className="flex flex-col items-start gap-8">
-        <h1 className="text-4xl md:text-5xl font-bold dark:text-white">
+        <h1 className="text-4xl font-bold dark:text-white md:text-5xl">
           Hi, I&apos;m Kishan
         </h1>
         <p className="text-md">
@@ -44,7 +44,7 @@ const Home = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
             className="mb-10px cursor-pointer"
             href={`https://blog.kishans.in/${post.slug}`}
           >
-            <h3 className="font-bold text-xl mb-1">{post.title}</h3>
+            <h3 className="mb-1 text-xl font-bold">{post.title}</h3>
             <p className="font-light">{post.brief}</p>
           </a>
         ))}

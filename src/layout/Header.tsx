@@ -1,36 +1,37 @@
 import Image from "next/image";
 import Link from "next/link";
-import React, { ReactNode, useEffect, useState } from "react";
-import { useTheme } from "next-themes";
+import React, { ReactNode } from "react";
 import { Routes } from "../config";
 import KishanLogo from "../../public/assets/kishanlogo.png";
-import { FiSun } from "react-icons/fi";
-import { FaMoon } from "react-icons/fa";
+import { ThemeSwitcherButton } from "@components/ThemeSwitcherButton";
 
 interface NavLinkProps {
   url: string;
   children: ReactNode;
 }
 
-export const Header = () => {
+interface HeaderProps {
+  useAppDir?: boolean;
+}
+
+export const Header = ({ useAppDir = false }: HeaderProps) => {
   return (
-    <header className="flex sticky backdrop-blur-md top-0 max-w-full w-[924px] mx-auto mb-8 p-4 justify-between align-middle z-10">
-      <Link href={Routes.home}>
-        <div
-          className="cursor-pointer span flex justify-center items-center 
-        bg-gray-900 rounded-full h-[45px] w-[45px] hover:rotate-[360deg] 
-        duration-700 ease-real-in-out transition-all shadow-2xl shadow-gray-500"
-        >
-          <Image
-            priority={true}
-            src={KishanLogo}
-            placeholder="empty"
-            alt="Kishan"
-          ></Image>
-        </div>
+    <header className="sticky top-0 z-10 mx-auto mb-8 flex w-[924px] max-w-full justify-between p-4 align-middle backdrop-blur-md">
+      <Link
+        className="span flex h-[45px] w-[45px] cursor-pointer 
+           items-center justify-center rounded-full bg-gray-900 shadow-2xl 
+           shadow-gray-500 transition-all duration-700 ease-real-in-out hover:rotate-[360deg]"
+        href={Routes.home}
+      >
+        <Image
+          priority={true}
+          src={KishanLogo}
+          placeholder="empty"
+          alt="Kishan"
+        ></Image>
       </Link>
       <div className="flex ">
-        <div className="flex gap-3">
+        <div className="flex items-center gap-3">
           <NavLink url={Routes.projects}>Projects</NavLink>
           <NavLink url={Routes.aboutMe}>About Me</NavLink>
           <ThemeSwitcherButton />
@@ -41,34 +42,13 @@ export const Header = () => {
 };
 
 const NavLink = ({ url, children }: NavLinkProps) => (
-  <Link href={url} passHref scroll={false}>
-    <button
-      className="font-normal transition-all ease-in-out duration-200 rounded-md px-4
+  <Link
+    className="rounded-md px-4 py-2 font-normal transition-all duration-200 ease-in-out
     hover:bg-blue-100 hover:text-blue-700 active:bg-blue-200"
-    >
-      {children}
-    </button>
+    href={url}
+    passHref
+    scroll={false}
+  >
+    {children}
   </Link>
 );
-
-const ThemeSwitcherButton = () => {
-  const { resolvedTheme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return null;
-  }
-
-  return (
-    <button
-      aria-label="Switch Theme"
-      onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
-    >
-      {resolvedTheme === "dark" ? <FiSun /> : <FaMoon />}
-    </button>
-  );
-};
