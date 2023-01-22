@@ -1,9 +1,8 @@
+import { SocialLinks } from "@components/SocialLinks";
+import { MainLayout } from "@layout";
 import { NextSeo } from "next-seo";
 import Image from "next/image";
 import React from "react";
-import { MainLayout } from "../layout";
-import KishanPhoto from "../../public/assets/profile-pic.png";
-import { SocialLinks } from "../components/SocialLinks";
 
 export const AboutPage = () => {
   return (
@@ -30,9 +29,10 @@ export const AboutPage = () => {
         </div>
         <div className="h-[181px] w-[181px] self-center rounded-full bg-purple-500 p-[1px]">
           <Image
-            className="h-[180px] w-[180px]"
+            height={180}
+            width={180}
             priority={true}
-            src={KishanPhoto}
+            src="/assets/profile-pic.png"
             alt="Kishan Kumar Photo"
           ></Image>
         </div>
