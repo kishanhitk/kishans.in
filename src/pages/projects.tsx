@@ -23,13 +23,13 @@ const ProjectsPage = () => {
           ],
         }}
       />
-      <div className="flex flex-col gap-5 justify-center items-start max-w-[700px] mb-4">
-        <h1 className="font-bold text-3xl">Projects</h1>
+      <div className="mb-4 flex max-w-[700px] flex-col items-start justify-center gap-5 bg-red-100">
+        <h1 className="text-3xl font-bold">Projects</h1>
         <p>
           I love learning new things everyday, and this list is a proof of work
           for the same.
         </p>
-        <div className="flex flex-col item-start gap-6">
+        <div className="item-start flex flex-col gap-6">
           {ProjectList.sort((prev, next) => prev.priority - next.priority).map(
             (project) => (
               <ProjectCard key={project.slug} project={project} />

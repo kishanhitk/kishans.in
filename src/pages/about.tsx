@@ -24,11 +24,11 @@ export const AboutPage = () => {
           ],
         }}
       />
-      <div className="flex flex-col gap-6 justify-center items-start max-w-[700px] mb-4">
+      <div className="mb-4 flex max-w-[700px] flex-col items-start justify-center gap-6">
         <div className="w-full text-center">
-          <h1 className="text-4xl md:text-5xl font-bold">About Me</h1>
+          <h1 className="text-4xl font-bold md:text-5xl">About Me</h1>
         </div>
-        <div className="rounded-full self-center bg-purple-500 h-[181px] w-[181px] p-[1px]">
+        <div className="h-[181px] w-[181px] self-center rounded-full bg-purple-500 p-[1px]">
           <Image
             className="h-[180px] w-[180px]"
             priority={true}

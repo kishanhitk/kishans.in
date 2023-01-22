@@ -12,13 +12,13 @@ interface ProjectCardProps {
 export const ProjectCard = ({ project }: ProjectCardProps) => {
   const { title, sourceUrl, liveUrl, summary, tags, img } = project;
   return (
-    <div className="p-8 rounded-xl bg-gray-100 dark:bg-gray-800">
-      <div className="flex flex-col gap-3 items-start">
+    <div className="rounded-xl bg-gray-100 p-8 dark:bg-gray-800">
+      <div className="flex flex-col items-start gap-3">
         <a className="w-full" href={liveUrl} target="_blank" rel="noreferrer">
-          <Image className="rounded-xl mx-auto" src={img} alt={title}></Image>
+          <Image className="mx-auto rounded-xl" src={img} alt={title}></Image>
         </a>
         <div className="flex items-center gap-2">
-          <h3 className="font-bold text-xl">{title}</h3>
+          <h3 className="text-xl font-bold">{title}</h3>
           <IconButton
             href={liveUrl}
             ariaLabel={title}
@@ -35,7 +35,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
           {tags.map((tag) => (
             <div
               key={tag}
-              className="rounded-md px-2 bg-blue-300 dark:bg-gray-700 "
+              className="rounded-md bg-blue-300 px-2 dark:bg-gray-700 "
             >
               #{tag}
             </div>

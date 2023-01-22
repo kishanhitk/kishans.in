@@ -13,8 +13,8 @@ export const IconButton = ({ href, ariaLabel, icon }: IconButtonProps) => {
       target="_blank"
       rel="noreferrer"
       aria-label={ariaLabel}
-      className="bg-gray-100 transition-all ease-in-out duration-200 p-3
-  hover:bg-blue-100 active:bg-blue-200 rounded-full dark:bg-gray-800"
+      className="rounded-full bg-gray-100 p-3 transition-all duration-200
+  ease-in-out hover:bg-blue-100 active:bg-blue-200 dark:bg-gray-800"
     >
       {icon}
     </a>

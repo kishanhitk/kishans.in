@@ -16,11 +16,11 @@ interface HeaderProps {
 
 export const Header = ({ useAppDir = false }: HeaderProps) => {
   return (
-    <header className="flex sticky backdrop-blur-md top-0 max-w-full w-[924px] mx-auto mb-8 p-4 justify-between align-middle z-10">
+    <header className="sticky top-0 z-10 mx-auto mb-8 flex w-[924px] max-w-full justify-between p-4 align-middle backdrop-blur-md">
       <Link
-        className="cursor-pointer span flex justify-center items-center 
-           bg-gray-900 rounded-full h-[45px] w-[45px] hover:rotate-[360deg] 
-           duration-700 ease-real-in-out transition-all shadow-2xl shadow-gray-500"
+        className="span flex h-[45px] w-[45px] cursor-pointer 
+           items-center justify-center rounded-full bg-gray-900 shadow-2xl 
+           shadow-gray-500 transition-all duration-700 ease-real-in-out hover:rotate-[360deg]"
         href={(useAppDir ? "/new" : "/").concat(Routes.home)}
       >
         <Image
@@ -31,7 +31,7 @@ export const Header = ({ useAppDir = false }: HeaderProps) => {
         ></Image>
       </Link>
       <div className="flex ">
-        <div className="flex gap-3 items-center">
+        <div className="flex items-center gap-3">
           <NavLink url={(useAppDir ? "/new" : "/").concat(Routes.projects)}>
             Projects
           </NavLink>
@@ -47,7 +47,7 @@ export const Header = ({ useAppDir = false }: HeaderProps) => {
 
 const NavLink = ({ url, children }: NavLinkProps) => (
   <Link
-    className="font-normal transition-all ease-in-out duration-200 rounded-md px-4 py-2
+    className="rounded-md px-4 py-2 font-normal transition-all duration-200 ease-in-out
     hover:bg-blue-100 hover:text-blue-700 active:bg-blue-200"
     href={url}
     passHref

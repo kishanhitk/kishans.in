@@ -7,7 +7,7 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
   return (
     <div>
       <Header useAppDir />
-      <div className="w-[650px] max-w-[90%] mx-auto mb-20">{children}</div>
+      <div className="mx-auto mb-20 w-[650px] max-w-[90%]">{children}</div>
     </div>
   );
 };
