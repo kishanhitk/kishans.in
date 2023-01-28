@@ -24,11 +24,13 @@ const Index = async ({ params: { slug } }: any) => {
   });
 
   return (
-    <div className="prose">
-      <h1>{title}</h1>
+    <div className="prose dark:text-white">
+      <h1 className="dark:text-white">{title}</h1>
       <p className="-mt-5 text-gray-500">{userLocalDate}</p>
-      <Image src={coverImage} alt={title} height={500} width={500} />
-      <ReactMarkdown>{contentMarkdown}</ReactMarkdown>
+      <Image src={coverImage} alt={title} height={900} width={900} />
+      <ReactMarkdown className="dark:text-white">
+        {contentMarkdown}
+      </ReactMarkdown>
     </div>
   );
 };
