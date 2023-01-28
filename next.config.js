@@ -13,6 +13,11 @@ const nextConfig = {
         permanent: false,
       },
       {
+        source: "/lg",
+        destination: "https://linkedingenius.vercel.app/",
+        permanent: false,
+      },
+      {
         source: "/stroll",
         destination: "https://stroll-land.vercel.app/",
         permanent: false,
