@@ -1,29 +1,12 @@
-import client from "@apollo-client";
-import { gql } from "@apollo/client";
 import { NextSeo } from "next-seo";
 import { SocialLinks } from "@components/SocialLinks";
 import { HashnodePost } from "@types";
 import PageWrapper from "@components/PageWrapper";
+import { getAllPostByUsername } from "@functions/hashnode";
+import PostCard from "@components/PostCard";
 
 const getPosts = async () => {
-  const { data } = await client.query({
-    query: gql`
-      query {
-        user(username: "kishanhitk") {
-          publication {
-            posts(page: 0) {
-              title
-              brief
-              slug
-              cuid
-            }
-          }
-        }
-      }
-    `,
-  });
-  const posts: HashnodePost[] = data.user.publication.posts;
-  return posts;
+  return getAllPostByUsername("kishanhitk");
 };
 
 const Home = async () => {
@@ -61,14 +44,7 @@ const Home = async () => {
         <SocialLinks />
         <h2 className="text-3xl font-bold">Recent Posts</h2>
         {posts?.map((post: HashnodePost) => (
-          <a
-            key={post.slug}
-            className="mb-10px cursor-pointer"
-            href={`https://blog.kishans.in/${post.slug}`}
-          >
-            <h3 className="mb-1 text-xl font-bold">{post.title}</h3>
-            <p className="font-light">{post.brief}</p>
-          </a>
+          <PostCard key={post.slug} post={post} />
         ))}
       </div>
     </PageWrapper>
