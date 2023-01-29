@@ -35,6 +35,7 @@ export const getPostBySlug = async (slug: string, hostname: string) => {
           dateAdded
           coverImage
           content
+          slug
         }
       }
     `,
