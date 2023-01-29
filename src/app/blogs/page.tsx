@@ -3,6 +3,8 @@ import { getAllPostByUsername } from "@functions/hashnode";
 import { HashnodePost } from "@types";
 import React from "react";
 
+export const revalidate = 86400; // revalidate every day
+
 const page = async () => {
   const posts = await getAllPostByUsername("kishanhitk");
   return (

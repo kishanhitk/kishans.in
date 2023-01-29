@@ -5,6 +5,8 @@ import PageWrapper from "@components/PageWrapper";
 import { getAllPostByUsername } from "@functions/hashnode";
 import PostCard from "@components/PostCard";
 
+export const revalidate = 86400; // revalidate every day
+
 const getPosts = async () => {
   return getAllPostByUsername("kishanhitk");
 };

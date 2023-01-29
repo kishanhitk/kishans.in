@@ -2,6 +2,8 @@ import React from "react";
 import Image from "next/image";
 import { getAllPostByUsername, getPostBySlug } from "@functions/hashnode";
 
+export const revalidate = 86400; // revalidate every day
+
 export async function generateStaticParams() {
   const posts = await getAllPostByUsername("kishanhitk");
 
