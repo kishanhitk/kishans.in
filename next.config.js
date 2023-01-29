@@ -3,6 +3,9 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
+  images: {
+    domains: ["cdn.hashnode.com"],
+  },
   reactStrictMode: true,
   swcMinify: true,
   async redirects() {
