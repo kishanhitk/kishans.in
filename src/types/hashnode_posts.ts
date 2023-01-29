@@ -5,17 +5,22 @@ export interface HashnodePost {
   url: string;
 }
 export interface HashnodePostFull extends HashnodePost {
-  contentMarkdown: string;
   dateAdded: string;
-  replyCount: number;
+  content: string;
+  replyCount?: number;
   coverImage: string;
-  responseCount: number;
-  reactions: {
-    reaction: {
-      name: string;
-    };
-    count: number;
-  }[];
+  responseCount?: number;
+  reactions?: HashnodeReactionFull[];
+}
+
+export interface HashnodeReaction {
+  name: string;
+  image: string;
+}
+
+export interface HashnodeReactionFull {
+  reaction: HashnodeReaction;
+  count: number;
 }
 
 export type HashnodePosts = HashnodePost[];

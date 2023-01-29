@@ -31,19 +31,10 @@ export const getPostBySlug = async (slug: string, hostname: string) => {
     query: gql`
       query Post($slug: String!, $hostname: String!) {
         post(slug: $slug, hostname: $hostname) {
-          contentMarkdown
           title
           dateAdded
-          replyCount
           coverImage
-          replyCount
-          responseCount
-          reactions {
-            reaction {
-              name
-            }
-            count
-          }
+          content
         }
       }
     `,
