@@ -18,6 +18,7 @@ export const Header = ({ useAppDir = false }: HeaderProps) => {
   return (
     <header className="sticky top-0 z-10 mx-auto mb-8 flex w-[924px] max-w-full justify-between p-4 align-middle backdrop-blur-md">
       <Link
+        prefetch
         className="span flex h-[45px] w-[45px] cursor-pointer 
            items-center justify-center rounded-full bg-gray-900 shadow-2xl 
            shadow-gray-500 transition-all duration-700 ease-real-in-out hover:rotate-[360deg]"
@@ -43,6 +44,7 @@ export const Header = ({ useAppDir = false }: HeaderProps) => {
 
 const NavLink = ({ url, children }: NavLinkProps) => (
   <Link
+    prefetch
     className="rounded-md px-4 py-2 font-normal transition-all duration-200 ease-in-out
     hover:bg-blue-100 hover:text-blue-700 active:bg-blue-200"
     href={url}
