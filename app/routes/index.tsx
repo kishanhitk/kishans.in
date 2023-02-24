@@ -8,20 +8,20 @@ import { getAllPostByUsername } from "~/utils/hashnode";
 export async function loader() {
   const posts = await getAllPostByUsername("kishanhitk");
   return json(
-    { posts }
-    // {
-    //   headers: {
-    //     "Cache-Control":
-    //       "max-age=60, s-max-age=1200, stale-while-revalidate=180",
-    //   },
-    // }
+    { posts },
+    {
+      headers: {
+        "Cache-Control":
+          "max-age=600, s-max-age=1200, stale-while-revalidate=1800",
+      },
+    }
   );
 }
-// export function headers({ loaderHeaders }: { loaderHeaders: Headers }) {
-//   return {
-//     "Cache-Control": loaderHeaders.get("Cache-Control"),
-//   };
-// }
+export function headers({ loaderHeaders }: { loaderHeaders: Headers }) {
+  return {
+    "Cache-Control": loaderHeaders.get("Cache-Control"),
+  };
+}
 
 const Index = () => {
   const { posts } = useLoaderData<typeof loader>();
