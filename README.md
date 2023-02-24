@@ -1,19 +1,22 @@
-<!-- # [Kishans.in](https://kishans.in) -->
-<h1 align="center">
-  <a href="https://kishans.in">Kishans.in</a>
-</h1>
-<p align="center">
-    <img src="https://user-images.githubusercontent.com/41117038/130624803-cd046c25-19ee-46c1-8d69-37f74728c58a.png" alt="Lighthouse Score" />
-</p>
+# Welcome to Remix!
 
+- [Remix Docs](https://remix.run/docs)
 
-![Lighthouse Score](https://user-images.githubusercontent.com/41117038/130624700-16d963fa-602b-40cf-b658-6026797e1daf.png)
+## Development
 
-My personal website built with
+You will be utilizing Wrangler for local development to emulate the Cloudflare runtime. This is already wired up in your package.json as the `dev` script:
 
-* Next.js
-* tailwindcss
-* TypeScript
-* GraphQL
- 
-Deployed on Vercel.
+```sh
+# start the remix dev server and wrangler
+npm run dev
+```
+
+Open up [http://127.0.0.1:8788](http://127.0.0.1:8788) and you should be ready to go!
+
+## Deployment
+
+Cloudflare Pages are currently only deployable through their Git provider integrations.
+
+If you don't already have an account, then [create a Cloudflare account here](https://dash.cloudflare.com/sign-up/pages) and after verifying your email address with Cloudflare, go to your dashboard and follow the [Cloudflare Pages deployment guide](https://developers.cloudflare.com/pages/framework-guides/deploy-anything).
+
+Configure the "Build command" should be set to `npm run build`, and the "Build output directory" should be set to `public`.
