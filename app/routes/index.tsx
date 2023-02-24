@@ -17,6 +17,11 @@ export async function loader() {
     }
   );
 }
+export function headers({ loaderHeaders }: { loaderHeaders: Headers }) {
+  return {
+    "Cache-Control": loaderHeaders.get("Cache-Control"),
+  };
+}
 
 const Index = () => {
   const { posts } = useLoaderData<typeof loader>();
