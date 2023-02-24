@@ -7,20 +7,27 @@ import { getAllPostByUsername } from "~/utils/hashnode";
 
 export async function loader() {
   const posts = await getAllPostByUsername("kishanhitk");
-  return json({ posts }, { headers: { "Cache-Control": "max-age=3600", } });
+  return json(
+    { posts },
+    {
+      headers: {
+        "Cache-Control":
+          "max-age=60, s-max-age=1200, stale-while-revalidate=180 ",
+      },
+    }
+  );
 }
 
 const Index = () => {
-  const { posts } = useLoaderData<typeof loader>()
+  const { posts } = useLoaderData<typeof loader>();
   return (
-
     <div className="flex flex-col items-start gap-8">
       <h1 className="text-4xl font-bold dark:text-white md:text-5xl">
         Hi, I&apos;m Kishan
       </h1>
       <p className="text-md">
-        I&apos;m a self-taught developer from India. I love building cool
-        stuff for web and mobile using
+        I&apos;m a self-taught developer from India. I love building cool stuff
+        for web and mobile using
         <strong>: Javascript/Typescript</strong>, <strong> ReactJS</strong>,{" "}
         <strong> NodeJS</strong>, <strong> Flutter</strong>, and
         <strong> AWS</strong>.
