@@ -5,6 +5,14 @@ import React from "react";
 
 export const revalidate = 86400; // revalidate every day
 
+export async function generateStaticParams() {
+  const posts = await getAllPostByUsername("kishanhitk");
+
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
+}
+
 const page = async () => {
   const posts = await getAllPostByUsername("kishanhitk");
   return (
