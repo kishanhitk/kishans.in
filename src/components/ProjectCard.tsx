@@ -24,11 +24,13 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
             ariaLabel={title}
             icon={<IoOpenOutline />}
           />
-          <IconButton
-            href={sourceUrl}
-            ariaLabel={`${title} Source Code`}
-            icon={<FiGithub />}
-          />
+          {sourceUrl && (
+            <IconButton
+              href={sourceUrl}
+              ariaLabel={`${title} Source Code`}
+              icon={<FiGithub />}
+            />
+          )}
         </div>
         <p>{summary}</p>
         <div className="flex flex-wrap gap-2">

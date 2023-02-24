@@ -41,7 +41,6 @@ const Index = async ({ params: { slug } }: any) => {
         other stuff. <br />
         Follow me on
         <span>
-          {" "}
           <a
             href={`https://blog.kishans.in/${slug}`}
             className="underline decoration-dotted"

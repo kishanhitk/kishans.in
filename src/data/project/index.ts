@@ -5,9 +5,10 @@ import S6Banner from "../../../public/assets/s6banner.webp";
 import HMDBBanner from "../../../public/assets/hmdb.webp";
 import SafeChat from "../../../public/assets/safechat.webp";
 import GitGramBanner from "../../../public/assets/gitgram.webp";
+import GitaGPT from "../../../public/assets/gita-gpt.png";
 export const ProjectList: Projects = [
   {
-    priority: 0,
+    priority: 1,
     title: "JUMS Reboot",
     slug: "jums-reboot",
     summary:
@@ -27,6 +28,23 @@ export const ProjectList: Projects = [
       "FCM",
     ],
     img: JUMSBanner,
+  },
+  {
+    priority: 0,
+    title: "Gita GPT",
+    slug: "jums-reboot",
+    summary:
+      "Gita GPT, find solce in the wisdom of Shree Krishna 🦚. Built with Next.js and OpenAI GPT-3. It generated advices based on Gita Shlokas for your life problems. The project got featured in leading Indian news portals, including TimesNow, The Economic Times, News18, FirstPost, and more. The website has received 5,42,574+ pageviews, 3,25,11+ unique visitors, and have processed 8,09,102+ API requests. It used vercel edge functions with streaming support to generate the advices from OpenAI and stream the data in parallel making the response feel surprisingly fast. Usage many optimizations to reduce the OpenAI API usage and make it free for everyone. When the userbase started growingly rapidly, I had to implement rate-limiter to limit the maxium number of request a user can make each day.",
+    liveUrl: "https://gita.kishans.in",
+    tags: [
+      "Next.js",
+      "Streaming",
+      "TypeScript",
+      "OpenAI",
+      "TailwindCSS",
+      "Firebase",
+    ],
+    img: GitaGPT,
   },
   {
     priority: 1,
