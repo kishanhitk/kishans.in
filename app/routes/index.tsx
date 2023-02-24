@@ -12,7 +12,7 @@ export async function loader() {
     {
       headers: {
         "Cache-Control":
-          "max-age=60, s-max-age=1200, stale-while-revalidate=180 ",
+          "max-age=60, s-max-age=1200, stale-while-revalidate=180",
       },
     }
   );
