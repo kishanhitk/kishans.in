@@ -1,32 +1,37 @@
-export default function Index() {
+import { json } from "@remix-run/cloudflare";
+import { useLoaderData } from "@remix-run/react";
+import PostCard from "~/components/PostCard";
+import { SocialLinks } from "~/components/SocialLinks";
+import type { HashnodePost } from "~/types/hashnode";
+import { getAllPostByUsername } from "~/utils/hashnode";
+
+export async function loader() {
+  const posts = await getAllPostByUsername("kishanhitk");
+  return json({ posts }, { headers: { "Cache-Control": "max-age=3600", } });
+}
+
+const Index = () => {
+  const { posts } = useLoaderData<typeof loader>()
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
-      <h1>Welcome to Remix</h1>
-      <ul>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/blog"
-            rel="noreferrer"
-          >
-            15m Quickstart Blog Tutorial
-          </a>
-        </li>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/jokes"
-            rel="noreferrer"
-          >
-            Deep Dive Jokes App Tutorial
-          </a>
-        </li>
-        <li>
-          <a target="_blank" href="https://remix.run/docs" rel="noreferrer">
-            Remix Docs
-          </a>
-        </li>
-      </ul>
+
+    <div className="flex flex-col items-start gap-8">
+      <h1 className="text-4xl font-bold dark:text-white md:text-5xl">
+        Hi, I&apos;m Kishan
+      </h1>
+      <p className="text-md">
+        I&apos;m a self-taught developer from India. I love building cool
+        stuff for web and mobile using
+        <strong>: Javascript/Typescript</strong>, <strong> ReactJS</strong>,{" "}
+        <strong> NodeJS</strong>, <strong> Flutter</strong>, and
+        <strong> AWS</strong>.
+      </p>
+      <SocialLinks />
+      <h2 className="text-3xl font-bold">Recent Posts</h2>
+      {posts?.map((post: HashnodePost) => (
+        <PostCard key={post.slug} post={post} />
+      ))}
     </div>
   );
-}
+};
+
+export default Index;
