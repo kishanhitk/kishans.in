@@ -37,6 +37,7 @@ export const Header = ({ useAppDir = false }: HeaderProps) => {
           <ThemeSwitcherButton />
         </div>
       </div>
+      <Link href="demo">Demo</Link>
     </header>
   );
 };
