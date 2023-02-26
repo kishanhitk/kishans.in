@@ -33,7 +33,10 @@ const Index = async ({ params: { slug } }: any) => {
         <h1 className="dark:text-white">{title}</h1>
         <p className="-mt-5 text-gray-500">{userLocalDate}</p>
         <Image src={coverImage} alt={title} height={900} width={900} />
-        <div dangerouslySetInnerHTML={createMarkup()}></div>
+        <article
+          data-clarity-region="article"
+          dangerouslySetInnerHTML={createMarkup()}
+        ></article>
       </div>
       <p className="mt-10 border-t pt-5">
         Liked this article? I keep writing about web development, design, and
