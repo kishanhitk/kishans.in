@@ -4,7 +4,7 @@ import { ProjectList } from "@data/project";
 import { MainLayout } from "@layout";
 import { NextSeo } from "next-seo";
 import React from "react";
-
+export const revalidate = 86400;
 const ProjectsPage = () => {
   return (
     <PageWrapper>
