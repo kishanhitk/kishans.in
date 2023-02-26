@@ -1,6 +1,6 @@
 export enum Routes {
   home = "/",
-  projects = "projects",
-  aboutMe = "about",
-  contactMe = "contact",
+  projects = "/projects",
+  aboutMe = "/about",
+  contactMe = "/contact",
 }
