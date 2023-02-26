@@ -44,7 +44,6 @@ export const getPostBySlug = async (slug: string, hostname: string) => {
       hostname,
     },
   });
-
   const post = data.post;
   return post as HashnodePostFull;
 };

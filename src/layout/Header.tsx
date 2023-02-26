@@ -46,8 +46,6 @@ const NavLink = ({ url, children }: NavLinkProps) => (
     className="rounded-md px-4 py-2 font-normal transition-all duration-200 ease-in-out
     hover:bg-blue-100 hover:text-blue-700 active:bg-blue-200"
     href={url}
-
-
   >
     {children}
   </Link>
