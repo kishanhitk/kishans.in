@@ -4,7 +4,7 @@ import { MainLayout } from "@layout";
 import { NextSeo } from "next-seo";
 import Image from "next/image";
 import React from "react";
-
+export const revalidate = 86400;
 export default function Page() {
   return (
     <PageWrapper>
