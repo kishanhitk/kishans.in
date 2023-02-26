@@ -13,7 +13,7 @@ specifiers:
   eslint: 8.34.0
   eslint-config-next: 13.2.1
   framer-motion: ^8.5.0
-  graphql: ^16.6.0
+  graphql: 17.0.0-alpha.2.canary.pr.3791.e6d3ec58026d75b71b7b84c3da5f376ec7eeca94
   next: 13.2.2-canary.1
   next-seo: ^5.15.0
   next-themes: ^0.2.1
@@ -28,11 +28,11 @@ specifiers:
   typescript: ^4.9.5
 
 dependencies:
-  '@apollo/client': 3.7.9_gdcq4dv6opitr3wbfwyjmanyra
+  '@apollo/client': 3.7.9_a2zswuzxkro2hngljhkn4tytyi
   '@fontsource/inter': 4.5.15
   '@next/font': 13.2.2-canary.1
   framer-motion: 8.5.5_biqbaboplfbrettd7655fr4n2y
-  graphql: 16.6.0
+  graphql: 17.0.0-alpha.2.canary.pr.3791.e6d3ec58026d75b71b7b84c3da5f376ec7eeca94
   next: 13.2.2-canary.1_biqbaboplfbrettd7655fr4n2y
   next-seo: 5.15.0_qqyqr3kxb6ily2ps46epmolks4
   next-themes: 0.2.1_qqyqr3kxb6ily2ps46epmolks4
@@ -58,7 +58,7 @@ devDependencies:
 
 packages:
 
-  /@apollo/client/3.7.9_gdcq4dv6opitr3wbfwyjmanyra:
+  /@apollo/client/3.7.9_a2zswuzxkro2hngljhkn4tytyi:
     resolution: {integrity: sha512-YnJvrJOVWrp4y/zdNvUaM8q4GuSHCEIecsRDTJhK/veT33P/B7lfqGJ24NeLdKMj8tDEuXYF7V0t+th4+rgC+Q==}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
@@ -76,12 +76,12 @@ packages:
       subscriptions-transport-ws:
         optional: true
     dependencies:
-      '@graphql-typed-document-node/core': 3.1.1_graphql@16.6.0
+      '@graphql-typed-document-node/core': 3.1.1_buubfs2gaehj6dqla7mg6v4wqa
       '@wry/context': 0.7.0
       '@wry/equality': 0.5.3
       '@wry/trie': 0.3.2
-      graphql: 16.6.0
-      graphql-tag: 2.12.6_graphql@16.6.0
+      graphql: 17.0.0-alpha.2.canary.pr.3791.e6d3ec58026d75b71b7b84c3da5f376ec7eeca94
+      graphql-tag: 2.12.6_buubfs2gaehj6dqla7mg6v4wqa
       hoist-non-react-statics: 3.3.2
       optimism: 0.16.2
       prop-types: 15.8.1
@@ -135,12 +135,12 @@ packages:
     resolution: {integrity: sha512-FzleM9AxZQK2nqsTDtBiY0PMEVWvnKnuu2i09+p6DHvrHsuucoV2j0tmw+kAT3L4hvsLdAIDv6MdGehsPIdT+Q==}
     dev: false
 
-  /@graphql-typed-document-node/core/3.1.1_graphql@16.6.0:
+  /@graphql-typed-document-node/core/3.1.1_buubfs2gaehj6dqla7mg6v4wqa:
     resolution: {integrity: sha512-NQ17ii0rK1b34VZonlmT2QMJFI70m0TRwbknO/ihlbatXyaktDhN/98vBiUU6kNBPljqGqyIrl2T4nY2RpFANg==}
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
-      graphql: 16.6.0
+      graphql: 17.0.0-alpha.2.canary.pr.3791.e6d3ec58026d75b71b7b84c3da5f376ec7eeca94
     dev: false
 
   /@humanwhocodes/config-array/0.11.8:
@@ -1516,19 +1516,20 @@ packages:
     resolution: {integrity: sha512-bzh50DW9kTPM00T8y4o8vQg89Di9oLJVLW/KaOGIXJWP/iqCN6WKYkbNOF04vFLJhwcpYUh9ydh/+5vpOqV4YQ==}
     dev: true
 
-  /graphql-tag/2.12.6_graphql@16.6.0:
+  /graphql-tag/2.12.6_buubfs2gaehj6dqla7mg6v4wqa:
     resolution: {integrity: sha512-FdSNcu2QQcWnM2VNvSCCDCVS5PpPqpzgFT8+GXzqJuoDd0CBncxCY278u4mhRO7tMgo2JjgJA5aZ+nWSQ/Z+xg==}
     engines: {node: '>=10'}
     peerDependencies:
       graphql: ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
-      graphql: 16.6.0
+      graphql: 17.0.0-alpha.2.canary.pr.3791.e6d3ec58026d75b71b7b84c3da5f376ec7eeca94
       tslib: 2.4.1
     dev: false
 
-  /graphql/16.6.0:
-    resolution: {integrity: sha512-KPIBPDlW7NxrbT/eh4qPXz5FiFdL5UbaA0XUNz2Rp3Z3hqBSkbj0GVjwFDztsWVauZUWsbKHgMg++sk8UX0bkw==}
-    engines: {node: ^12.22.0 || ^14.16.0 || ^16.0.0 || >=17.0.0}
+  /graphql/17.0.0-alpha.2.canary.pr.3791.e6d3ec58026d75b71b7b84c3da5f376ec7eeca94:
+    resolution: {integrity: sha512-i51clZCG1Mc9i/bsXlsW6mYsDOrBLbDc5oRAw1Pl3QbN64V9DPRbF8SJhnTZ8aEvCNKsJpRAKf81VBd1thcXAg==}
+    engines: {node: ^14.19.0 || ^16.10.0 || >=18.0.0}
+    deprecated: You are using canary version build from https://github.com/graphql/graphql-js/pull/3791, no gurantees provided so please use your own discretion.
     dev: false
 
   /has-bigints/1.0.2:
