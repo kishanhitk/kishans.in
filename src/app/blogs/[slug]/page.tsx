@@ -24,20 +24,11 @@ export async function generateMetadata({
       description: brief,
       images: [
         {
-          url: coverImage,
-          width: 800,
-          height: 600,
-          alt: "Og Image Alt",
+          url: "https://hashnode.com/utility/r?url=https%3A%2F%2Fcdn.hashnode.com%2Fres%2Fhashnode%2Fimage%2Fstock%2Funsplash%2F16ep3TGZR-0%2Fupload%2F4053f43ef8727c52dde7a6ce9d4f655e.jpeg%3Fw%3D1200%26h%3D630%26fit%3Dcrop%26crop%3Dentropy%26auto%3Dcompress%2Cformat%26format%3Dwebp%26fm%3Dpng",
         },
-        {
-          url: coverImage,
-          width: 900,
-          height: 800,
-          alt: "Og Image Alt Second",
-        },
-        { url: coverImage },
       ],
       type: "article",
+      url: `https://kishans.in/blogs/${slug}`,
     },
   };
 }
