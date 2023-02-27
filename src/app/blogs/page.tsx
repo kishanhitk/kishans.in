@@ -1,7 +1,25 @@
 import PostCard from "@components/PostCard";
 import { getAllPostByUsername } from "@functions/hashnode";
 import { HashnodePost } from "@types";
+import { Metadata } from "next/types";
 import React from "react";
+export const metadata: Metadata = {
+  title: "Blogs",
+  description:
+    "Blogs by Kishan, a self-taught developer from India. He loves building cool stuff for web and mobile using Javascript/Typescript, ReactJS, NodeJS, Flutter, and AWS.",
+  openGraph: {
+    locale: "en_IE",
+    url: "https://www.kishans.in/blogs",
+    images: [
+      {
+        url: "https://www.kishans.in/assets/kishanlogo.webp",
+        width: 1200,
+        height: 630,
+        alt: "Kishan Kumar | Full Stack Developer",
+      },
+    ],
+  },
+};
 
 export const revalidate = 86400; // revalidate every day
 

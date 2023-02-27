@@ -3,11 +3,20 @@ import "../styles/globals.css";
 import { Providers } from "./providers";
 import { Inter } from "@next/font/google";
 import Script from "next/script";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: {
+    default: "Kishan",
+    template: "%s | Kishan Kumar",
+  },
+};
 
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
 });
+
 export default function RootLayout({
   children,
 }: {

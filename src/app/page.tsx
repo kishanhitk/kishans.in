@@ -3,9 +3,24 @@ import { HashnodePost } from "@types";
 import PageWrapper from "@components/PageWrapper";
 import { getAllPostByUsername } from "@functions/hashnode";
 import PostCard from "@components/PostCard";
+import { Metadata } from "next";
 
-export const metadata = {
-  title: "Kishan Kumar | Full Stack Developer",
+export const metadata: Metadata = {
+  title: "Kishan Kumar - Full Stack Developer",
+  description:
+    "Kishan is a self-taught developer from India. He loves building cool stuff for web and mobile using Javascript/Typescript, ReactJS, NodeJS, Flutter, and AWS.",
+  openGraph: {
+    locale: "en_IE",
+    url: "https://www.kishans.in",
+    images: [
+      {
+        url: "https://www.kishans.in/assets/kishanlogo.webp",
+        width: 1200,
+        height: 630,
+        alt: "Kishan Kumar | Full Stack Developer",
+      },
+    ],
+  },
 };
 
 export const revalidate = 86400; // revalidate every day

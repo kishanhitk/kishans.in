@@ -1,9 +1,29 @@
 import PageWrapper from "@components/PageWrapper";
 import { SocialLinks } from "@components/SocialLinks";
-import { MainLayout } from "@layout";
 import Image from "next/image";
+import { Metadata } from "next/types";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "About Me",
+  description:
+    "Kishan Kumar is a self-taught developer from India. He loves building cool stuff for web and mobile using Javascript/Typescript, ReactJS, NodeJS, Flutter, and AWS.",
+  openGraph: {
+    locale: "en_IE",
+    url: "https://www.kishans.in/about",
+    images: [
+      {
+        url: "https://www.kishans.in/assets/kishanlogo.webp",
+        width: 1200,
+        height: 630,
+        alt: "Kishan Kumar | Full Stack Developer",
+      },
+    ],
+  },
+};
+
 export const revalidate = 86400;
+
 export default function Page() {
   return (
     <PageWrapper>
