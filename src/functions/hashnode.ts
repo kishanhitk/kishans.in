@@ -36,6 +36,28 @@ export const getPostBySlug = async (slug: string, hostname: string) => {
           coverImage
           content
           slug
+          brief
+        }
+      }
+    `,
+    variables: {
+      slug,
+      hostname,
+    },
+  });
+  const post = data.post;
+  return post as HashnodePostFull;
+};
+export const getPostMetadataBySlug = async (slug: string, hostname: string) => {
+  const { data } = await client.query({
+    query: gql`
+      query Post($slug: String!, $hostname: String!) {
+        post(slug: $slug, hostname: $hostname) {
+          title
+          dateAdded
+          coverImage
+          slug
+          brief
         }
       }
     `,

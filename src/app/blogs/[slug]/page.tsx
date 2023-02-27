@@ -1,6 +1,10 @@
 import React from "react";
 import Image from "next/image";
-import { getAllPostByUsername, getPostBySlug } from "@functions/hashnode";
+import {
+  getAllPostByUsername,
+  getPostBySlug,
+  getPostMetadataBySlug,
+} from "@functions/hashnode";
 import { Metadata } from "next/types";
 
 export const revalidate = 86400; // revalidate every day
@@ -8,7 +12,10 @@ export const revalidate = 86400; // revalidate every day
 export async function generateMetadata({
   params: { slug },
 }: any): Promise<Metadata> {
-  const { title, brief, coverImage } = await getPostBySlug(slug, "kishanhitk");
+  const { title, brief, coverImage } = await getPostMetadataBySlug(
+    slug,
+    "kishanhitk"
+  );
   return {
     title: title,
     description: brief,
