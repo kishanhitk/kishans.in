@@ -18,13 +18,17 @@ export async function generateMetadata({
   );
   return {
     title: title,
-    description: brief,
+    description: brief.slice(0, 150),
+
     openGraph: {
       title: title,
       description: brief,
       images: [
         {
           url: coverImage,
+          width: 1200,
+          height: 630,
+          alt: title,
         },
       ],
       type: "article",
