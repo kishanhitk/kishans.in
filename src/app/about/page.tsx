@@ -1,30 +1,12 @@
 import PageWrapper from "@components/PageWrapper";
 import { SocialLinks } from "@components/SocialLinks";
 import { MainLayout } from "@layout";
-import { NextSeo } from "next-seo";
 import Image from "next/image";
 import React from "react";
 export const revalidate = 86400;
 export default function Page() {
   return (
     <PageWrapper>
-      <NextSeo
-        useAppDir={true}
-        title="About Me | Kishan Kumar - Full Stack Developer"
-        canonical="https://kishans.in/about"
-        description="About Kishan Kumar - Full Stack Developer"
-        openGraph={{
-          url: "https://kishans.in/about",
-          title: "About Me – Kishan",
-          description: "About Kishan Kumar - Full Stack Developer",
-          images: [
-            {
-              url: "https://kishans.in/assets/kishanlogo.png",
-              alt: "Og Image Alt",
-            },
-          ],
-        }}
-      />
       <div className="mb-4 flex max-w-[700px] flex-col items-start justify-center gap-6">
         <div className="w-full text-center">
           <h1 className="text-4xl font-bold md:text-5xl">About Me</h1>
