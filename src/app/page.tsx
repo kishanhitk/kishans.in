@@ -1,9 +1,27 @@
-import { NextSeo } from "next-seo";
 import { SocialLinks } from "@components/SocialLinks";
 import { HashnodePost } from "@types";
 import PageWrapper from "@components/PageWrapper";
 import { getAllPostByUsername } from "@functions/hashnode";
 import PostCard from "@components/PostCard";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Kishan Kumar - Full Stack Developer",
+  description:
+    "Kishan is a self-taught developer from India. He loves building cool stuff for web and mobile using Javascript/Typescript, ReactJS, NodeJS, Flutter, and AWS.",
+  openGraph: {
+    locale: "en_IE",
+    url: "https://www.kishans.in",
+    images: [
+      {
+        url: "https://www.kishans.in/assets/kishanlogo.webp",
+        width: 1200,
+        height: 630,
+        alt: "Kishan Kumar | Full Stack Developer",
+      },
+    ],
+  },
+};
 
 export const revalidate = 86400; // revalidate every day
 
@@ -15,23 +33,6 @@ const Home = async () => {
   const posts = await getPosts();
   return (
     <PageWrapper>
-      <NextSeo
-        useAppDir={true}
-        title="Kishan Kumar - Full Stack Developer"
-        description="Blogs and Projects by Kishan"
-        canonical="https://kishans.in"
-        openGraph={{
-          url: "https://kishans.in",
-          title: "Kishan Kumar - Full Stack Developer",
-          description: "Blogs and Projects by Kishan",
-          images: [
-            {
-              url: "https://kishans.in/assets/kishanlogo.png",
-              alt: "Og Image Alt",
-            },
-          ],
-        }}
-      />
       <div className="flex flex-col items-start gap-8">
         <h1 className="text-4xl font-bold dark:text-white md:text-5xl">
           Hi, I&apos;m Kishan

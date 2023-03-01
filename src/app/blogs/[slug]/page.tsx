@@ -1,8 +1,41 @@
 import React from "react";
 import Image from "next/image";
-import { getAllPostByUsername, getPostBySlug } from "@functions/hashnode";
+import {
+  getAllPostByUsername,
+  getPostBySlug,
+  getPostMetadataBySlug,
+} from "@functions/hashnode";
+import { Metadata } from "next/types";
 
 export const revalidate = 86400; // revalidate every day
+
+export async function generateMetadata({
+  params: { slug },
+}: any): Promise<Metadata> {
+  const { title, brief, coverImage } = await getPostMetadataBySlug(
+    slug,
+    "kishanhitk"
+  );
+  return {
+    title: title,
+    description: brief.slice(0, 150),
+
+    openGraph: {
+      title: title,
+      description: brief,
+      images: [
+        {
+          url: coverImage,
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+      type: "article",
+      url: `https://kishans.in/blogs/${slug}`,
+    },
+  };
+}
 
 export async function generateStaticParams() {
   const posts = await getAllPostByUsername("kishanhitk");

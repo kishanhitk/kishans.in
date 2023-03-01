@@ -1,30 +1,32 @@
 import PageWrapper from "@components/PageWrapper";
 import { SocialLinks } from "@components/SocialLinks";
-import { MainLayout } from "@layout";
-import { NextSeo } from "next-seo";
 import Image from "next/image";
+import { Metadata } from "next/types";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "About Me",
+  description:
+    "Kishan Kumar is a self-taught developer from India. He loves building cool stuff for web and mobile using Javascript/Typescript, ReactJS, NodeJS, Flutter, and AWS.",
+  openGraph: {
+    locale: "en_IE",
+    url: "https://www.kishans.in/about",
+    images: [
+      {
+        url: "https://www.kishans.in/assets/kishanlogo.webp",
+        width: 1200,
+        height: 630,
+        alt: "Kishan Kumar | Full Stack Developer",
+      },
+    ],
+  },
+};
+
 export const revalidate = 86400;
+
 export default function Page() {
   return (
     <PageWrapper>
-      <NextSeo
-        useAppDir={true}
-        title="About Me | Kishan Kumar - Full Stack Developer"
-        canonical="https://kishans.in/about"
-        description="About Kishan Kumar - Full Stack Developer"
-        openGraph={{
-          url: "https://kishans.in/about",
-          title: "About Me – Kishan",
-          description: "About Kishan Kumar - Full Stack Developer",
-          images: [
-            {
-              url: "https://kishans.in/assets/kishanlogo.png",
-              alt: "Og Image Alt",
-            },
-          ],
-        }}
-      />
       <div className="mb-4 flex max-w-[700px] flex-col items-start justify-center gap-6">
         <div className="w-full text-center">
           <h1 className="text-4xl font-bold md:text-5xl">About Me</h1>
