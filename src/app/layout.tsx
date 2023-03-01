@@ -4,6 +4,7 @@ import { Providers } from "./providers";
 import { Inter } from "next/font/google";
 import Script from "next/script";
 import { Metadata } from "next";
+import NProgressBar from "@components/NProgressBar";
 
 export const metadata: Metadata = {
   title: {
@@ -58,6 +59,7 @@ export default function RootLayout({
       </head>
       <body className="bg-white text-black dark:bg-[#1A1F2E] dark:text-white">
         <Providers>
+          <NProgressBar />
           <MainLayout>{children}</MainLayout>
         </Providers>
       </body>
