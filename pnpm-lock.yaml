@@ -3,7 +3,6 @@ lockfileVersion: 5.4
 specifiers:
   '@apollo/client': ^3.7.9
   '@fontsource/inter': ^4.5.15
-  '@next/font': 13.2.2
   '@tailwindcss/typography': ^0.5.9
   '@types/node': 18.14.2
   '@types/nprogress': ^0.2.0
@@ -30,7 +29,6 @@ specifiers:
 dependencies:
   '@apollo/client': 3.7.9_a2zswuzxkro2hngljhkn4tytyi
   '@fontsource/inter': 4.5.15
-  '@next/font': 13.2.2
   framer-motion: 10.0.1_biqbaboplfbrettd7655fr4n2y
   graphql: 17.0.0-alpha.2.canary.pr.3791.e6d3ec58026d75b71b7b84c3da5f376ec7eeca94
   next: 13.2.2_biqbaboplfbrettd7655fr4n2y
@@ -177,10 +175,6 @@ packages:
     dependencies:
       glob: 7.1.7
     dev: true
-
-  /@next/font/13.2.2:
-    resolution: {integrity: sha512-ZGwJxAfAYRTO+GTrlFqXFnh1vbcXvtf+kMRE23MjyIJpQQA3qFXnMSitXJkfzzyMAFYo1cRuKeWJbIqqFVYRXQ==}
-    dev: false
 
   /@next/swc-android-arm-eabi/13.2.2:
     resolution: {integrity: sha512-JHTnsNTl9gDQkWqggJFj6rQHK2+9lIMGolOPihfZBQAE48amVsGkYyFHbiuWnhwnYX99fCFWomARDwOtLAhzdQ==}
