@@ -21,6 +21,16 @@ export const metadata: Metadata = {
       },
     ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kishan Kumar - Full Stack Developer",
+    description:
+      "Kishan is a self-taught developer from India. He loves building cool stuff for web and mobile using Javascript/Typescript, ReactJS, NodeJS, Flutter, and AWS.",
+    siteId: "2258969065",
+    creator: "@jst_kishan",
+    creatorId: "2258969065",
+    images: ["https://www.kishans.in/assets/kishans-og-banner.png"],
+  },
 };
 
 export const revalidate = 86400; // revalidate every day
