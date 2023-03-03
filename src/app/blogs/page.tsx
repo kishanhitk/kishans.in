@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     url: "https://www.kishans.in/blogs",
     images: [
       {
-        url: "https://www.kishans.in/assets/kishanlogo.webp",
+        url: "https://www.kishans.in/assets/kishans-og-banner.png",
         width: 1200,
         height: 630,
         alt: "Kishan Kumar | Full Stack Developer",
