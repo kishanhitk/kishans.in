@@ -48,11 +48,13 @@ const Home = async () => {
           Hi, I&apos;m Kishan
         </h1>
         <p className="text-md">
-          I&apos;m a self-taught developer from India. I love building cool
-          stuff for web and mobile using
-          <strong>: Javascript/Typescript</strong>, <strong> ReactJS</strong>,{" "}
-          <strong> NodeJS</strong>, <strong> Flutter</strong>, and
-          <strong> AWS</strong>.
+          I&apos;m a self-taught
+          <strong> full-stack developer </strong>
+          from India. I love hacking cool stuff. Primarily with
+          <strong>: Next.js</strong> or <strong>Remix.run</strong>, sometimes
+          NFT smart contracts with <strong>Scilla</strong> on{" "}
+          <strong>Zilliqa</strong>. Jack of all trades, you can say. Let&apos;s
+          build something cool together!
         </p>
         <SocialLinks />
         <h2 className="text-3xl font-bold">Recent Posts</h2>

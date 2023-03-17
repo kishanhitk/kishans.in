@@ -1,6 +1,7 @@
 import PageWrapper from "@components/PageWrapper";
 import { SocialLinks } from "@components/SocialLinks";
 import Image from "next/image";
+import Link from "next/link";
 import { Metadata } from "next/types";
 import React from "react";
 
@@ -41,11 +42,12 @@ export default function Page() {
           ></Image>
         </div>
         <p className="text-md">
-          I&apos;m a self-taught developer from India. I love building cool
-          stuff for web and mobile using
-          <strong>: Javascript/Typescript</strong>, <strong> ReactJS</strong>,{" "}
-          <strong> NodeJS</strong>, <strong> Flutter</strong>, and
-          <strong> AWS</strong>.
+          I&apos;m a self-taught
+          <strong> full-stack developer </strong>
+          from India. I love hacking cool stuff. Primarily with
+          <strong>: Next.js</strong> or <strong>Remix.run</strong>, sometimes
+          NFT smart contracts with <strong>Scilla</strong> on{" "}
+          <strong>Zilliqa</strong>. Jack of all trades, you can say.
         </p>
         <p className="text-md">
           I document my journey through my{" "}
