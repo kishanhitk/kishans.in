@@ -4,6 +4,7 @@ import PageWrapper from "@components/PageWrapper";
 import { getAllPostByUsername } from "@functions/hashnode";
 import PostCard from "@components/PostCard";
 import { Metadata } from "next";
+import AboutMe from "@components/about.mdx";
 
 export const metadata: Metadata = {
   title: "Kishan Kumar - Full Stack Developer",
@@ -56,6 +57,7 @@ const Home = async () => {
           <strong>Zilliqa</strong>. Jack of all trades, you can say. Let&apos;s
           build something cool together!
         </p>
+        <AboutMe />
         <SocialLinks />
         <h2 className="text-3xl font-bold">Recent Posts</h2>
         {posts?.map((post: HashnodePost) => (
