@@ -57,10 +57,12 @@ const Home = async () => {
           master of fun. 😄
         </Paragraph>
         <SocialLinks />
-        <h2 className="text-3xl font-bold">Recent Posts</h2>
-        {posts?.map((post: HashnodePost) => (
-          <PostCard key={post.slug} post={post} />
-        ))}
+        <div>
+          <h2 className="mt-3 mb-5 text-3xl font-semibold">Recent posts</h2>
+          {posts?.map((post: HashnodePost) => (
+            <PostCard key={post.slug} post={post} />
+          ))}
+        </div>
       </div>
     </PageWrapper>
   );

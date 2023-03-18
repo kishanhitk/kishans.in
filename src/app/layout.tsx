@@ -1,7 +1,7 @@
 import { MainLayout } from "@layout";
 import "../styles/globals.css";
 import { Providers } from "./providers";
-import { Inter } from "next/font/google";
+import { Quicksand } from "next/font/google";
 import Script from "next/script";
 import { Metadata } from "next";
 import NProgressBar from "@components/NProgressBar";
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   },
 };
 
-const inter = Inter({
+const inter = Quicksand({
   subsets: ["latin"],
   display: "swap",
 });

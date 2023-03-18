@@ -13,8 +13,8 @@ module.exports = {
         "real-in-out": "cubic-bezier(0.42,0,0.58,1)",
       },
       fontFamily: {
-        sans: ["Inter", "system-ui"],
-        body: ['"Inter"'],
+        sans: ["Quicksand", "system-ui"],
+        body: ['"Quicksand"'],
       },
     },
   },
