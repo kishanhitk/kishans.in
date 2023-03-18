@@ -4,6 +4,7 @@ import PageWrapper from "@components/PageWrapper";
 import { getAllPostByUsername } from "@functions/hashnode";
 import PostCard from "@components/PostCard";
 import { Metadata } from "next";
+import Paragraph from "@components/Paragraph";
 
 export const metadata: Metadata = {
   title: "Kishan Kumar - Full Stack Developer",
@@ -47,14 +48,14 @@ const Home = async () => {
         <h1 className="text-4xl font-bold dark:text-white md:text-5xl">
           Hi, I&apos;m Kishan
         </h1>
-        <p className="text-md leading-7">
+        <Paragraph>
           Hey there! I&apos;m a self-taught full-stack developer hailing from
           India who loves hacking cool stuff! <strong>Next.js</strong> and{" "}
           <strong>Remix.run</strong> are my go-to weapons, but sometimes, I dive
           into the world of NFT smart contracts with <strong>Scilla</strong> on{" "}
           <strong>Zilliqa</strong>. You could say I&apos;m a jack of all trades,
           master of fun. 😄
-        </p>
+        </Paragraph>
         <SocialLinks />
         <h2 className="text-3xl font-bold">Recent Posts</h2>
         {posts?.map((post: HashnodePost) => (
