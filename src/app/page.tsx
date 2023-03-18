@@ -47,14 +47,13 @@ const Home = async () => {
         <h1 className="text-4xl font-bold dark:text-white md:text-5xl">
           Hi, I&apos;m Kishan
         </h1>
-        <p className="text-md">
-          I&apos;m a self-taught
-          <strong> full-stack developer </strong>
-          from India. I love hacking cool stuff. Primarily with
-          <strong>: Next.js</strong> or <strong>Remix.run</strong>, sometimes
-          NFT smart contracts with <strong>Scilla</strong> on{" "}
-          <strong>Zilliqa</strong>. Jack of all trades, you can say. Let&apos;s
-          build something cool together!
+        <p className="text-md leading-7">
+          Hey there! I&apos;m a self-taught full-stack developer hailing from
+          India who loves hacking cool stuff! <strong>Next.js</strong> and{" "}
+          <strong>Remix.run</strong> are my go-to weapons, but sometimes, I dive
+          into the world of NFT smart contracts with <strong>Scilla</strong> on{" "}
+          <strong>Zilliqa</strong>. You could say I&apos;m a jack of all trades,
+          master of fun. 😄
         </p>
         <SocialLinks />
         <h2 className="text-3xl font-bold">Recent Posts</h2>

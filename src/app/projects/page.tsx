@@ -30,8 +30,8 @@ const ProjectsPage = () => {
       <div className="mb-4 flex max-w-[700px] flex-col items-start justify-center gap-5">
         <h1 className="text-3xl font-bold">Projects</h1>
         <p>
-          I love learning new things everyday, and this list is a proof of work
-          for the same.
+          A cozy corner where I&apos;ve tinkered with some ideas. Feel free to
+          take a peek and explore!
         </p>
         <div className="item-start flex flex-col gap-6">
           {ProjectList.sort((prev, next) => prev.priority - next.priority).map(
