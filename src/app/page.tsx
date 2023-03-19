@@ -49,8 +49,8 @@ const Home = async () => {
           Hi, I&apos;m Kishan
         </h1>
         <Paragraph>
-          Hey there! I&apos;m a self-taught full-stack developer hailing from
-          India who loves hacking cool stuff! <strong>Next.js</strong> and{" "}
+          I&apos;m a self-taught full-stack developer hailing from India who
+          loves hacking cool stuff! <strong>Next.js</strong> and{" "}
           <strong>Remix.run</strong> are my go-to weapons, but sometimes, I dive
           into the world of NFT smart contracts with <strong>Scilla</strong> on{" "}
           <strong>Zilliqa</strong>. You could say I&apos;m a jack of all trades,
