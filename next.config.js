@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
-    runtime: "experimental-edge",
+    runtime: "edge",
     appDir: true,
   },
   images: {
