@@ -8,11 +8,12 @@ export default function ResumeLayout({
   return (
     <div
       style={{
-        margin: "0",
-        padding: "0",
+        margin: "0px",
+        padding: "0px",
         boxSizing: "border-box",
       }}
     >
+      Hello
       {children}
     </div>
   );

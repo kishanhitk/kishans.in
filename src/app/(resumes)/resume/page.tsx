@@ -21,6 +21,7 @@ function ResumePage() {
   return (
     <div style={{ height: "100vh" }}>
       <iframe
+        allow="fullscreen"
         src="https://kishans.in/assets/Kishan_Kumar_FullStack_Resume.pdf"
         width="100%"
         height="100%"
