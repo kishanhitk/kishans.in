@@ -1,6 +1,8 @@
 import PageWrapper from "@components/PageWrapper";
+import Paragraph from "@components/Paragraph";
+import ProfilePicture from "@components/ProfilePicture";
 import { SocialLinks } from "@components/SocialLinks";
-import Image from "next/image";
+import Link from "next/link";
 import { Metadata } from "next/types";
 import React from "react";
 
@@ -24,6 +26,7 @@ export const metadata: Metadata = {
 
 export const revalidate = 86400;
 
+// Main page component
 export default function Page() {
   return (
     <PageWrapper>
@@ -31,33 +34,36 @@ export default function Page() {
         <div className="w-full text-center">
           <h1 className="text-4xl font-bold md:text-5xl">About Me</h1>
         </div>
-        <div className="h-[181px] w-[181px] self-center rounded-full bg-purple-500 p-[1px]">
-          <Image
-            height={180}
-            width={180}
-            priority={true}
-            src="/assets/profile-pic.png"
-            alt="Kishan Kumar Photo"
-          ></Image>
-        </div>
-        <p className="text-md">
-          I&apos;m a self-taught developer from India. I love building cool
-          stuff for web and mobile using
-          <strong>: Javascript/Typescript</strong>, <strong> ReactJS</strong>,{" "}
-          <strong> NodeJS</strong>, <strong> Flutter</strong>, and
-          <strong> AWS</strong>.
-        </p>
-        <p className="text-md">
-          I document my journey through my{" "}
-          <a href="/blog" className="hover:underline">
-            blogs
-          </a>
-          . When I am not writing code, I am reading books on life and startups.
-          I love listening to lofi while coding.
-          <br />
-          <strong>Are you working on something exciting?</strong> <br />
-          Let&#39;s talk 👇
-        </p>
+        <ProfilePicture />
+        <Paragraph>
+          Hey there! I&apos;m a self-taught full-stack developer hailing from
+          India who loves hacking cool stuff! <strong>Next.js</strong> and{" "}
+          <strong>Remix.run</strong> are my go-to weapons, but sometimes, I dive
+          into the world of NFT smart contracts with <strong>Scilla</strong> on{" "}
+          <strong>Zilliqa</strong>. You could say I&apos;m a jack of all trades,
+          master of fun. 😄
+        </Paragraph>
+        <Paragraph>
+          I&apos;ve had my hands on two major NFT smart contracts for{" "}
+          <strong>The Soulless Citadel</strong>, the largest NFT project on
+          <strong> Zilliqa.</strong> One of these bad boys is a full-blown NFT
+          marketplace, packed with bidding, listing, purchasing, and more. The
+          other is an NFT minting contract with fancy discount mechanisms like
+          premining and whitelist. Oh, and I also whipped up the{" "}
+          <strong>GraphQL API</strong> for the Soulless Game, a real-time card
+          game where you can play with the NFTs you own. Pretty cool, huh?
+        </Paragraph>
+        <Paragraph>
+          When I&apos;m not busy typing away, I love sharing my coding
+          adventures on my <Link href="/blog">blog</Link>. I also unwind with
+          books on life and startups, and nothing beats coding with some chill
+          lofi beats in the background. 🎧
+        </Paragraph>
+        <Paragraph>
+          So, are you working on something that&apos;s got you jumping out of
+          your seat with excitement? Let&apos;s chat about it! Drop me a line
+          below. 👇😉
+        </Paragraph>
         <SocialLinks />
       </div>
     </PageWrapper>

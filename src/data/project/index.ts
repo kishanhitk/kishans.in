@@ -32,9 +32,9 @@ export const ProjectList: Projects = [
   {
     priority: 0,
     title: "Gita GPT",
-    slug: "jums-reboot",
-    summary:
-      "Gita GPT, find solce in the wisdom of Shree Krishna 🦚. Built with Next.js and OpenAI GPT-3. It generated advices based on Gita Shlokas for your life problems. The project got featured in leading Indian news portals, including TimesNow, The Economic Times, News18, FirstPost, and more. The website has received 5,42,574+ pageviews, 3,29,884+ unique visitors, and have processed 8,09,102+ API requests. It used vercel edge functions with streaming support to generate the advices from OpenAI and stream the data in parallel making the response feel surprisingly fast. Usage many optimizations to reduce the OpenAI API usage and make it free for everyone. When the userbase started growingly rapidly, I had to implement rate-limiter to limit the maxium number of request a user can make each day.",
+    slug: "gita-gpt",
+    summary: `
+    Gita GPT, a source of solace inspired by the wisdom of Shree Krishna 🦚, developed using Next.js and OpenAI GPT-3. This unique project offers personalized advice based on verses from the Bhagavad Gita, tailored to address life's challenges. The platform quickly gained recognition, with features in prominent Indian news outlets such as TimesNow, The Economic Times, News18, and FirstPost.\n\nWith impressive statistics, the website has garnered over 5,42,574+ pageviews, 3,29,884+ unique visitors, and processed 8,09,102+ API requests. To deliver surprisingly fast response times, Gita GPT employed Vercel edge functions with streaming support, allowing data to be streamed in parallel while generating advice from OpenAI.\n\nTo keep the service free for all users, various optimizations were implemented to minimize OpenAI API usage. As the user base rapidly expanded, a rate-limiter was introduced to manage the maximum number of daily requests per user, ensuring a fair and accessible experience for everyone.`,
     liveUrl: "https://gita.kishans.in",
     tags: [
       "Next.js",

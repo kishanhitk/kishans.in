@@ -4,6 +4,7 @@ import React from "react";
 import { FiGithub } from "react-icons/fi";
 import { IoOpenOutline } from "react-icons/io5";
 import { IconButton } from "./IconButton";
+import Paragraph from "./Paragraph";
 
 interface ProjectCardProps {
   project: Project;
@@ -32,7 +33,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
             />
           )}
         </div>
-        <p>{summary}</p>
+        <Paragraph>{summary}</Paragraph>
         <div className="flex flex-wrap gap-2">
           {tags.map((tag) => (
             <div

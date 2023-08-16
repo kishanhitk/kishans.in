@@ -39,7 +39,7 @@ export async function generateMetadata({
 
 export async function generateStaticParams() {
   const posts = await getAllPostByUsername("kishanhitk");
-  return posts.map((post) => ({
+  return posts.map((post: any) => ({
     slug: post.slug,
   }));
 }

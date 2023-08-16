@@ -16,7 +16,7 @@ function ResumePage() {
       />
       <div style={{ height: "100vh" }}>
         <iframe
-          src="https://kishanhitk.github.io/resume/KishanKumar-Frontend-Resume.pdf"
+          src="https://kishans.in/public/assets/Kishan_Kumar_FullStack_Resume.pdf"
           width="100%"
           height="100%"
         ></iframe>
