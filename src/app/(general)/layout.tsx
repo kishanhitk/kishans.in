@@ -1,6 +1,6 @@
 import { MainLayout } from "@layout";
-import "../styles/globals.css";
-import { Providers } from "./providers";
+import "../../styles/globals.css";
+import { Providers } from "../providers";
 import { Quicksand } from "next/font/google";
 import Script from "next/script";
 import { Metadata } from "next";
