@@ -35,7 +35,7 @@ export const SocialLinks = () => {
         icon={<IoLogoGooglePlaystore />}
       />
       <IconButton
-        href="/resume"
+        href="https://kishans.in/assets/Kishan_Kumar_FullStack_Resume.pdf"
         ariaLabel="Résumé"
         icon={<IoDocumentTextOutline />}
       />
