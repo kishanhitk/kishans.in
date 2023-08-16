@@ -9,10 +9,10 @@ dependencies:
     specifier: ^4.5.15
     version: 4.5.15
   framer-motion:
-    specifier: ^10.6.0
-    version: 10.6.0(react-dom@18.2.0)(react@18.2.0)
+    specifier: 10.16.0
+    version: 10.16.0(react-dom@18.2.0)(react@18.2.0)
   next:
-    specifier: 13.4.16
+    specifier: ^13.4.16
     version: 13.4.16(react-dom@18.2.0)(react@18.2.0)
   next-seo:
     specifier: ^5.15.0
@@ -24,10 +24,10 @@ dependencies:
     specifier: ^0.2.0
     version: 0.2.0
   react:
-    specifier: 18.2.0
+    specifier: ^18.2.0
     version: 18.2.0
   react-dom:
-    specifier: 18.2.0
+    specifier: ^18.2.0
     version: 18.2.0(react@18.2.0)
   react-icons:
     specifier: ^4.8.0
@@ -38,25 +38,25 @@ devDependencies:
     specifier: ^0.5.9
     version: 0.5.9(tailwindcss@3.2.7)
   '@types/node':
-    specifier: 18.15.3
+    specifier: ^18.15.3
     version: 18.15.3
   '@types/nprogress':
     specifier: ^0.2.0
     version: 0.2.0
   '@types/react':
-    specifier: 18.0.28
+    specifier: ^18.0.28
     version: 18.0.28
   '@types/react-dom':
-    specifier: 18.0.11
+    specifier: ^18.0.11
     version: 18.0.11
   autoprefixer:
     specifier: ^10.4.14
     version: 10.4.14(postcss@8.4.21)
   eslint:
-    specifier: 8.36.0
+    specifier: ^8.36.0
     version: 8.36.0
   eslint-config-next:
-    specifier: 13.2.4
+    specifier: ^13.2.4
     version: 13.2.4(eslint@8.36.0)(typescript@5.0.2)
   postcss:
     specifier: ^8.4.21
@@ -104,7 +104,7 @@ packages:
       eslint: ^6.0.0 || ^7.0.0 || >=8.0.0
     dependencies:
       eslint: 8.36.0
-      eslint-visitor-keys: 3.3.0
+      eslint-visitor-keys: 3.4.3
     dev: true
 
   /@eslint-community/regexpp@4.6.2:
@@ -397,7 +397,7 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dependencies:
       '@typescript-eslint/types': 5.48.2
-      eslint-visitor-keys: 3.3.0
+      eslint-visitor-keys: 3.4.3
     dev: true
 
   /acorn-jsx@5.3.2(acorn@8.10.0):
@@ -1076,11 +1076,6 @@ packages:
       estraverse: 5.3.0
     dev: true
 
-  /eslint-visitor-keys@3.3.0:
-    resolution: {integrity: sha512-mQ+suqKJVyeuwGYHAdjMFqjCyfl8+Ldnxuyp3ldiMBFKkvytrXUZWaiPCEav8qDHKty44bD+qV1IP4T+w+xXRA==}
-    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
-    dev: true
-
   /eslint-visitor-keys@3.4.3:
     resolution: {integrity: sha512-wpc+LXeiyiisxPlEkUzU6svyS1frIO3Mgxj1fdy7Pm8Ygzguax2N3Fa/D/ag1WqbOprdI+uY6wMUl8/a2G+iag==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
@@ -1105,7 +1100,7 @@ packages:
       doctrine: 3.0.0
       escape-string-regexp: 4.0.0
       eslint-scope: 7.1.1
-      eslint-visitor-keys: 3.3.0
+      eslint-visitor-keys: 3.4.3
       espree: 9.6.1
       esquery: 1.4.2
       esutils: 2.0.3
@@ -1241,8 +1236,8 @@ packages:
     resolution: {integrity: sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA==}
     dev: true
 
-  /framer-motion@10.6.0(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-RkZe8iBhdWNs1y2HfYh4WlM9Co11/Vu+JCSQzmLaP5alM3QbBiue6OkeXygfxsRDp4yCar95ExoHE0CZQNyuVQ==}
+  /framer-motion@10.16.0(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-R+88Mkr/1dr7XHjacwptfJyrywRzQ1HZX3YSZtN4tFMBq1O8GGCbDEv31Nf/H08o0hUXLC87GkxsR/1bZgwXfw==}
     peerDependencies:
       react: ^18.0.0
       react-dom: ^18.0.0
