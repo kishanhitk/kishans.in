@@ -12,10 +12,6 @@ module.exports = {
       transitionTimingFunction: {
         "real-in-out": "cubic-bezier(0.42,0,0.58,1)",
       },
-      fontFamily: {
-        sans: ["Quicksand", "system-ui"],
-        body: ['"Quicksand"'],
-      },
     },
   },
   plugins: [require("@tailwindcss/typography")],

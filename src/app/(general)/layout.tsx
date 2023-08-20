@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   },
 };
 
-const inter = Quicksand({
+const font = Quicksand({
   subsets: ["latin"],
   display: "swap",
 });
@@ -26,7 +26,7 @@ export default function RootLayout({
   const NEXT_PUBLIC_GOOGLE_ANALYTICS_ID =
     process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID;
   return (
-    <html lang="en" className={inter.className}>
+    <html lang="en" className={font.className}>
       <head>
         <Script
           id="microsoft-clarity"

@@ -18,8 +18,8 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
         <a className="w-full" href={liveUrl} target="_blank" rel="noreferrer">
           <Image className="mx-auto rounded-xl" src={img} alt={title}></Image>
         </a>
-        <div className="flex items-center gap-2">
-          <h3 className="text-xl font-bold">{title}</h3>
+        <div className="-mb-3 flex items-center gap-2 ">
+          <h3 className="text-2xl font-semibold">{title}</h3>
           <IconButton
             href={liveUrl}
             ariaLabel={title}
@@ -38,9 +38,9 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
           {tags.map((tag) => (
             <div
               key={tag}
-              className="rounded-md bg-blue-300 px-2 dark:bg-gray-700 "
+              className="rounded-md bg-gray-300 px-3 py-1 font-light dark:bg-gray-700 "
             >
-              #{tag}
+              {tag}
             </div>
           ))}
         </div>
