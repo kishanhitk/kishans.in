@@ -19,6 +19,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
           className="mx-auto w-full rounded-xl  rounded-b-none  object-cover"
           src={img}
           alt={title}
+          placeholder="blur"
         ></Image>
       </a>
       <div className="flex flex-col items-start gap-3 p-8 pt-2 ">
