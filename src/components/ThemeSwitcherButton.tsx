@@ -7,21 +7,19 @@ import { FiSun } from "react-icons/fi";
 export const ThemeSwitcherButton = () => {
   const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  let otherTheme = resolvedTheme === "dark" ? "light" : "dark";
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  if (!mounted) {
-    return null;
-  }
-
   return (
     <button
-      aria-label="Switch Theme"
-      onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
+      aria-label={mounted ? `Switch to ${otherTheme} theme` : "Toggle theme"}
+      onClick={() => setTheme(otherTheme)}
     >
-      {resolvedTheme === "dark" ? <FiSun /> : <FaMoon />}
+      <FaMoon className="hidden dark:block" />
+      <FiSun className="dark:hidden" />
     </button>
   );
 };
