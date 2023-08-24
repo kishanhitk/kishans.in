@@ -63,7 +63,7 @@ export const getPostBySlug = async (
           }
           updatedAt
           content {
-            html
+            markdown
           }
         }
       }

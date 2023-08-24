@@ -6,6 +6,7 @@ import {
   getPostMetadataBySlug,
 } from "@functions/hashnode";
 import { Metadata } from "next/types";
+import { MDXRemote } from "next-mdx-remote/rsc";
 
 export const revalidate = 86400; // revalidate every day
 
@@ -58,20 +59,13 @@ const Index = async ({ params: { slug } }: any) => {
     day: "numeric",
   });
 
-  function createMarkup() {
-    return { __html: content.html };
-  }
-
   return (
     <>
       <div className="prose dark:prose-invert">
         <h1 className="dark:text-white">{title}</h1>
         <p className="-mt-5 text-gray-500">{userLocalDate}</p>
         <Image src={coverImage.url} alt={title} height={900} width={900} />
-        <article
-          data-clarity-region="article"
-          dangerouslySetInnerHTML={createMarkup()}
-        ></article>
+        <MDXRemote source={content.markdown} />
       </div>
       <p className="mt-10 border-t pt-5">
         Liked this article? I keep writing about web development, design, and
