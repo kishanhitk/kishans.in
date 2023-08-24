@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 export const revalidate = 86400; // revalidate every day
 
 const getPosts = async () => {
-  return getAllPostByUsername("kishanhitk");
+  return getAllPostByUsername("blog.kishans.in");
 };
 
 const Home = async () => {
@@ -58,7 +58,7 @@ const Home = async () => {
         </Paragraph>
         <SocialLinks />
         <div>
-          <h2 className="mt-3 mb-5 text-3xl font-semibold">Recent posts</h2>
+          <h2 className="mb-5 mt-3 text-3xl font-semibold">Recent posts</h2>
           {posts?.map((post: HashnodePost) => (
             <PostCard key={post.slug} post={post} />
           ))}

@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 export const revalidate = 86400; // revalidate every day
 
 export async function generateStaticParams() {
-  const posts = await getAllPostByUsername("kishanhitk");
+  const posts = await getAllPostByUsername("blog.kishans.in");
 
   return posts.map((post) => ({
     slug: post.slug,
@@ -32,7 +32,7 @@ export async function generateStaticParams() {
 }
 
 const page = async () => {
-  const posts = await getAllPostByUsername("kishanhitk");
+  const posts = await getAllPostByUsername("blog.kishans.in");
   return (
     <>
       <h2 className="mb-10 text-3xl font-bold">Recent Posts</h2>

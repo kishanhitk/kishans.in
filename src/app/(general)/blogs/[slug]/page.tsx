@@ -14,7 +14,7 @@ export async function generateMetadata({
 }: any): Promise<Metadata> {
   const { title, brief, coverImage } = await getPostMetadataBySlug(
     slug,
-    "kishanhitk"
+    "blog.kishans.in"
   );
   return {
     title: title,
@@ -25,7 +25,7 @@ export async function generateMetadata({
       description: brief,
       images: [
         {
-          url: coverImage,
+          url: coverImage.url,
           width: 1200,
           height: 630,
           alt: title,
@@ -38,17 +38,19 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams() {
-  const posts = await getAllPostByUsername("kishanhitk");
+  const posts = await getAllPostByUsername("blog.kishans.in");
   return posts.map((post: any) => ({
     slug: post.slug,
   }));
 }
 
 const Index = async ({ params: { slug } }: any) => {
-  const { coverImage, title, dateAdded, content } = await getPostBySlug(
-    slug,
-    "kishanhitk"
-  );
+  const {
+    coverImage,
+    title,
+    updatedAt: dateAdded,
+    content,
+  } = await getPostBySlug(slug, "blog.kishans.in");
 
   const userLocalDate = new Date(dateAdded).toLocaleDateString("en-US", {
     year: "numeric",
@@ -57,7 +59,7 @@ const Index = async ({ params: { slug } }: any) => {
   });
 
   function createMarkup() {
-    return { __html: content };
+    return { __html: content.html };
   }
 
   return (
@@ -65,7 +67,7 @@ const Index = async ({ params: { slug } }: any) => {
       <div className="prose dark:prose-invert">
         <h1 className="dark:text-white">{title}</h1>
         <p className="-mt-5 text-gray-500">{userLocalDate}</p>
-        <Image src={coverImage} alt={title} height={900} width={900} />
+        <Image src={coverImage.url} alt={title} height={900} width={900} />
         <article
           data-clarity-region="article"
           dangerouslySetInnerHTML={createMarkup()}

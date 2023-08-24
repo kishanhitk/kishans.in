@@ -5,7 +5,7 @@ export async function GET(request: Request) {
   // Static pages
   const pages = ["/", "/resume", "/projects", "/blogs", "/about"];
 
-  const posts = await getAllPostByUsername("kishanhitk");
+  const posts = await getAllPostByUsername("blog.kishans.in");
 
   // Dynamic pages
   posts.forEach((post) => {

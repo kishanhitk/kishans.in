@@ -1,6 +1,6 @@
 import { HashnodePost, HashnodePostFull } from "@types";
 
-const API_URL = "https://api.hashnode.com"; // Replace with your GraphQL server URL
+const API_URL = "https://gql.hashnode.com";
 
 async function fetchGraphQL<T = any>(
   query: string,
@@ -22,25 +22,29 @@ async function fetchGraphQL<T = any>(
 }
 
 export const getAllPostByUsername = async (
-  username: string
+  host: string
 ): Promise<HashnodePost[]> => {
-  const query = `
-    query Posts($username: String!) {
-      user(username: $username) {
-        publication {
-          posts(page: 0) {
-            title
-            brief
-            slug
-            cuid
+  const query = /* GraphQL */ `
+    query Publication($host: String!) {
+      publication(host: $host) {
+        posts(first: 10) {
+          edges {
+            node {
+              title
+              brief
+              cuid
+              slug
+            }
           }
         }
       }
     }
   `;
 
-  const { data } = await fetchGraphQL(query, { username });
-  const posts: HashnodePost[] = data.user.publication.posts;
+  const { data } = await fetchGraphQL(query, { host });
+  const posts: HashnodePost[] = data.publication.posts.edges.map(
+    (post: any) => post.node
+  );
   return posts;
 };
 
@@ -48,21 +52,25 @@ export const getPostBySlug = async (
   slug: string,
   hostname: string
 ): Promise<HashnodePostFull> => {
-  const query = `
-    query Post($slug: String!, $hostname: String!) {
-      post(slug: $slug, hostname: $hostname) {
-        title
-        dateAdded
-        coverImage
-        content
-        slug
-        brief
+  const query = /* GraphQL */ `
+    query Publication($slug: String!, $hostname: String!) {
+      publication(host: $hostname) {
+        post(slug: $slug) {
+          title
+          brief
+          coverImage {
+            url
+          }
+          updatedAt
+          content {
+            html
+          }
+        }
       }
     }
   `;
-
   const { data } = await fetchGraphQL(query, { slug, hostname });
-  const post: HashnodePostFull = data.post;
+  const post: HashnodePostFull = data.publication.post;
   return post;
 };
 
@@ -70,19 +78,23 @@ export const getPostMetadataBySlug = async (
   slug: string,
   hostname: string
 ): Promise<HashnodePostFull> => {
-  const query = `
-    query Post($slug: String!, $hostname: String!) {
-      post(slug: $slug, hostname: $hostname) {
-        title
-        dateAdded
-        coverImage
-        slug
-        brief
+  const query = /* GraphQL */ `
+    query Publication($slug: String!, $hostname: String!) {
+      publication(host: $hostname) {
+        post(slug: $slug) {
+          title
+          updatedAt
+          coverImage {
+            url
+          }
+          slug
+          brief
+        }
       }
     }
   `;
 
   const { data } = await fetchGraphQL(query, { slug, hostname });
-  const post: HashnodePostFull = data.post;
+  const post: HashnodePostFull = data.publication.post;
   return post;
 };
