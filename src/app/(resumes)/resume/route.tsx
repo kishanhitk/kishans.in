@@ -6,7 +6,7 @@ export async function GET(request: Request) {
     process.cwd(),
     "public",
     "assets",
-    "Kishan_Kumar_FullStack_Resume.pdf"
+    "Kishan_Kumar_SDE_FullStack_Resume.pdf"
   );
 
   // Read the file as a Buffer
@@ -16,7 +16,7 @@ export async function GET(request: Request) {
     headers: {
       "Content-Type": "application/pdf",
       "Content-Disposition":
-        "inline; filename=Kishan_Kumar_FullStack_Resume.pdf",
+        "inline; filename=Kishan_Kumar_SDE_FullStack_Resume.pdf",
     },
   });
 }
