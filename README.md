@@ -16,4 +16,4 @@ My personal website built with
 * TypeScript
 * GraphQL
  
-Deployed on Vercel.
+Deployed on Vercel. 
