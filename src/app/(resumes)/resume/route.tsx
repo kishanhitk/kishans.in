@@ -1,6 +1,7 @@
 import { promises as fs } from "fs";
 import { join } from "path";
 
+export const runtime = "edge";
 export async function GET(request: Request) {
   const filePath = join(
     process.cwd(),

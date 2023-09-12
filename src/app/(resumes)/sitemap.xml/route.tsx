@@ -1,5 +1,5 @@
 import { getAllPostByUsername } from "@functions/hashnode";
-
+export const runtime = "edge";
 export async function GET(request: Request) {
   const baseURL = "https://kishans.in";
   // Static pages
