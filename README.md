@@ -9,7 +9,7 @@
 
 ![Lighthouse Score](https://user-images.githubusercontent.com/41117038/130624700-16d963fa-602b-40cf-b658-6026797e1daf.png)
 
-My personal website built with 
+My personal website built with
 
 * Next.js
 * tailwindcss
