@@ -4,7 +4,7 @@ import React from "react";
 import { FiGithub } from "react-icons/fi";
 import { IoOpenOutline } from "react-icons/io5";
 import { IconButton } from "./IconButton";
-import Paragraph from "./Paragraph";
+import { MDXRemote } from "next-mdx-remote/rsc";
 
 interface ProjectCardProps {
   project: Project;
@@ -38,7 +38,8 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
             />
           )}
         </div>
-        <Paragraph>{summary}</Paragraph>
+        <MDXRemote source={summary} />
+        {/* <Paragraph>{summary}</Paragraph> */}
         <div className="flex flex-wrap gap-2">
           {tags.map((tag) => (
             <div

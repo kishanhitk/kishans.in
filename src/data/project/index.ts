@@ -6,6 +6,8 @@ import HMDBBanner from "../../../public/assets/hmdb.webp";
 import SafeChat from "../../../public/assets/safechat.webp";
 import GitGramBanner from "../../../public/assets/gitgram.webp";
 import GitaGPT from "../../../public/assets/gita-gpt.png";
+import MyPRs from "../../../public/assets/myprs-banner.png";
+
 export const ProjectList: Projects = [
   {
     priority: 1,
@@ -30,11 +32,55 @@ export const ProjectList: Projects = [
     img: JUMSBanner,
   },
   {
+    priority: -1,
+    title: "MyPRs",
+    slug: "mypes",
+    summary: /* Markdown */ ` 
+    MyPRs: One link to highlight your Open-Source Contributions.
+    
+    
+    Just had a PR merged into your favourite OSS repo? 🎉
+Feeling super proud?
+But how do you spotlight this achievement?
+Adding every PR to your résumé isn’t feasible...
+
+
+Enter MyPRs: Curate, highlight, and share your proudest contributions seamlessly. Make every merge count!
+
+**Built with**:
+- Remix.run (build fast apps following web standards)
+- TailwindCSS
+- Vercel (the perfect place to deploy modern web apps. I tried all alternatives and finally chose Vercel)
+- Supabase
+- Framer Motion
+    `,
+    liveUrl: "https://myprs.xyz",
+    sourceUrl: "https://github.com/kishanhitk/myprs",
+    tags: ["Remix", "Streaming", "TypeScript", "Framer Motion", "Supabase"],
+    img: MyPRs,
+  },
+  {
     priority: 0,
     title: "Gita GPT",
     slug: "gita-gpt",
-    summary: `
-    Gita GPT, a source of solace inspired by the wisdom of Shree Krishna 🦚, developed using Next.js and OpenAI GPT-3. This unique project offers personalized advice based on verses from the Bhagavad Gita, tailored to address life's challenges. The platform quickly gained recognition, with features in prominent Indian news outlets such as TimesNow, The Economic Times, News18, and FirstPost.\n\nWith impressive statistics, the website has garnered over 5,42,574+ pageviews, 3,29,884+ unique visitors, and processed 8,09,102+ API requests. To deliver surprisingly fast response times, Gita GPT employed Vercel edge functions with streaming support, allowing data to be streamed in parallel while generating advice from OpenAI.\n\nTo keep the service free for all users, various optimizations were implemented to minimize OpenAI API usage. As the user base rapidly expanded, a rate-limiter was introduced to manage the maximum number of daily requests per user, ensuring a fair and accessible experience for everyone.`,
+    summary: /* Markdown */ ` 
+          **Gita GPT**: Find Solace in the wisdom of Shree Krishna 🦚
+          - 📈 **Metrics**: 
+            - **5,42,574+** Pageviews
+            - **3,29,884+** Unique Visitors
+            - **8,09,102+** OpenAI API Requests Processed
+---
+\n\n
+- 🗞 **Media Coverage**: Featured in **TimesNow, The Economic Times, News18, and FirstPost**.
+---
+- 🚀 **Tech Stack**: Built with Next.js and integrated with OpenAI's GPT-3.5.
+---
+- ⚡ **Performance**: Employed Vercel edge functions with streaming, ensuring blazing-fast responses.
+---
+          - 💡 **Optimization**: Strategies to minimize OpenAI API costs and rate-limiters for equitable access, ensuring the service remains *free* for all.
+`,
+    // summary: `
+    // Gita GPT, a source of solace inspired by the wisdom of Shree Krishna 🦚, developed using Next.js and OpenAI GPT-3.5. This unique project offers personalized advice based on verses from the Bhagavad Gita, tailored to address life's challenges. The platform quickly gained recognition, with features in prominent Indian news outlets such as **TimesNow, The Economic Times, News18**, and FirstPost.\n\nWith impressive statistics, the website has garnered over **5,42,574+** pageviews, **3,29,884+** unique visitors, and processed **8,09,102+** API requests. To deliver surprisingly fast response times, Gita GPT employed Vercel edge functions with streaming support, allowing data to be streamed in parallel while generating advice from OpenAI.\n\nTo keep the service free for all users, various optimizations were implemented to minimize OpenAI API usage. As the user base rapidly expanded, a rate-limiter was introduced to manage the maximum number of daily requests per user, ensuring a fair and accessible experience for everyone.`,
     liveUrl: "https://gita.kishans.in",
     tags: [
       "Next.js",
