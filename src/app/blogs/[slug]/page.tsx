@@ -63,7 +63,7 @@ const Index = async ({ params: { slug } }: any) => {
     <>
       <div className="prose dark:prose-invert">
         <h1 className="dark:text-white">{title}</h1>
-        <p className="-mt-5 text-gray-500">{userLocalDate}</p>
+        <p className="-mt-5 text-gray-500">Updated: {userLocalDate}</p>
         <Image src={coverImage.url} alt={title} height={900} width={900} />
         <MDXRemote source={content.markdown} />
       </div>
