@@ -33,12 +33,12 @@ export const metadata: Metadata = {
   },
 };
 
-export const revalidate = 0; // revalidate every day
+export const revalidate = 86400; // revalidate every day
 
+export const runtime = "edge";
 
 
 const Home =  () => {
-  console.log("Home");
   return (
     <PageWrapper>
       <div className="flex flex-col items-start gap-8">
