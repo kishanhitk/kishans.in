@@ -7,6 +7,7 @@ import { Metadata } from "next";
 import NProgressBar from "@components/NProgressBar";
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://kishans.in'),
   title: {
     default: "Kishan",
     template: "%s | Kishan Kumar",
