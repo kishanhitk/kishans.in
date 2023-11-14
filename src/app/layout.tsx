@@ -4,7 +4,6 @@ import { Providers } from "../utils/providers";
 import { Quicksand } from "next/font/google";
 import Script from "next/script";
 import { Metadata } from "next";
-import NProgressBar from "@components/NProgressBar";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://kishans.in'),
@@ -63,7 +62,6 @@ export default function RootLayout({
       </head>
       <body className="bg-white text-black dark:bg-[#1A1F2E] dark:text-white">
         <Providers>
-          <NProgressBar />
           <MainLayout>
             {children}
             </MainLayout>

@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 
 export const revalidate = 86400; // revalidate every day
 
-export const runtime = "edge";
+
 
 
 const Home =  () => {
