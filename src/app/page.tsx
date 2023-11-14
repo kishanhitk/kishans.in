@@ -1,10 +1,9 @@
 import { SocialLinks } from "@components/SocialLinks";
-import { HashnodePost } from "@types";
 import PageWrapper from "@components/PageWrapper";
-import { getAllPostByUsername } from "@functions/hashnode";
-import PostCard from "@components/PostCard";
 import { Metadata } from "next";
 import Paragraph from "@components/Paragraph";
+import RecentPosts from "@components/RecentPosts";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Kishan Kumar - Full Stack Developer",
@@ -36,12 +35,10 @@ export const metadata: Metadata = {
 
 export const revalidate = 86400; // revalidate every day
 
-const getPosts = async () => {
-  return getAllPostByUsername("blog.kishans.in");
-};
 
-const Home = async () => {
-  const posts = await getPosts();
+
+
+const Home =  () => {
   return (
     <PageWrapper>
       <div className="flex flex-col items-start gap-8">
@@ -58,10 +55,9 @@ const Home = async () => {
         </Paragraph>
         <SocialLinks />
         <div>
-          <h2 className="mb-5 mt-3 text-3xl font-semibold">Recent posts</h2>
-          {posts?.map((post: HashnodePost) => (
-            <PostCard key={post.slug} post={post} />
-          ))}
+            <Suspense fallback={<div />}>
+          <RecentPosts/>
+        </Suspense>
         </div>
       </div>
     </PageWrapper>

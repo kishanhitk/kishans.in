@@ -4,9 +4,9 @@ import { Providers } from "../utils/providers";
 import { Quicksand } from "next/font/google";
 import Script from "next/script";
 import { Metadata } from "next";
-import NProgressBar from "@components/NProgressBar";
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://kishans.in'),
   title: {
     default: "Kishan",
     template: "%s | Kishan Kumar",
@@ -29,6 +29,7 @@ export default function RootLayout({
     <html lang="en" className={font.className}>
       <head>
         <Script
+        defer
           id="microsoft-clarity"
           dangerouslySetInnerHTML={{
             __html: `
@@ -41,9 +42,11 @@ export default function RootLayout({
           }}
         />
         <Script
+        defer
           src={`https://www.googletagmanager.com/gtag/js?id=${NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`}
         />
         <Script
+        defer
           id="google-analytics"
           dangerouslySetInnerHTML={{
             __html: `
@@ -59,8 +62,9 @@ export default function RootLayout({
       </head>
       <body className="bg-white text-black dark:bg-[#1A1F2E] dark:text-white">
         <Providers>
-          <NProgressBar />
-          <MainLayout>{children}</MainLayout>
+          <MainLayout>
+            {children}
+            </MainLayout>
         </Providers>
       </body>
     </html>
