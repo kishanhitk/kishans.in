@@ -11,7 +11,7 @@
   "dependencies": {
     "@fontsource/inter": "^5.0.15",
     "framer-motion": "^10.16.5",
-    "next": "^14.0.2",
+    "next": "14.0.3-canary.7",
     "next-mdx-remote": "^4.4.1",
     "next-themes": "^0.2.1",
     "nprogress": "^0.2.0",

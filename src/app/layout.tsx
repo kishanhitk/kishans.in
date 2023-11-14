@@ -30,6 +30,7 @@ export default function RootLayout({
     <html lang="en" className={font.className}>
       <head>
         <Script
+        defer
           id="microsoft-clarity"
           dangerouslySetInnerHTML={{
             __html: `
@@ -42,9 +43,11 @@ export default function RootLayout({
           }}
         />
         <Script
+        defer
           src={`https://www.googletagmanager.com/gtag/js?id=${NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`}
         />
         <Script
+        defer
           id="google-analytics"
           dangerouslySetInnerHTML={{
             __html: `
@@ -61,7 +64,9 @@ export default function RootLayout({
       <body className="bg-white text-black dark:bg-[#1A1F2E] dark:text-white">
         <Providers>
           <NProgressBar />
-          <MainLayout>{children}</MainLayout>
+          <MainLayout>
+            {children}
+            </MainLayout>
         </Providers>
       </body>
     </html>
