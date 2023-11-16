@@ -35,10 +35,7 @@ export const metadata: Metadata = {
 
 export const revalidate = 86400; // revalidate every day
 
-
-
-
-const Home =  () => {
+const Home = () => {
   return (
     <PageWrapper>
       <div className="flex flex-col items-start gap-8">
@@ -55,9 +52,9 @@ const Home =  () => {
         </Paragraph>
         <SocialLinks />
         <div>
-            <Suspense fallback={<div />}>
-          <RecentPosts/>
-        </Suspense>
+          <Suspense fallback={<div />}>
+            <RecentPosts />
+          </Suspense>
         </div>
       </div>
     </PageWrapper>
