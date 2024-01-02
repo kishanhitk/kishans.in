@@ -47,6 +47,11 @@ const nextConfig = {
         permanent: false,
       },
       {
+        source: "/snapsearch",
+        destination: "https://chromewebstore.google.com/detail/snapsearch-better-search/aeblbpjamlpjfedjbkhnbiecmepbgkdo?hl=en",
+        permanent: true,
+      },
+      {
         source: "/cv",
         destination:
           "https://drive.google.com/file/d/1pwXoDhTbHCIXZvDRXEPnmVboId8PceyI/view?usp=sharing",
