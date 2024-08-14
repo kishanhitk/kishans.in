@@ -35,7 +35,6 @@ export function Providers({ children }: { children: React.ReactNode }) {
       <LazyMotion features={loadFeatures}>
         <AnimatePresence
           mode="wait"
-          initial={false}
           onExitComplete={() => window.scrollTo(0, 0)}
         >
           <ThemeWatcher />
