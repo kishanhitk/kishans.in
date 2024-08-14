@@ -1,10 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    ppr: true,
-  },
   images: {
-    domains: ["cdn.hashnode.com"],
+    remotePatterns:[
+      {
+        protocol: 'https',
+        hostname: 'cdn.hashnode.com',
+      },
+    ]
   },
   reactStrictMode: true,
   swcMinify: true,
