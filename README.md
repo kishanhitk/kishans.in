@@ -15,5 +15,6 @@ My personal website built with
 * tailwindcss
 * TypeScript
 * GraphQL
+* Vercel
  
 Deployed on Vercel.
