@@ -1,5 +1,7 @@
 ---
-import { Header } from '../components/Header';
+import Header from '../components/Header.astro';
+
+
 
 interface Props {
 	title: string;
@@ -23,3 +25,9 @@ const { title } = Astro.props;
 		<slot />
 	</body>
 </html>
+<style>
+	html.dark {
+  background-color: black;
+  color: #fff;
+}
+</style>
