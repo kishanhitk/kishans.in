@@ -49,7 +49,6 @@ export const getAllPostByUsername = async (
   const posts: HashnodePost[] = data.publication.posts.edges.map(
     (post: any) => post.node
   );
-  console.log(posts);
   return posts;
 };
 
