@@ -5,7 +5,6 @@ import { SocialLinks } from "@components/SocialLinks";
 import PageWrapper from "@components/PageWrapper";
 import Paragraph from "@components/Paragraph";
 import RecentPosts from "@components/RecentPosts";
-import { Suspense } from "react";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -49,9 +48,7 @@ const Home = () => {
           <SocialLinks />
         </motion.div>
         <motion.div variants={fadeInUp}>
-          <Suspense fallback={<div />}>
             <RecentPosts/>
-          </Suspense>
         </motion.div>
       </motion.div>
     </PageWrapper>
