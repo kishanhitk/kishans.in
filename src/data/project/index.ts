@@ -1,4 +1,3 @@
-
 import JUMSBanner from "../../../public/assets/jumsbanner.webp";
 import StrollBanner from "../../../public/assets/stroll.webp";
 import S6Banner from "../../../public/assets/s6banner.webp";

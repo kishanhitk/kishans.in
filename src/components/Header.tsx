@@ -1,8 +1,5 @@
-import {type ReactNode } from "react";
-import  { Routes } from "../config";
-
-
-
+import { type ReactNode } from "react";
+import { Routes } from "../config";
 
 interface NavLinkProps {
   url: string;
@@ -22,10 +19,7 @@ export const Header = ({ useAppDir = false }: HeaderProps) => {
            shadow-gray-500 transition-all duration-700 ease-real-in-out hover:rotate-[360deg]"
         href={Routes.home}
       >
-        <img
-          src="/assets/kishanlogo.png"
-          alt="Kishan"
-        ></img>
+        <img src="/assets/kishanlogo.png" alt="Kishan"></img>
       </a>
       <div className="flex ">
         <div className="flex items-center gap-3">

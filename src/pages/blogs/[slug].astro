@@ -1,10 +1,10 @@
 ---
-import { marked } from 'marked';
-import BlogPage from '../../components/blogs/BlogPage';
-import { getAllPostByUsername, getPostBySlug } from '../../functions/hashnode';
+import { marked } from "marked";
+import BlogPage from "../../components/blogs/BlogPage";
+import { getAllPostByUsername, getPostBySlug } from "../../functions/hashnode";
 
 export async function getStaticPaths() {
-    const posts = await getAllPostByUsername("blog.kishans.in")
+  const posts = await getAllPostByUsername("blog.kishans.in");
   return posts.map((post) => ({
     params: { slug: post.slug },
     props: { post },
@@ -17,9 +17,7 @@ const blog = await getPostBySlug(slug, "blog.kishans.in");
 console.log(blog);
 const content = marked.parse(blog.content.markdown);
 ---
-<BlogPage client:load
-post={blog}
 
-/>
+<BlogPage client:load post={blog} />
 
-<div set:html={content}></div>
+<div set:html={content} />

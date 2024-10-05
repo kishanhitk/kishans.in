@@ -1,8 +1,7 @@
 import { FiGithub } from "react-icons/fi";
 import { IoOpenOutline } from "react-icons/io5";
 import type { Project } from "../../types";
-import  { IconButton } from "../shared/IconButton";
-
+import { IconButton } from "../shared/IconButton";
 
 interface ProjectCardProps {
   project: Project;

@@ -1,15 +1,13 @@
 import type { HashnodePost, HashnodePostFull } from "../types/hashnode";
 
-
 const API_URL = "https://gql.hashnode.com";
 
 async function fetchGraphQL<T = any>(
   query: string,
-  variables: object
+  variables: object,
 ): Promise<T> {
   const response = await fetch(API_URL, {
-
-    cache:"force-cache",
+    cache: "force-cache",
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -25,7 +23,7 @@ async function fetchGraphQL<T = any>(
 }
 
 export const getAllPostByUsername = async (
-  host: string
+  host: string,
 ): Promise<HashnodePost[]> => {
   const query = /* GraphQL */ `
     query Publication($host: String!) {
@@ -46,14 +44,14 @@ export const getAllPostByUsername = async (
 
   const { data } = await fetchGraphQL(query, { host });
   const posts: HashnodePost[] = data.publication.posts.edges.map(
-    (post: any) => post.node
+    (post: any) => post.node,
   );
   return posts;
 };
 
 export const getPostBySlug = async (
   slug: string,
-  hostname: string
+  hostname: string,
 ): Promise<HashnodePostFull> => {
   const query = /* GraphQL */ `
     query Publication($slug: String!, $hostname: String!) {
@@ -79,7 +77,7 @@ export const getPostBySlug = async (
 
 export const getPostMetadataBySlug = async (
   slug: string,
-  hostname: string
+  hostname: string,
 ): Promise<HashnodePostFull> => {
   const query = /* GraphQL */ `
     query Publication($slug: String!, $hostname: String!) {
