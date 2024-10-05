@@ -10,7 +10,6 @@ async function fetchGraphQL<T = any>(
     next:{
       revalidate: 604800,
     },
-    cache:"force-cache",
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -31,9 +30,11 @@ export const getAllPostByUsername = async (
   const query = /* GraphQL */ `
     query Publication($host: String!) {
       publication(host: $host) {
+        id
         posts(first: 11) {
           edges {
             node {
+              id
               title
               brief
               cuid
@@ -59,7 +60,9 @@ export const getPostBySlug = async (
   const query = /* GraphQL */ `
     query Publication($slug: String!, $hostname: String!) {
       publication(host: $hostname) {
+        id
         post(slug: $slug) {
+          id
           title
           brief
           coverImage {
@@ -85,7 +88,9 @@ export const getPostMetadataBySlug = async (
   const query = /* GraphQL */ `
     query Publication($slug: String!, $hostname: String!) {
       publication(host: $hostname) {
+        id
         post(slug: $slug) {
+          id
           title
           updatedAt
           coverImage {
