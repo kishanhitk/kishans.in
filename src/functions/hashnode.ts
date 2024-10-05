@@ -31,7 +31,7 @@ export const getAllPostByUsername = async (
   const query = /* GraphQL */ `
     query Publication($host: String!) {
       publication(host: $host) {
-        posts(first: 10) {
+        posts(first: 11) {
           edges {
             node {
               title
@@ -49,6 +49,7 @@ export const getAllPostByUsername = async (
   const posts: HashnodePost[] = data.publication.posts.edges.map(
     (post: any) => post.node
   );
+  console.log(posts);
   return posts;
 };
 
