@@ -26,7 +26,7 @@ export async function generateMetadata({
       description: brief,
       images: [
         {
-          url: coverImage.url,
+          url: coverImage?.url,
           width: 1200,
           height: 630,
           alt: title,
@@ -64,7 +64,11 @@ const Index = async ({ params: { slug } }: any) => {
       <div className="prose dark:prose-invert">
         <h1 className="dark:text-white">{title}</h1>
         <p className="-mt-5 text-gray-500">Updated: {userLocalDate}</p>
-        <Image src={coverImage.url} alt={title} height={900} width={900} />
+        {
+          coverImage?.url ? (
+            <Image src={coverImage.url} alt={title} height={900} width={900} />
+          ) : null
+        }
         <MDXRemote source={content.markdown} />
       </div>
       <p className="mt-10 border-t pt-5">
