@@ -1,0 +1,18 @@
+
+---
+import { getAllPostByUsername } from '../../functions/hashnode';
+import type { HashnodePost } from '../../types/hashnode';
+import PostCard from './PostCard';
+const posts = await  getAllPostByUsername("blog.kishans.in");
+---
+
+
+
+    <div>
+      <h2 class="mb-5 mt-3 text-3xl font-semibold">Recent posts</h2>
+      {posts?.map((post: HashnodePost) => (
+        <PostCard post={post} client:load />
+      ))}
+    </div>
+
+
