@@ -8,6 +8,7 @@ export type Project = {
   liveUrl: string;
   tags: string[];
   img: StaticImageData;
+  imgSrc?: string;
   priority: number;
 };
 

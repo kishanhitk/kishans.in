@@ -8,15 +8,15 @@ interface ProjectCardProps {
 }
 
 export const ProjectCard = ({ project }: ProjectCardProps) => {
-  const { title, sourceUrl, liveUrl, summary, tags, img } = project;
+  const { title, sourceUrl, liveUrl, summary, tags, img, imgSrc } = project;
   return (
     <div className="rounded-xl bg-gray-100 dark:border-none dark:bg-gray-800">
       <a className="w-full" href={liveUrl} target="_blank" rel="noreferrer">
         <img
           className="mx-auto w-full rounded-xl  rounded-b-none  object-cover"
-          src={img}
+          src={imgSrc}
           alt={title}
-        ></img>
+        />
       </a>
       <div className="flex flex-col items-start gap-3 p-8 pt-2 ">
         <div className="-mb-3 flex items-center gap-2 ">

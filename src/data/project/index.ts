@@ -30,6 +30,7 @@ export const ProjectList: Projects = [
       "FCM",
     ],
     img: JUMSBanner,
+    imgSrc: "/assets/jumsbanner.webp",
   },
   {
     priority: -1,
@@ -42,7 +43,7 @@ export const ProjectList: Projects = [
     Just had a PR merged into your favourite OSS repo? 🎉
 Feeling super proud?
 But how do you spotlight this achievement?
-Adding every PR to your résumé isn’t feasible...
+Adding every PR to your résumé isn't feasible...
 
 
 Enter MyPRs: Curate, highlight, and share your proudest contributions seamlessly. Make every merge count!
@@ -58,6 +59,7 @@ Enter MyPRs: Curate, highlight, and share your proudest contributions seamlessly
     sourceUrl: "https://github.com/kishanhitk/myprs",
     tags: ["Remix", "Streaming", "TypeScript", "Framer Motion", "Supabase"],
     img: MyPRs,
+    imgSrc: "/assets/myprs-banner.png",
   },
   {
     priority: 0,
@@ -79,8 +81,6 @@ Enter MyPRs: Curate, highlight, and share your proudest contributions seamlessly
 ---
           - 💡 **Optimization**: Strategies to minimize OpenAI API costs and rate-limiters for equitable access, ensuring the service remains *free* for all.
 `,
-    // summary: `
-    // Gita GPT, a source of solace inspired by the wisdom of Shree Krishna 🦚, developed using Next.js and OpenAI GPT-3.5. This unique project offers personalized advice based on verses from the Bhagavad Gita, tailored to address life's challenges. The platform quickly gained recognition, with features in prominent Indian news outlets such as **TimesNow, The Economic Times, News18**, and FirstPost.\n\nWith impressive statistics, the website has garnered over **5,42,574+** pageviews, **3,29,884+** unique visitors, and processed **8,09,102+** API requests. To deliver surprisingly fast response times, Gita GPT employed Vercel edge functions with streaming support, allowing data to be streamed in parallel while generating advice from OpenAI.\n\nTo keep the service free for all users, various optimizations were implemented to minimize OpenAI API usage. As the user base rapidly expanded, a rate-limiter was introduced to manage the maximum number of daily requests per user, ensuring a fair and accessible experience for everyone.`,
     liveUrl: "https://gita.kishans.in",
     tags: [
       "Next.js",
@@ -91,6 +91,7 @@ Enter MyPRs: Curate, highlight, and share your proudest contributions seamlessly
       "Firebase",
     ],
     img: GitaGPT,
+    imgSrc: "/assets/gita-gpt.png",
   },
   {
     priority: 1,
@@ -102,6 +103,7 @@ Enter MyPRs: Curate, highlight, and share your proudest contributions seamlessly
     liveUrl: "http://stroll-land.vercel.app/",
     tags: ["JavaScript", "Extension", "DOM"],
     img: StrollBanner,
+    imgSrc: "/assets/stroll.webp",
   },
   {
     priority: 2,
@@ -113,6 +115,7 @@ Enter MyPRs: Curate, highlight, and share your proudest contributions seamlessly
     liveUrl: "http://hmdb-next.vercel.app/",
     tags: ["React", "Next.js", "TypeScript", "ChakraUI", "SSG"],
     img: HMDBBanner,
+    imgSrc: "/assets/hmdb.webp",
   },
   {
     priority: 3,
@@ -124,6 +127,7 @@ Enter MyPRs: Curate, highlight, and share your proudest contributions seamlessly
     liveUrl: "https://git-gram.netlify.app/",
     tags: ["React", "JavaScript", "MaterialUI", "Firebase", "Framer Motion"],
     img: GitGramBanner,
+    imgSrc: "/assets/gitgram.webp",
   },
   {
     priority: 4,
@@ -142,6 +146,7 @@ Enter MyPRs: Curate, highlight, and share your proudest contributions seamlessly
       "Instant Messaging",
     ],
     img: SafeChat,
+    imgSrc: "/assets/safechat.webp",
   },
   {
     priority: 5,
@@ -154,5 +159,6 @@ Enter MyPRs: Curate, highlight, and share your proudest contributions seamlessly
       "https://play.google.com/store/apps/details?id=com.kishans.s6chat&hl=en&gl=US",
     tags: ["Flutter", "Firebase", "Instant Messaging"],
     img: S6Banner,
+    imgSrc: "/assets/s6banner.webp",
   },
 ];
