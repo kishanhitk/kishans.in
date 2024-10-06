@@ -75,14 +75,14 @@ const Index = async ({ params: { slug } }: any) => {
         Liked this article? I keep writing about web development, design, and
         other stuff. <br />
         Follow me on
-        <span>
+        {" "}
           <a
             href={`https://blog.kishans.in/${slug}`}
-            className="underline decoration-dotted"
-          >
-            Hashnode
-          </a>{" "}
-        </span>
+            className="underline decoration-dotted inline-block"
+            >
+             Hashnode 
+          </a>
+            {" "}
         to get notified when I publish a new article.
       </p>
     </>
