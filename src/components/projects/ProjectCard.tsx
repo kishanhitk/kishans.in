@@ -2,13 +2,14 @@ import { FiGithub } from "react-icons/fi";
 import { IoOpenOutline } from "react-icons/io5";
 import type { Project } from "../../types";
 import { IconButton } from "../shared/IconButton";
-
+import { marked } from "marked";
 interface ProjectCardProps {
   project: Project;
 }
 
 export const ProjectCard = ({ project }: ProjectCardProps) => {
   const { title, sourceUrl, liveUrl, summary, tags, img, imgSrc } = project;
+  const content = marked.parse(summary);
   return (
     <div className="rounded-xl bg-gray-100 dark:border-none dark:bg-gray-800">
       <a className="w-full" href={liveUrl} target="_blank" rel="noreferrer">
@@ -34,7 +35,10 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
             />
           )}
         </div>
-        <div dangerouslySetInnerHTML={{ __html: summary }} />
+        <div
+          className="max-w-xl whitespace-pre-wrap"
+          dangerouslySetInnerHTML={{ __html: content }}
+        />
         {/* <Paragraph>{summary}</Paragraph> */}
         <div className="flex flex-wrap gap-2">
           {tags.map((tag) => (

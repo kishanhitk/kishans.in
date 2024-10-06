@@ -13,6 +13,7 @@
     "@astrojs/check": "^0.9.4",
     "@astrojs/react": "^3.6.2",
     "@astrojs/tailwind": "^5.1.1",
+    "@fontsource-variable/manrope": "^5.1.0",
     "@fontsource/inter": "^5.1.0",
     "astro": "^4.15.11",
     "framer-motion": "^11.11.1",
