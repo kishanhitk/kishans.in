@@ -1,7 +1,7 @@
 interface BlogPageProps {
   post: {
     title: string;
-    dateAdded: string;
+    updatedAt: string;
     coverImage: {
       url: string;
     };
@@ -13,8 +13,8 @@ interface BlogPageProps {
 }
 
 const Index = ({ post }: BlogPageProps) => {
-  const { title, dateAdded, coverImage, content, slug } = post;
-  const userLocalDate = new Date(dateAdded).toLocaleDateString("en-US", {
+  const { title, updatedAt, coverImage, content, slug } = post;
+  const userLocalDate = new Date(updatedAt).toLocaleDateString("en-US", {
     year: "numeric",
     month: "long",
     day: "numeric",
