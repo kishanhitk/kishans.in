@@ -17,7 +17,7 @@ const posts = await getAllPostByUsername("blog.kishans.in");
         posts?.map((post: HashnodePost, index) => {
           return (
             <>
-              <Writing post={post} client:load />
+              <Writing post={post} />
               {index !== posts.length - 1 && <Separator className="my-7" />}
             </>
           );

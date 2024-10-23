@@ -5,7 +5,7 @@ import tailwind from "@astrojs/tailwind";
 
 import react from "@astrojs/react";
 
-import vercel from "@astrojs/vercel/serverless";
+import vercel from "@astrojs/vercel/static";
 
 // https://astro.build/config
 export default defineConfig({
@@ -25,9 +25,6 @@ export default defineConfig({
     imagesConfig: {
       domains: ["images.unsplash.com"],
       sizes: [320, 640, 1280],
-    },
-    isr: {
-      expiration: 60 * 60 * 24, // 1 day
     },
   }),
 });
