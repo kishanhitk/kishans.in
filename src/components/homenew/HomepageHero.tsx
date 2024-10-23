@@ -6,12 +6,13 @@ const HomepageHero = () => {
     <div className="container">
       <h1 className="text-4xl font-bold text-gray-900">Hello, I'm Kishan.</h1>
       <h2 className="text-2xl text-gray-500 mt-2">
-        I'm a software engineer and a writer.
+        A product engineer from India.
       </h2>
       <p className="text-xl mt-5 text-gray-700">
-        I write about software engineering, design, and the intersection of the
-        two. I'm currently working on a book about the future of software
-        engineering.
+        A developer with a product mindset, keen attention to detail, and a
+        passion for web performance optimization. I build efficient, scalable
+        products that enhance user experience across modern web applications.
+        Currently working at Quinence.
       </p>
       <Button className="mt-8 px-8 rounded-full py-5 font-mono" asChild>
         <a href="/about">

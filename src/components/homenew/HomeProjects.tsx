@@ -29,7 +29,7 @@ const projects = [
     title: "Gita GPT",
     description: "Find Solace in the wisdom of Shree Krishna 🦚",
     image: "/assets/gita-gpt.png",
-    link: "https://gita.kishans.xyz",
+    link: "https://gita.kishans.in",
   },
   {
     title: "JUMS Reboot",
