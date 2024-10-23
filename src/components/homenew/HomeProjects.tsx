@@ -9,54 +9,42 @@ const HomeProjects = () => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto mt-16">
         <div className="rounded-2xl overflow-hidden p-10 bg-gray-100">
-          <img
-            src="https://alexpate.com/_next/image?url=%2Fhystruct.png&w=640&q=90"
-            alt=""
-            className="rounded-2xl"
-          />
+          <img src="/assets/myprs-banner.png" alt="" className="rounded-2xl" />
           <div className="mt-4">
-            <h5 className="text-xl font-semibold">Hystruct</h5>
+            <h5 className="text-xl font-semibold">MyPRs</h5>
             <p className="text-black/70 mt-1">
-              A tool for building better websites.
+              One link to highlight your Open-Source Contributions.
             </p>
           </div>
         </div>
         <div className="rounded-xl overflow-hidden p-10 bg-gray-100">
-          <img
-            src="https://alexpate.com/_next/image?url=%2Fhystruct.png&w=640&q=90"
-            alt=""
-            className="rounded-xl"
-          />
+          <img src="/assets/gita-gpt.png" alt="" className="rounded-xl" />
           <div className="mt-4">
-            <h5 className="text-xl font-semibold">Hystruct</h5>
+            <h5 className="text-xl font-semibold">Gita GPT</h5>
             <p className="text-black/70 mt-1">
-              A tool for building better websites.
+              Find Solace in the wisdom of Shree Krishna 🦚
             </p>
           </div>
         </div>
         <div className="rounded-xl overflow-hidden p-10 bg-gray-100">
-          <img
-            src="https://alexpate.com/_next/image?url=%2Fhystruct.png&w=640&q=90"
-            alt=""
-            className="rounded-xl"
-          />
+          <img src="/assets/jumsbanner.webp" alt="" className="rounded-xl" />
           <div className="mt-4">
-            <h5 className="text-xl font-semibold">Hystruct</h5>
+            <h5 className="text-xl font-semibold">JUMS Reboot</h5>
             <p className="text-black/70 mt-1">
-              A tool for building better websites.
+              All in-one app for Jadavpur University Students.
             </p>
           </div>
         </div>
         <div className="rounded-xl overflow-hidden p-10 bg-gray-100">
-          <img
-            src="https://alexpate.com/_next/image?url=%2Fhystruct.png&w=640&q=90"
-            alt=""
-            className="rounded-xl"
-          />
+          <img src="/assets/stroll.webp" alt="" className="rounded-xl" />
+
           <div className="mt-4">
-            <h5 className="text-xl font-semibold">Hystruct</h5>
+            <h5 className="text-xl font-semibold">
+              Stroll - The Dev Extension
+            </h5>
             <p className="text-black/70 mt-1">
-              A tool for building better websites.
+              A browser extension that automatically scrolls your browser to the
+              most relevant answer while browsing Stack-Overflow.
             </p>
           </div>
         </div>
