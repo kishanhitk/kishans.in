@@ -29,9 +29,11 @@ export const getAllPostByUsername = async (
     query Publication($host: String!) {
       publication(host: $host) {
         id
+        id
         posts(first: 11) {
           edges {
             node {
+              id
               id
               title
               brief
@@ -60,7 +62,9 @@ export const getPostBySlug = async (
     query Publication($slug: String!, $hostname: String!) {
       publication(host: $hostname) {
         id
+        id
         post(slug: $slug) {
+          id
           id
           title
           brief
@@ -90,7 +94,9 @@ export const getPostMetadataBySlug = async (
     query Publication($slug: String!, $hostname: String!) {
       publication(host: $hostname) {
         id
+        id
         post(slug: $slug) {
+          id
           id
           title
           updatedAt
