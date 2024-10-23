@@ -4,7 +4,7 @@ const HomeProjects = () => {
       <div className="container">
         <h3 className="text-2xl font-semibold">Personal Projects</h3>
         <h4 className="text-xl text-black/70 mt-4">
-          Some of my personal projects.
+          Building things is my therapy.
         </h4>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto mt-16">
