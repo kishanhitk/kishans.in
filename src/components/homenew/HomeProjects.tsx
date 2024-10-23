@@ -7,7 +7,7 @@ const HomeProjects = () => {
           Building things is my therapy.
         </h4>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-8 max-w-6xl mx-auto mt-8 sm:mt-16">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 max-w-6xl mx-auto mt-8 sm:mt-16">
         {projects.map((project) => (
           <ProjectCard key={project.title} {...project} />
         ))}
