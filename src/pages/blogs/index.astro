@@ -1,0 +1,28 @@
+---
+import type { HashnodePost } from "@/types";
+import { getAllPostByUsername } from "../../functions/hashnode";
+import PostCard from "../../components/homenew/WritingNew";
+import { Separator } from "../../components/ui/separator";
+import Layout from "@/layouts/Layout.astro";
+
+const posts = await getAllPostByUsername("blog.kishans.in");
+---
+
+<Layout title="Blogs">
+  <div class="container mb-20 min-h-screen">
+    <h1 class="text-4xl font-bold text-gray-900">Recent Writings</h1>
+
+    <div class="mt-6">
+      {
+        posts?.map((post: HashnodePost, index) => {
+          return (
+            <>
+              <PostCard post={post} client:load />
+              {index !== posts.length - 1 && <Separator className="my-7" />}
+            </>
+          );
+        })
+      }
+    </div>
+  </div>
+</Layout>

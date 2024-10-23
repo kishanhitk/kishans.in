@@ -8,49 +8,67 @@ const HomeProjects = () => {
         </h4>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto mt-16">
-        <div className="rounded-2xl overflow-hidden p-10 bg-gray-100">
-          <img src="/assets/myprs-banner.png" alt="" className="rounded-2xl" />
-          <div className="mt-4">
-            <h5 className="text-xl font-semibold">MyPRs</h5>
-            <p className="text-black/70 mt-1">
-              One link to highlight your Open-Source Contributions.
-            </p>
-          </div>
-        </div>
-        <div className="rounded-xl overflow-hidden p-10 bg-gray-100">
-          <img src="/assets/gita-gpt.png" alt="" className="rounded-xl" />
-          <div className="mt-4">
-            <h5 className="text-xl font-semibold">Gita GPT</h5>
-            <p className="text-black/70 mt-1">
-              Find Solace in the wisdom of Shree Krishna 🦚
-            </p>
-          </div>
-        </div>
-        <div className="rounded-xl overflow-hidden p-10 bg-gray-100">
-          <img src="/assets/jumsbanner.webp" alt="" className="rounded-xl" />
-          <div className="mt-4">
-            <h5 className="text-xl font-semibold">JUMS Reboot</h5>
-            <p className="text-black/70 mt-1">
-              All in-one app for Jadavpur University Students.
-            </p>
-          </div>
-        </div>
-        <div className="rounded-xl overflow-hidden p-10 bg-gray-100">
-          <img src="/assets/stroll.webp" alt="" className="rounded-xl" />
-
-          <div className="mt-4">
-            <h5 className="text-xl font-semibold">
-              Stroll - The Dev Extension
-            </h5>
-            <p className="text-black/70 mt-1">
-              A browser extension that automatically scrolls your browser to the
-              most relevant answer while browsing Stack-Overflow.
-            </p>
-          </div>
-        </div>
+        {projects.map((project) => (
+          <ProjectCard key={project.title} {...project} />
+        ))}
       </div>
     </div>
   );
 };
 
 export default HomeProjects;
+
+const projects = [
+  {
+    title: "MyPRs",
+    description: "One link to highlight your Open-Source Contributions.",
+    image: "/assets/myprs-banner.png",
+    link: "https://myprs.xyz",
+  },
+  {
+    title: "Gita GPT",
+    description: "Find Solace in the wisdom of Shree Krishna 🦚",
+    image: "/assets/gita-gpt.png",
+    link: "https://gita.kishans.xyz",
+  },
+  {
+    title: "JUMS Reboot",
+    description: "All in-one app for Jadavpur University Students.",
+    image: "/assets/jumsbanner.webp",
+    link: "https://play.google.com/store/apps/details?id=com.kishans.jumsRebootFlutter&hl=en_IN",
+  },
+  {
+    title: "Stroll - The Dev Extension",
+    description:
+      "A browser extension that automatically scrolls your browser to the most relevant answer while browsing Stack-Overflow.",
+    image: "/assets/stroll.webp",
+    link: "https://stroll-land.vercel.app",
+  },
+];
+
+const ProjectCard = ({
+  title,
+  description,
+  image,
+  link,
+}: {
+  title: string;
+  description: string;
+  image: string;
+  link: string;
+}) => {
+  return (
+    <a
+      href={link}
+      className="rounded-xl overflow-hidden p-10 bg-gray-100"
+      target="_blank"
+      rel="noreferrer"
+    >
+      <img src={image} alt="" className="rounded-xl" />
+      <div className="mt-4">
+        <h5 className="text-xl font-semibold">{title}</h5>
+        <p className="text-black/70 mt-1">{description}</p>
+      </div>
+    </a>
+  );
+};
