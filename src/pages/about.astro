@@ -1,8 +1,44 @@
 ---
-import AboutPage from "../components/about/AboutPage";
-import Layout from "../layouts/Layout.astro";
+import { Separator } from "@/components/ui/separator";
+import Layout from "@/layouts/Layout.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-  <AboutPage />
+<Layout title="Blogs">
+  <div class="container mb-20 min-h-screen">
+    <h1 class="text-4xl font-bold text-gray-900">About Me</h1>
+    <Separator className="my-7" />
+    <p class="text-xl text-gray-600 leading-9">
+      Hi there, I'm Kishan. I build modern web products with a focus on
+      efficiency and scalability, along with an interest in AI products. I
+      currently work as a Full-Stack Developer at Quinence, where I lead and
+      contribute to various projects.
+      <br />
+      <br />
+      Most recently, at Quinence, I have been leading the redevelopment of Fuschia
+      Careers, a high-volume recruiting platform, enhancing its performance and functionality
+      while integrating AI (LLM) to optimize recruiter workflows. Additionally, I
+      work on a personalized tech training platform, Modern Fullstack, where I designed
+      and developed the website architecture and backend, improving the platform’s
+      performance by 10X. I was also involved in building the course content.<br
+      />
+      <br />Previously, I worked with The Soulless Citadel, a blockchain NFT
+      project, where I developed a high-performance, real-time game backend and
+      smart contracts for the marketplace, facilitating over 2,200 transactions
+      and generating sales of nearly $370,000. <br />
+      <br />I’ve always been passionate about web performance, optimizing
+      systems to be fast and scalable, while maintaining attention to detail and
+      a strong product mindset. Whether it's building email automation tools,
+      crafting interactive courses, or working on AI-driven platforms, my goal
+      is always to enhance the user experience through thoughtful engineering
+      and innovation. <br />
+      <br />If you’re interested in collaborating or have a project in mind,
+      feel free to reach out to me at
+      <a
+        href="mailto:hello@kishans.in?cc=kishansharma1231@gmail.com&subject=Hey%20Kishan%2C%20we%20have%20some%20exiting%20opportunity%20for%20you"
+        class="text-black underline"
+      >
+        hello@kishans.in.
+      </a>
+    </p>
+  </div>
 </Layout>
