@@ -11,12 +11,19 @@ export default {
       center: "true",
       screens: {
         sm: "640px",
-        md: "768px",
-        lg: "768px",
-        xl: "768px",
+        md: "700px",
+        lg: "700px",
+        xl: "700px",
       },
     },
     extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            maxWidth: "100ch",
+          },
+        },
+      },
       transitionTimingFunction: {
         "real-in-out": "cubic-bezier(0.42,0,0.58,1)",
       },
