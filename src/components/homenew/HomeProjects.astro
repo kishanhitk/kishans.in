@@ -1,0 +1,49 @@
+---
+import ProjectCard from "./ProjectCard.astro";
+import myPRsBanner from "@/assets/myprs-banner.png";
+import gitaGPTBanner from "@/assets/gita-gpt.png";
+import jumsBanner from "@/assets/jumsbanner.webp";
+import strollBanner from "@/assets/stroll.webp";
+
+const projects = [
+  {
+    title: "MyPRs",
+    description: "One link to highlight your Open-Source Contributions.",
+    image: myPRsBanner,
+    link: "https://myprs.xyz",
+  },
+  {
+    title: "Gita GPT",
+    description: "Find Solace in the wisdom of Shree Krishna 🦚",
+    image: gitaGPTBanner,
+    link: "https://gita.kishans.in",
+  },
+  {
+    title: "JUMS Reboot",
+    description: "All in-one app for Jadavpur University Students.",
+    image: jumsBanner,
+    link: "https://play.google.com/store/apps/details?id=com.kishans.jumsRebootFlutter&hl=en_IN",
+  },
+  {
+    title: "Stroll - The Dev Extension",
+    description:
+      "A browser extension that automatically scrolls your browser to the most relevant answer while browsing Stack-Overflow.",
+    image: strollBanner,
+    link: "https://stroll-land.vercel.app",
+  },
+];
+---
+
+<div class="my-8 sm:my-10" id="projects">
+  <div class="container">
+    <h3 class="text-xl sm:text-2xl font-semibold">Personal Projects</h3>
+    <h4 class="text-lg sm:text-xl text-black/70 mt-3 sm:mt-4">
+      Building things is my therapy.
+    </h4>
+  </div>
+  <div
+    class="grid grid-cols-1 sm:grid-cols-2 gap-2 max-w-6xl mx-auto mt-8 sm:mt-16"
+  >
+    {projects.map((project) => <ProjectCard {...project} />)}
+  </div>
+</div>

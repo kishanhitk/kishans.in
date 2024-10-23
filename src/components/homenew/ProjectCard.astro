@@ -1,0 +1,31 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  title: string;
+  description: string;
+  image: string;
+  link: string;
+}
+
+const { title, description, image, link } = Astro.props;
+---
+
+<a
+  href={link}
+  class="rounded-xl overflow-hidden p-6 sm:p-10 bg-gray-50 m-4"
+  target="_blank"
+  rel="noreferrer"
+>
+  <Image
+    src={image}
+    alt={title}
+    width={600}
+    height={400}
+    class="rounded-xl w-full shadow-lg object-cover"
+  />
+  <div class="mt-4">
+    <h5 class="text-lg sm:text-xl font-semibold">{title}</h5>
+    <p class="text-sm sm:text-base text-black/70 mt-1">{description}</p>
+  </div>
+</a>
