@@ -11,6 +11,7 @@ export interface HashnodePostFull extends HashnodePost {
   coverImage: HashnodeImage;
   responseCount?: number;
   reactions?: HashnodeReactionFull[];
+  updatedAt: string;
 }
 
 export interface HashnodeImage {
