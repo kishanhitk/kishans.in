@@ -25,7 +25,7 @@ const formattedDate = new Date(post.publishedAt).toLocaleDateString("en-US", {
   >
     {post.title}
   </h3>
-  <p class="text-sm text-black/50 my-2 font-mono">
+  <p class="text-sm text-gray-500 my-2 font-mono">
     Published on {formattedDate}
   </p>
   <p class="mb-5">{post.brief.slice(0, 100)}...</p>
