@@ -1,5 +1,5 @@
-import { promises as fs } from "fs";
-import { join } from "path";
+import { promises as fs } from "node:fs";
+import { join } from "node:path";
 
 export async function GET(request: Request) {
   const filePath = join(
@@ -15,8 +15,7 @@ export async function GET(request: Request) {
   return new Response(fileBuffer, {
     headers: {
       "Content-Type": "application/pdf",
-      "Content-Disposition":
-        "inline; filename=Kishan_Kumar_SDE_FullStack_Resume.pdf",
+      "Content-Disposition": "inline",
     },
   });
 }
