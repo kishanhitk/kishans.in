@@ -1,0 +1,113 @@
+---
+import { Separator } from "@/components/ui/separator";
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout title="About">
+  <div class="container mb-12 sm:mb-20 min-h-screen px-4 sm:px-6 lg:px-8">
+    <h1 class="text-3xl sm:text-4xl font-bold text-gray-900">About Me</h1>
+    <Separator className="my-5 sm:my-7" />
+    <p class="text-lg sm:text-xl text-gray-600 leading-7 sm:leading-9">
+      Hi there, I'm Kishan. I build modern web products with a focus on
+      efficiency and scalability, along with an interest in AI products. I
+      currently work as a Full-Stack Developer at Quinence, where I lead and
+      contribute to various projects.
+      <br />
+      <br />
+      Most recently, at Quinence, I have been leading the redevelopment of Fuschia
+      Careers, a high-volume recruiting platform, enhancing its performance and functionality
+      while integrating AI (LLM) to optimize recruiter workflows. Additionally, I
+      work on a personalized tech training platform, Modern Fullstack, where I designed
+      and developed the website architecture and backend, improving the platform’s
+      performance by 10X. I was also involved in building the course content.<br
+      />
+      <br />Previously, I worked with The Soulless Citadel, a blockchain NFT
+      project, where I developed a high-performance, real-time game backend and
+      smart contracts for the marketplace, facilitating over 2,200 transactions
+      and generating sales of nearly $370,000. <br />
+      <br />I’ve always been passionate about web performance, optimizing
+      systems to be fast and scalable, while maintaining attention to detail and
+      a strong product mindset. Whether it's building email automation tools,
+      crafting interactive courses, or working on AI-driven platforms, my goal
+      is always to enhance the user experience through thoughtful engineering
+      and innovation. <br />
+      <br />If you’re interested in collaborating or have a project in mind,
+      feel free to reach out to me at
+      <a
+        href="mailto:hello@kishans.in?cc=kishansharma1231@gmail.com&subject=Hey%20Kishan%2C%20we%20have%20some%20exiting%20opportunity%20for%20you"
+        class="text-black underline"
+      >
+        hello@kishans.in.
+      </a>
+    </p>
+
+    <h2
+      class="text-xl sm:text-2xl font-bold text-gray-900 mt-8 sm:mt-10 mb-4 sm:mb-5"
+    >
+      Experience
+    </h2>
+    <ul class="space-y-4 sm:space-y-6">
+      <li class="flex flex-col sm:flex-row items-start sm:items-center">
+        <img
+          src="assets/logos/quinence.png"
+          alt="Quinence logo"
+          class="w-12 h-12 sm:w-14 sm:h-14 mb-2 sm:mb-0 sm:mr-4 rounded-lg shadow-sm"
+        />
+        <div>
+          <h3 class="text-xl sm:text-2xl font-semibold">Quinence</h3>
+          <p class="text-gray-600 my-1 mb-2 text-base sm:text-lg">
+            Full-Stack Engineer
+          </p>
+          <p class="text-sm text-gray-500 font-mono">June 2022 → Present</p>
+        </div>
+      </li>
+      <Separator className="my-5 sm:my-7" />
+      <li class="flex flex-col sm:flex-row items-start sm:items-center">
+        <img
+          src="assets/logos/increff.png"
+          alt="Increff logo"
+          class="w-12 h-12 sm:w-14 sm:h-14 mb-2 sm:mb-0 sm:mr-4 rounded-lg shadow-sm"
+        />
+        <div>
+          <h3 class="text-xl sm:text-2xl font-semibold">Increff</h3>
+          <p class="text-gray-600 my-1 mb-2 text-base sm:text-lg">
+            Software Developer (UI) Intern
+          </p>
+          <p class="text-sm text-gray-500 font-mono">January 2022 → May 2022</p>
+        </div>
+      </li>
+      <Separator className="my-5 sm:my-7" />
+
+      <li class="flex flex-col sm:flex-row items-start sm:items-center">
+        <img
+          src="assets/logos/ncr.png"
+          alt="NCR Technologies logo"
+          class="w-12 h-12 sm:w-14 sm:h-14 mb-2 sm:mb-0 sm:mr-4 rounded-lg shadow-sm"
+        />
+        <div>
+          <h3 class="text-xl sm:text-2xl font-semibold">NCR Technologies</h3>
+          <p class="text-gray-600 my-1 mb-2 text-base sm:text-lg">
+            Software Developer Intern
+          </p>
+          <p class="text-sm text-gray-500 font-mono">May 2021 → Aug 2021</p>
+        </div>
+      </li>
+      <Separator className="my-5 sm:my-7" />
+
+      <li class="flex flex-col sm:flex-row items-start sm:items-center">
+        <img
+          src="assets/logos/digimall.png"
+          alt="Digimall logo"
+          class="w-12 h-12 sm:w-14 sm:h-14 mb-2 sm:mb-0 sm:mr-4 rounded-lg shadow-sm"
+        />
+        <div>
+          <h3 class="text-xl sm:text-2xl font-semibold">Digimall</h3>
+          <p class="text-gray-600 my-1 mb-2 text-base sm:text-lg">
+            Software Developer Intern
+          </p>
+          <p class="text-sm text-gray-500 font-mono">March 2021 → May 2021</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</Layout>

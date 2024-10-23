@@ -1,5 +1,3 @@
-import { StaticImageData } from "next/image";
-
 export type Project = {
   title: string;
   slug: string;
@@ -7,7 +5,9 @@ export type Project = {
   sourceUrl?: string;
   liveUrl: string;
   tags: string[];
-  img: StaticImageData;
+  // @ts-ignore
+  img: any;
+  imgSrc?: string;
   priority: number;
 };
 

@@ -1,0 +1,40 @@
+---
+import "@fontsource-variable/manrope";
+import HeaderNew from "../components/HeaderNew.astro";
+import "@/styles/global.css";
+import Footer from "@/components/Footer.astro";
+import { ViewTransitions } from "astro:transitions";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <ViewTransitions />
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <HeaderNew />
+    <slot />
+    <Footer />
+  </body>
+</html>
+<style>
+  html.dark {
+    background-color: #202125;
+    color: #fff;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+</style>

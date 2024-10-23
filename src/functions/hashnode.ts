@@ -1,15 +1,13 @@
-import { HashnodePost, HashnodePostFull } from "@types";
+import type { HashnodePost, HashnodePostFull } from "../types/hashnode";
 
 const API_URL = "https://gql.hashnode.com";
 
 async function fetchGraphQL<T = any>(
   query: string,
-  variables: object
+  variables: object,
 ): Promise<T> {
   const response = await fetch(API_URL, {
-    next:{
-      revalidate: 604800,
-    },
+    cache: "force-cache",
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -25,20 +23,23 @@ async function fetchGraphQL<T = any>(
 }
 
 export const getAllPostByUsername = async (
-  host: string
+  host: string,
 ): Promise<HashnodePost[]> => {
   const query = /* GraphQL */ `
     query Publication($host: String!) {
       publication(host: $host) {
         id
+        id
         posts(first: 11) {
           edges {
             node {
+              id
               id
               title
               brief
               cuid
               slug
+              publishedAt
             }
           }
         }
@@ -48,20 +49,22 @@ export const getAllPostByUsername = async (
 
   const { data } = await fetchGraphQL(query, { host });
   const posts: HashnodePost[] = data.publication.posts.edges.map(
-    (post: any) => post.node
+    (post: any) => post.node,
   );
   return posts;
 };
 
 export const getPostBySlug = async (
   slug: string,
-  hostname: string
+  hostname: string,
 ): Promise<HashnodePostFull> => {
   const query = /* GraphQL */ `
     query Publication($slug: String!, $hostname: String!) {
       publication(host: $hostname) {
         id
+        id
         post(slug: $slug) {
+          id
           id
           title
           brief
@@ -69,8 +72,10 @@ export const getPostBySlug = async (
             url
           }
           updatedAt
+          publishedAt
           content {
             markdown
+            html
           }
         }
       }
@@ -83,13 +88,15 @@ export const getPostBySlug = async (
 
 export const getPostMetadataBySlug = async (
   slug: string,
-  hostname: string
+  hostname: string,
 ): Promise<HashnodePostFull> => {
   const query = /* GraphQL */ `
     query Publication($slug: String!, $hostname: String!) {
       publication(host: $hostname) {
         id
+        id
         post(slug: $slug) {
+          id
           id
           title
           updatedAt
