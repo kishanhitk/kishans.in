@@ -7,7 +7,6 @@ async function fetchGraphQL<T = any>(
   variables: object,
 ): Promise<T> {
   const response = await fetch(API_URL, {
-    cache: "force-cache",
     method: "POST",
     headers: {
       "Content-Type": "application/json",
