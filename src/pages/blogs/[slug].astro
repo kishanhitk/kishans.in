@@ -18,7 +18,7 @@ const blog = await getPostBySlug(slug, "blog.kishans.in");
 
 <Layout title={blog.title}>
   <div class="container">
-    <BlogPage client:load post={blog} />
+    <BlogPage post={blog} />
     <div
       class="prose dark:prose-invert prose-xl prose-zinc prose-code:font-mono prose-pre:bg-black text-zinc-600"
       set:html={blog.content.html}
