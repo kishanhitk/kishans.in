@@ -5,6 +5,7 @@ export default {
   theme: {
     fontFamily: {
       sans: ["Saans-VF", "sans-serif"],
+      mono: ["GeistMono-VF", "sans-serif"],
     },
     container: {
       center: "true",

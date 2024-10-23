@@ -9,6 +9,13 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: "GeistMono-VF";
+  src: url("/fonts/GeistMono-VF.ttf");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
 
 @layer base {
   :root {
@@ -72,4 +79,8 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.debug {
+  border: 1px solid red;
 }

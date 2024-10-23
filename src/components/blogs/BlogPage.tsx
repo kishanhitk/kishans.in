@@ -22,7 +22,7 @@ const Index = ({ post }: BlogPageProps) => {
 
   return (
     <div>
-      <div className="prose dark:prose-invert">
+      <div className="prose dark:prose-invert debug">
         <h1 className="dark:text-white">{title}</h1>
         <p className="-mt-5 text-gray-500">Updated: {userLocalDate}</p>
         {coverImage?.url ? (

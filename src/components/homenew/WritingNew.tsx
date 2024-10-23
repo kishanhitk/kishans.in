@@ -9,8 +9,7 @@ const PostCard = ({ post }: PostCardProps) => {
   return (
     <a key={post.slug} className="cursor-pointer" href={`/blogs/${post.slug}`}>
       <h3 className="mb-1 text-2xl font-semibold">{post.title}</h3>
-      <p className="text-sm text-black/50 my-2">
-        {/* In the format of 23rd October 2024 */}
+      <p className="text-sm text-black/50 my-2 font-mono">
         Published on{" "}
         {new Date(post.publishedAt).toLocaleDateString("en-US", {
           day: "numeric",

@@ -1,6 +1,6 @@
 const HomeProjects = () => {
   return (
-    <div className="my-10">
+    <div className="my-10" id="projects">
       <div className="container">
         <h3 className="text-2xl font-semibold">Personal Projects</h3>
         <h4 className="text-xl text-black/70 mt-4">
