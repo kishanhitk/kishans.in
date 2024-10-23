@@ -3,11 +3,11 @@ import { Separator } from "@/components/ui/separator";
 import Layout from "@/layouts/Layout.astro";
 ---
 
-<Layout title="Blogs">
-  <div class="container mb-20 min-h-screen">
-    <h1 class="text-4xl font-bold text-gray-900">About Me</h1>
-    <Separator className="my-7" />
-    <p class="text-xl text-gray-600 leading-9">
+<Layout title="About">
+  <div class="container mb-12 sm:mb-20 min-h-screen px-4 sm:px-6 lg:px-8">
+    <h1 class="text-3xl sm:text-4xl font-bold text-gray-900">About Me</h1>
+    <Separator className="my-5 sm:my-7" />
+    <p class="text-lg sm:text-xl text-gray-600 leading-7 sm:leading-9">
       Hi there, I'm Kishan. I build modern web products with a focus on
       efficiency and scalability, along with an interest in AI products. I
       currently work as a Full-Stack Developer at Quinence, where I lead and
@@ -41,62 +41,68 @@ import Layout from "@/layouts/Layout.astro";
       </a>
     </p>
 
-    <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-5">Experience</h2>
-    <ul class="space-y-6">
-      <li class="flex">
+    <h2
+      class="text-xl sm:text-2xl font-bold text-gray-900 mt-8 sm:mt-10 mb-4 sm:mb-5"
+    >
+      Experience
+    </h2>
+    <ul class="space-y-4 sm:space-y-6">
+      <li class="flex flex-col sm:flex-row items-start sm:items-center">
         <img
           src="assets/logos/quinence.png"
           alt="Quinence logo"
-          class="w-14 h-14 mr-4 rounded-lg shadow-sm"
+          class="w-12 h-12 sm:w-14 sm:h-14 mb-2 sm:mb-0 sm:mr-4 rounded-lg shadow-sm"
         />
         <div>
-          <h3 class="text-2xl font-semibold">Quinence</h3>
-          <p class="text-gray-600 my-1 mb-2 text-lg">Full-Stack Engineer</p>
+          <h3 class="text-xl sm:text-2xl font-semibold">Quinence</h3>
+          <p class="text-gray-600 my-1 mb-2 text-base sm:text-lg">
+            Full-Stack Engineer
+          </p>
           <p class="text-sm text-gray-500 font-mono">June 2022 → Present</p>
         </div>
       </li>
-      <Separator className="my-7" />
-      <li class="flex">
+      <Separator className="my-5 sm:my-7" />
+      <li class="flex flex-col sm:flex-row items-start sm:items-center">
         <img
           src="assets/logos/increff.png"
           alt="Increff logo"
-          class="w-14 h-14 mr-4 rounded-lg shadow-sm"
+          class="w-12 h-12 sm:w-14 sm:h-14 mb-2 sm:mb-0 sm:mr-4 rounded-lg shadow-sm"
         />
         <div>
-          <h3 class="text-xl font-semibold">Increff</h3>
-          <p class="text-gray-600 my-1 mb-2 text-lg">
+          <h3 class="text-xl sm:text-2xl font-semibold">Increff</h3>
+          <p class="text-gray-600 my-1 mb-2 text-base sm:text-lg">
             Software Developer (UI) Intern
           </p>
           <p class="text-sm text-gray-500 font-mono">January 2022 → May 2022</p>
         </div>
       </li>
-      <Separator className="my-7" />
+      <Separator className="my-5 sm:my-7" />
 
-      <li class="flex">
+      <li class="flex flex-col sm:flex-row items-start sm:items-center">
         <img
           src="assets/logos/ncr.png"
           alt="NCR Technologies logo"
-          class="w-14 h-14 mr-4 rounded-lg shadow-sm"
+          class="w-12 h-12 sm:w-14 sm:h-14 mb-2 sm:mb-0 sm:mr-4 rounded-lg shadow-sm"
         />
         <div>
-          <h3 class="text-xl font-semibold">NCR Technologies</h3>
-          <p class="text-gray-600 my-1 mb-2 text-lg">
+          <h3 class="text-xl sm:text-2xl font-semibold">NCR Technologies</h3>
+          <p class="text-gray-600 my-1 mb-2 text-base sm:text-lg">
             Software Developer Intern
           </p>
           <p class="text-sm text-gray-500 font-mono">May 2021 → Aug 2021</p>
         </div>
       </li>
-      <Separator className="my-7" />
+      <Separator className="my-5 sm:my-7" />
 
-      <li class="flex">
+      <li class="flex flex-col sm:flex-row items-start sm:items-center">
         <img
           src="assets/logos/digimall.png"
           alt="Digimall logo"
-          class="w-14 h-14 mr-4 rounded-lg shadow-sm"
+          class="w-12 h-12 sm:w-14 sm:h-14 mb-2 sm:mb-0 sm:mr-4 rounded-lg shadow-sm"
         />
         <div>
-          <h3 class="text-xl font-semibold">Digimall</h3>
-          <p class="text-gray-600 my-1 mb-2 text-lg">
+          <h3 class="text-xl sm:text-2xl font-semibold">Digimall</h3>
+          <p class="text-gray-600 my-1 mb-2 text-base sm:text-lg">
             Software Developer Intern
           </p>
           <p class="text-sm text-gray-500 font-mono">March 2021 → May 2021</p>

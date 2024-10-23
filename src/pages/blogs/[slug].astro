@@ -17,10 +17,10 @@ const blog = await getPostBySlug(slug, "blog.kishans.in");
 ---
 
 <Layout title={blog.title}>
-  <div class="container">
+  <div class="container px-4 sm:px-6 lg:px-8">
     <BlogPage post={blog} />
     <div
-      class="prose dark:prose-invert prose-xl prose-zinc prose-code:font-mono prose-pre:bg-black text-zinc-600"
+      class="prose dark:prose-invert prose-lg sm:prose-xl prose-zinc prose-code:font-mono prose-pre:bg-black text-zinc-600 max-w-full"
       set:html={blog.content.html}
     />
   </div>

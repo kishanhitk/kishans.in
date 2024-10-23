@@ -1,13 +1,13 @@
 const HomeProjects = () => {
   return (
-    <div className="my-10" id="projects">
+    <div className="my-8 sm:my-10" id="projects">
       <div className="container">
-        <h3 className="text-2xl font-semibold">Personal Projects</h3>
-        <h4 className="text-xl text-black/70 mt-4">
+        <h3 className="text-xl sm:text-2xl font-semibold">Personal Projects</h3>
+        <h4 className="text-lg sm:text-xl text-black/70 mt-3 sm:mt-4">
           Building things is my therapy.
         </h4>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto mt-16">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 max-w-6xl mx-auto mt-8 sm:mt-16">
         {projects.map((project) => (
           <ProjectCard key={project.title} {...project} />
         ))}
@@ -60,14 +60,14 @@ const ProjectCard = ({
   return (
     <a
       href={link}
-      className="rounded-xl overflow-hidden p-10 bg-gray-100"
+      className="rounded-xl overflow-hidden p-6 sm:p-10 bg-gray-100"
       target="_blank"
       rel="noreferrer"
     >
-      <img src={image} alt="" className="rounded-xl" />
+      <img src={image} alt="" className="rounded-xl w-full" />
       <div className="mt-4">
-        <h5 className="text-xl font-semibold">{title}</h5>
-        <p className="text-black/70 mt-1">{description}</p>
+        <h5 className="text-lg sm:text-xl font-semibold">{title}</h5>
+        <p className="text-sm sm:text-base text-black/70 mt-1">{description}</p>
       </div>
     </a>
   );
