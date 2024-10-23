@@ -3,6 +3,7 @@ import "@fontsource-variable/manrope";
 import HeaderNew from "../components/HeaderNew.astro";
 import "@/styles/global.css";
 import Footer from "@/components/Footer.astro";
+import { ViewTransitions } from "astro:transitions";
 
 interface Props {
   title: string;
@@ -14,6 +15,7 @@ const { title } = Astro.props;
 <!doctype html>
 <html lang="en">
   <head>
+    <ViewTransitions />
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
@@ -22,7 +24,6 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <!-- <Header /> -->
     <HeaderNew />
     <slot />
     <Footer />
