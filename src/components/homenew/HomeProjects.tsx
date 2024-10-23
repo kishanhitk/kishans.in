@@ -2,7 +2,7 @@ const HomeProjects = () => {
   return (
     <div className="my-10">
       <div className="container">
-        <h3 className="text-3xl font-semibold">Personal Projects</h3>
+        <h3 className="text-2xl font-semibold">Personal Projects</h3>
         <h4 className="text-xl text-black/70 mt-4">
           Some of my personal projects.
         </h4>

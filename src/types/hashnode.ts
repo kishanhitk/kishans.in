@@ -3,9 +3,9 @@ export interface HashnodePost {
   slug: string;
   brief: string;
   url: string;
+  publishedAt: string;
 }
 export interface HashnodePostFull extends HashnodePost {
-  updatedAt: string;
   content: HashnodeContent;
   replyCount?: number;
   coverImage: HashnodeImage;

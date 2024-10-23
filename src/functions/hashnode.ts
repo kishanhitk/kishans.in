@@ -37,6 +37,7 @@ export const getAllPostByUsername = async (
               brief
               cuid
               slug
+              publishedAt
             }
           }
         }
@@ -67,6 +68,7 @@ export const getPostBySlug = async (
             url
           }
           updatedAt
+          publishedAt
           content {
             markdown
             html
