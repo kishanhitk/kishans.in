@@ -1,9 +1,9 @@
 ---
 import type { HashnodePost } from "@/types";
 import { getAllPostByUsername } from "../../functions/hashnode";
-import PostCard from "../../components/homenew/WritingNew";
 import { Separator } from "../../components/ui/separator";
 import Layout from "@/layouts/Layout.astro";
+import Writing from "@/components/homenew/Writing.astro";
 
 const posts = await getAllPostByUsername("blog.kishans.in");
 ---
@@ -17,7 +17,7 @@ const posts = await getAllPostByUsername("blog.kishans.in");
         posts?.map((post: HashnodePost, index) => {
           return (
             <>
-              <PostCard post={post} client:load />
+              <Writing post={post} client:load />
               {index !== posts.length - 1 && <Separator className="my-7" />}
             </>
           );

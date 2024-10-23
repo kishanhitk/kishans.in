@@ -1,0 +1,27 @@
+---
+import type { HashnodePost } from "../../types/hashnode";
+
+export interface Props {
+  post: HashnodePost;
+}
+
+const { post } = Astro.props;
+
+const formattedDate = new Date(post.publishedAt).toLocaleDateString("en-US", {
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+});
+---
+
+<a
+  data-astro-prefetch="viewport"
+  href={`/blogs/${post.slug}`}
+  class="cursor-pointer"
+>
+  <h3 class="mb-1 text-2xl font-semibold">{post.title}</h3>
+  <p class="text-sm text-black/50 my-2 font-mono">
+    Published on {formattedDate}
+  </p>
+  <p class="mb-5">{post.brief.slice(0, 100)}...</p>
+</a>
