@@ -1,0 +1,30 @@
+---
+import DotPattern from "@/components/ui/dot-pattern";
+import Layout from "@/layouts/Layout.astro";
+import { cn } from "@/lib/utils";
+---
+
+<Layout title="">
+  <div class="h-screen w-screen bg-black flex justify-center items-center">
+    <div
+      class="h-[630px] w-[1200px] bg-white flex justify-center items-center flex-col relative"
+    >
+      <DotPattern
+        cr={1}
+        className={cn(
+          "[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]",
+        )}
+      />
+      <div class="z-10 flex flex-col items-center">
+        <h1 class="text-black text-[9rem] font-bold">
+          Kishan <span class="text-black/70">Kumar</span>
+        </h1>
+        <div class="text-gray-500 text-4xl mt-2 text-center space-y-2">
+          <div>Full Stack Developer</div>
+          <div>Web Performer Enthusiast</div>
+          <div>Product Engineering</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
