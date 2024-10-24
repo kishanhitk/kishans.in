@@ -23,7 +23,6 @@ const userLocalDate = new Date(publishedAt).toLocaleDateString("en-US", {
       Posted: {userLocalDate}
     </p>
   </div>
-  {coverImage?.url && <img src={coverImage.url} class="mb-5" alt={title} />}
   {
     coverImage?.url && (
       <Image
