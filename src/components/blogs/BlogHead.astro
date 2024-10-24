@@ -1,6 +1,6 @@
 ---
 import type { HashnodePostFull } from "@/types/hashnode";
-
+import { Image } from "astro:assets";
 interface BlogPageProps {
   post: HashnodePostFull;
 }
@@ -24,4 +24,15 @@ const userLocalDate = new Date(publishedAt).toLocaleDateString("en-US", {
     </p>
   </div>
   {coverImage?.url && <img src={coverImage.url} class="mb-5" alt={title} />}
+  {
+    coverImage?.url && (
+      <Image
+        width={1200}
+        height={630}
+        src={coverImage.url}
+        class="mb-5"
+        alt={title}
+      />
+    )
+  }
 </div>
