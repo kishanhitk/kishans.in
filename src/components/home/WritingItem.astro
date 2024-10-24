@@ -19,10 +19,7 @@ const formattedDate = new Date(post.publishedAt).toLocaleDateString("en-US", {
   href={`/blogs/${post.slug}`}
   class="cursor-pointer"
 >
-  <h3
-    class="mb-1 text-2xl font-semibold"
-    transition:name={`title-${post.slug}`}
-  >
+  <h3 class="mb-1 text-2xl font-semibold">
     {post.title}
   </h3>
   <p class="text-sm text-gray-500 my-2 font-mono">
