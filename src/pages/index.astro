@@ -10,9 +10,10 @@ import Layout from "@/layouts/Layout.astro";
 </Layout>
 
 <script>
-  const homepage = document.getElementById("homepage") as HTMLElement;
-  homepage.style.opacity = "1";
-
+  const homepage = document.getElementById("homepage");
+  if (homepage) {
+    homepage.classList.remove("opacity-0");
+  }
   import { animate } from "motion";
 
   function animateHomepage() {
@@ -58,11 +59,6 @@ import Layout from "@/layouts/Layout.astro";
 
   // Run animation on initial page load
   document.addEventListener("DOMContentLoaded", animateHomepage);
-
-  // Run animation when navigating back to this page
-  document.addEventListener("astro:after-swap", () => {
-    homepage.style.opacity = "1";
-  });
 </script>
 
 <noscript>

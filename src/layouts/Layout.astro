@@ -85,3 +85,10 @@ const siteURL = new URL(Astro.url.pathname, Astro.site || "https://kishans.in");
     opacity: 1 !important;
   }
 </style>
+
+<script is:inline>
+  document.addEventListener("astro:after-swap", () => {
+    const homepage = document.getElementById("homepage");
+    homepage.classList.remove("opacity-0");
+  });
+</script>
