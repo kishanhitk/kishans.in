@@ -7,9 +7,19 @@ import Footer from "@/components/Footer.astro";
 
 interface Props {
   title: string;
+  description?: string;
+  image?: string;
+  canonicalURL?: string;
 }
 
-const { title } = Astro.props;
+const {
+  title,
+  description = "Full-stack developer at Quinence with a product mindset. Specializes in scalable web products, AI integration, and performance optimization to enhance user experience.",
+  image = "/assets/kishans-og-banner.png",
+  canonicalURL = new URL(Astro.url.pathname, Astro.site).href,
+} = Astro.props;
+
+const siteName = "Kishan Kumar - Full Stack Developer";
 ---
 
 <!doctype html>
@@ -17,14 +27,40 @@ const { title } = Astro.props;
   <head>
     <ViewTransitions />
     <meta charset="UTF-8" />
-    <meta
-      name="description"
-      content="Full-stack developer at Quinence with a product mindset. Specializes in scalable web products, AI integration, and performance optimization to enhance user experience."
-    />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
+
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, Astro.url)} />
+    <meta property="og:site_name" content={siteName} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={Astro.url} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={new URL(image, Astro.url)} />
+    <meta name="twitter:creator" content="@jst_kishan" />
+
+    <!-- Additional SEO tags -->
+    <meta name="author" content="Kishan Kumar" />
+    <meta name="robots" content="index, follow" />
+    <meta
+      name="keywords"
+      content="full-stack developer, web development, AI integration, performance optimization, Quinence, product engineer"
+    />
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#ffffff" />
   </head>
   <body>
     <Header />
