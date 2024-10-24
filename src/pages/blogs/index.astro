@@ -3,7 +3,7 @@ import type { HashnodePost } from "@/types";
 import { getAllPostByUsername } from "../../functions/hashnode";
 import { Separator } from "../../components/ui/separator";
 import Layout from "@/layouts/Layout.astro";
-import Writing from "@/components/homenew/Writing.astro";
+import Writing from "@/components/home/Writing.astro";
 
 const posts = await getAllPostByUsername("blog.kishans.in");
 ---
