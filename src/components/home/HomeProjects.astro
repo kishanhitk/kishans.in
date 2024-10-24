@@ -3,7 +3,6 @@ import ProjectCard from "./ProjectCard.astro";
 import myPRsBanner from "@/assets/myprs-banner.png";
 import gitaGPTBanner from "@/assets/gita-gpt.png";
 import jumsBanner from "@/assets/jumsbanner.webp";
-import strollBanner from "@/assets/stroll.webp";
 import snapsearchBanner from "@/assets/snapsearch.png";
 
 const projects = [
@@ -35,7 +34,7 @@ const projects = [
 ---
 
 <div class="my-8 sm:my-10" id="projects">
-  <div class="container">
+  <div class="container" id="projects-header">
     <h3 class="text-xl sm:text-2xl font-semibold">Personal Projects</h3>
     <h4 class="text-lg sm:text-xl text-black/70 mt-3 sm:mt-4">
       Building things is my therapy.
@@ -43,6 +42,7 @@ const projects = [
   </div>
   <div
     class="grid grid-cols-1 sm:grid-cols-2 gap-2 max-w-6xl mx-auto mt-8 sm:mt-16"
+    id="projects-grid"
   >
     {projects.map((project) => <ProjectCard {...project} />)}
   </div>
