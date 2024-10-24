@@ -16,10 +16,11 @@ const {
   title,
   description = "Full-stack developer at Quinence with a product mindset. Specializes in scalable web products, AI integration, and performance optimization to enhance user experience.",
   image = "/assets/kishans-og-banner.png",
-  canonicalURL = new URL(Astro.url.pathname, Astro.site).href,
+  canonicalURL,
 } = Astro.props;
 
 const siteName = "Kishan Kumar - Full Stack Developer";
+const siteURL = new URL(Astro.url.pathname, Astro.site || "https://kishans.in");
 ---
 
 <!doctype html>
@@ -33,22 +34,22 @@ const siteName = "Kishan Kumar - Full Stack Developer";
 
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={canonicalURL} />
+    {canonicalURL && <link rel="canonical" href={canonicalURL} />}
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={Astro.url} />
+    <meta property="og:url" content={siteURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={new URL(image, Astro.url)} />
+    <meta property="og:image" content={new URL(image, siteURL)} />
     <meta property="og:site_name" content={siteName} />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={Astro.url} />
+    <meta property="twitter:url" content={siteURL} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={new URL(image, Astro.url)} />
+    <meta property="twitter:image" content={new URL(image, siteURL)} />
     <meta name="twitter:creator" content="@jst_kishan" />
 
     <!-- Additional SEO tags -->
