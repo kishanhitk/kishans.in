@@ -1,7 +1,7 @@
 ---
-import BlogPage from "@/components/blogs/BlogPage.astro";
-import { getAllPostByUsername, getPostBySlug } from "../../functions/hashnode";
-import Layout from "../../layouts/Layout.astro";
+import BlogHead from "@/components/blogs/BlogHead.astro";
+import { getAllPostByUsername, getPostBySlug } from "@/functions/hashnode";
+import Layout from "@/layouts/Layout.astro";
 
 export async function getStaticPaths() {
   const posts = await getAllPostByUsername("blog.kishans.in");
@@ -18,7 +18,7 @@ const blog = await getPostBySlug(slug, "blog.kishans.in");
 
 <Layout title={blog.title}>
   <div class="container px-4 sm:px-6 lg:px-8">
-    <BlogPage post={blog} />
+    <BlogHead post={blog} />
     <div
       class="prose dark:prose-invert prose-lg sm:prose-xl prose-zinc prose-code:font-mono prose-pre:bg-black text-zinc-600 max-w-full"
       set:html={blog.content.html}
