@@ -8,44 +8,44 @@ import Layout from "@/layouts/Layout.astro";
 </Layout>
 
 <script>
-  import { animate } from "motion";
-  const title = document.getElementById("hero-title");
-  const subtitle = document.getElementById("hero-subtitle");
-  const description = document.getElementById("hero-description");
-  const heroButton = document.getElementById("hero-button");
-  const projectsSeparator = document.getElementById("projects-separator");
-  const projectsHeader = document.getElementById("projects-header");
-  const projectsGrid = document.getElementById("projects-grid");
+  // import { animate } from "motion";
+  // const title = document.getElementById("hero-title");
+  // const subtitle = document.getElementById("hero-subtitle");
+  // const description = document.getElementById("hero-description");
+  // const heroButton = document.getElementById("hero-button");
+  // const projectsSeparator = document.getElementById("projects-separator");
+  // const projectsHeader = document.getElementById("projects-header");
+  // const projectsGrid = document.getElementById("projects-grid");
 
-  const duration = 0.6;
+  // const duration = 0.6;
 
-  const animationSequence = {
-    opacity: [0, 1],
-    y: [8, 0],
-    scale: [0.99, 1],
-  };
-  const delay = 0.2;
-  if (
-    title &&
-    subtitle &&
-    description &&
-    heroButton &&
-    projectsSeparator &&
-    projectsHeader &&
-    projectsGrid
-  ) {
-    animate(title, animationSequence, { duration, delay: delay * 1 });
-    animate(subtitle, animationSequence, { duration, delay: delay * 2 });
-    animate(description, animationSequence, { duration, delay: delay * 3 });
-    animate(heroButton, animationSequence, { duration, delay: delay * 4 });
-    animate(projectsSeparator, animationSequence, {
-      duration,
-      delay: delay * 6,
-    });
-    animate(projectsHeader, animationSequence, {
-      duration,
-      delay: delay * 7,
-    });
-    animate(projectsGrid, animationSequence, { duration, delay: delay * 8 });
-  }
+  // const animationSequence = {
+  //   opacity: [0, 1],
+  //   y: [8, 0],
+  //   scale: [0.99, 1],
+  // };
+  // const delay = 0.2;
+  // if (
+  //   title &&
+  //   subtitle &&
+  //   description &&
+  //   heroButton &&
+  //   projectsSeparator &&
+  //   projectsHeader &&
+  //   projectsGrid
+  // ) {
+  //   animate(title, animationSequence, { duration, delay: delay * 1 });
+  //   animate(subtitle, animationSequence, { duration, delay: delay * 2 });
+  //   animate(description, animationSequence, { duration, delay: delay * 3 });
+  //   animate(heroButton, animationSequence, { duration, delay: delay * 4 });
+  //   animate(projectsSeparator, animationSequence, {
+  //     duration,
+  //     delay: delay * 6,
+  //   });
+  //   animate(projectsHeader, animationSequence, {
+  //     duration,
+  //     delay: delay * 7,
+  //   });
+  //   animate(projectsGrid, animationSequence, { duration, delay: delay * 8 });
+  // }
 </script>
