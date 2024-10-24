@@ -10,6 +10,9 @@ import Layout from "@/layouts/Layout.astro";
 </Layout>
 
 <script>
+  const homepage = document.getElementById("homepage") as HTMLElement;
+  homepage.style.opacity = "1";
+
   import { animate } from "motion";
 
   function animateHomepage() {
@@ -20,10 +23,6 @@ import Layout from "@/layouts/Layout.astro";
     const projectsSeparator = document.getElementById("projects-separator");
     const projectsHeader = document.getElementById("projects-header");
     const projectsGrid = document.getElementById("projects-grid");
-
-    const homepage = document.getElementById("homepage") as HTMLElement;
-
-    homepage.style.opacity = "1";
 
     const duration = 0.6;
 
@@ -61,10 +60,7 @@ import Layout from "@/layouts/Layout.astro";
   document.addEventListener("DOMContentLoaded", animateHomepage);
 
   // Run animation when navigating back to this page
-  document.addEventListener("astro:after-swap", () => {
-    const homepage = document.getElementById("homepage") as HTMLElement;
-    homepage.style.opacity = "1";
-  });
+  document.addEventListener("astro:after-swap", () => {});
 </script>
 
 <noscript>
