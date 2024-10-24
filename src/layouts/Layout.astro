@@ -24,7 +24,7 @@ const siteURL = new URL(Astro.url.pathname, Astro.site || "https://kishans.in");
 ---
 
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="en">
   <head>
     <ViewTransitions />
     <meta charset="UTF-8" />
@@ -62,9 +62,6 @@ const siteURL = new URL(Astro.url.pathname, Astro.site || "https://kishans.in");
 
     <!-- Theme Color -->
     <meta name="theme-color" content="#ffffff" />
-    <script>
-      document.documentElement.classList.remove("no-js");
-    </script>
   </head>
   <body>
     <Header />
@@ -72,13 +69,6 @@ const siteURL = new URL(Astro.url.pathname, Astro.site || "https://kishans.in");
     <Footer />
   </body>
 </html>
-
-<style is:global>
-  .no-js #homepage {
-    opacity: 1 !important;
-  }
-</style>
-
 <style>
   html.dark {
     background-color: #202125;
