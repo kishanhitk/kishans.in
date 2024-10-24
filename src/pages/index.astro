@@ -60,7 +60,9 @@ import Layout from "@/layouts/Layout.astro";
   document.addEventListener("DOMContentLoaded", animateHomepage);
 
   // Run animation when navigating back to this page
-  document.addEventListener("astro:after-swap", () => {});
+  document.addEventListener("astro:after-swap", () => {
+    homepage.style.opacity = "1";
+  });
 </script>
 
 <noscript>
