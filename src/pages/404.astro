@@ -1,0 +1,28 @@
+---
+import { Button } from "@/components/ui/button";
+import "@/styles/global.css";
+import Four04Asset from "@/assets/404.png";
+import { Image } from "astro:assets";
+---
+
+<div
+  class="min-h-screen flex items-center justify-center flex-col p-4 text-center relative"
+>
+  <Image
+    src={Four04Asset}
+    alt="404"
+    class="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
+  />
+  <h1
+    class="text-4xl sm:text-6xl md:text-8xl lg:text-[11rem] font-extrabold text-black/60 leading-tight mb-4"
+  >
+    You are lost
+  </h1>
+  <a href="/">
+    <Button
+      className="mt-6 sm:mt-8 px-6 sm:px-8 rounded-full py-4 sm:py-5 font-mono text-sm sm:text-base group bg-black/50 hover:bg-opacity-70 transition-all duration-300"
+    >
+      Go back home
+    </Button>
+  </a>
+</div>
