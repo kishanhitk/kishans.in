@@ -13,7 +13,7 @@ const { title, description, image, link } = Astro.props;
 
 <a
   href={link}
-  class="rounded-xl overflow-hidden p-6 sm:p-10 bg-gray-50 m-4"
+  class="rounded-xl overflow-hidden p-6 sm:p-10 bg-gray-50 m-4 group"
   target="_blank"
   rel="noreferrer"
 >
@@ -22,7 +22,7 @@ const { title, description, image, link } = Astro.props;
     alt={title}
     width={600}
     height={400}
-    class="rounded-xl w-full shadow-lg object-cover"
+    class="rounded-xl w-full shadow-lg object-cover group-hover:scale-105 transition-all duration-500"
   />
   <div class="mt-4">
     <h5 class="text-lg sm:text-xl font-semibold">{title}</h5>

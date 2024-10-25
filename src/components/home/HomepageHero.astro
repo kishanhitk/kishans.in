@@ -21,11 +21,14 @@ import { MoveRight } from "lucide-react";
   </p>
   <a href="/about">
     <Button
-      className="mt-6 sm:mt-8 px-6 sm:px-8 rounded-full py-4 sm:py-5 font-mono text-sm sm:text-base"
+      className="mt-6 sm:mt-8 px-6 sm:px-8 rounded-full py-4 sm:py-5 font-mono text-sm sm:text-base group"
       id="hero-button"
     >
       More About Me
-      <MoveRight strokeWidth={1.2} className="ml-2" />
+      <MoveRight
+        strokeWidth={1.2}
+        className="ml-2 group-hover:translate-x-2 transition-all duration-100"
+      />
     </Button>
   </a>
 </div>
