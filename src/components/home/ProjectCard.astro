@@ -3,12 +3,13 @@ import { Image } from "astro:assets";
 
 interface Props {
   title: string;
+  subtitle?: string;
   description: string;
   image: ImageMetadata;
   link: string;
 }
 
-const { title, description, image, link } = Astro.props;
+const { title, subtitle, description, image, link } = Astro.props;
 ---
 
 <a
@@ -25,7 +26,12 @@ const { title, description, image, link } = Astro.props;
     class="rounded-xl w-full shadow-lg object-cover group-hover:scale-105 transition-all duration-500"
   />
   <div class="mt-4">
-    <h5 class="text-lg sm:text-xl font-semibold">{title}</h5>
-    <p class="text-sm sm:text-base text-black/70 mt-1">{description}</p>
+    <h5 class="text-lg sm:text-xl font-semibold">
+      {title}
+      <span class="text-sm text-black/60 ml-2">{subtitle}</span>
+    </h5>
+    <p class="text-sm sm:text-base text-black/70 mt-1">
+      {description}
+    </p>
   </div>
 </a>
