@@ -1,11 +1,12 @@
 ---
-import type { HashnodePost } from "@/types";
-import { getAllPostByUsername } from "@/functions/hashnode";
-import { Separator } from "@/components/ui/separator";
-import Layout from "@/layouts/Layout.astro";
-import Writing from "@/components/home/WritingItem.astro";
 
-const posts = await getAllPostByUsername("blog.kishans.in");
+import Writing from '@/components/home/WritingItem.astro'
+import { Separator } from '@/components/ui/separator'
+import { getAllPostByUsername } from '@/functions/hashnode'
+import Layout from '@/layouts/Layout.astro'
+import type { HashnodePost } from '@/types'
+
+const posts = await getAllPostByUsername('blog.kishans.in')
 ---
 
 <Layout title="Blogs">

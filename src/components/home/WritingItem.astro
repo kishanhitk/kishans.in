@@ -1,17 +1,18 @@
 ---
-import type { HashnodePost } from "@/types/hashnode";
+
+import type { HashnodePost } from '@/types/hashnode'
 
 export interface Props {
-  post: HashnodePost;
+  post: HashnodePost
 }
 
-const { post } = Astro.props;
+const { post } = Astro.props
 
-const formattedDate = new Date(post.publishedAt).toLocaleDateString("en-US", {
-  day: "numeric",
-  month: "long",
-  year: "numeric",
-});
+const formattedDate = new Date(post.publishedAt).toLocaleDateString('en-US', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+})
 ---
 
 <a

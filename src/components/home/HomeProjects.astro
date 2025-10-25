@@ -1,53 +1,55 @@
 ---
-import ProjectCard from "./ProjectCard.astro";
-import myPRsBanner from "@/assets/myprs-banner.png";
-import gitaGPTBanner from "@/assets/gita-gpt.png";
-import jumsBanner from "@/assets/jumsbanner.webp";
-import snapsearchBanner from "@/assets/snapsearch.png";
-import heyStatusBanner from "@/assets/hey-status-2.png";
-import strollBanner from "@/assets/stroll.webp";
+
+import gitaGPTBanner from '@/assets/gita-gpt.png'
+import heyStatusBanner from '@/assets/hey-status-2.png'
+import jumsBanner from '@/assets/jumsbanner.webp'
+import myPRsBanner from '@/assets/myprs-banner.png'
+import snapsearchBanner from '@/assets/snapsearch.png'
+import strollBanner from '@/assets/stroll.webp'
+import ProjectCard from './ProjectCard.astro'
+
 const projects = [
   {
-    title: "MyPRs",
-    description: "One link to highlight your Open-Source Contributions.",
+    title: 'MyPRs',
+    description: 'One link to highlight your Open-Source Contributions.',
     image: myPRsBanner,
-    link: "https://myprs.dev",
+    link: 'https://myprs.dev',
   },
   {
-    title: "Gita GPT",
-    subtitle: "13M+ Visits | 110K+ Users",
-    description: "Find Solace in the wisdom of Shree Krishna 🦚",
+    title: 'Gita GPT',
+    subtitle: '13M+ Visits | 110K+ Users',
+    description: 'Find Solace in the wisdom of Shree Krishna 🦚',
     image: gitaGPTBanner,
-    link: "https://gita.kishans.in",
+    link: 'https://gita.kishans.in',
   },
   {
-    title: "JUMS Reboot",
-    subtitle: "500+ Downloads | 5.0 Rating",
-    description: "All in-one app for Jadavpur University Students.",
+    title: 'JUMS Reboot',
+    subtitle: '500+ Downloads | 5.0 Rating',
+    description: 'All in-one app for Jadavpur University Students.',
     image: jumsBanner,
-    link: "https://play.google.com/store/apps/details?id=com.kishans.jumsRebootFlutter&hl=en_IN",
+    link: 'https://play.google.com/store/apps/details?id=com.kishans.jumsRebootFlutter&hl=en_IN',
   },
   {
-    title: "HeyStatus",
-    description: "A real-time status page for your services.",
+    title: 'HeyStatus',
+    description: 'A real-time status page for your services.',
     image: heyStatusBanner,
-    link: "https://hey-status.pages.dev",
+    link: 'https://hey-status.pages.dev',
   },
   {
-    title: "SnapSearch",
-    subtitle: "242+ Users",
-    description: "Search the web distraction-free",
+    title: 'SnapSearch',
+    subtitle: '242+ Users',
+    description: 'Search the web distraction-free',
     image: snapsearchBanner,
-    link: "https://chromewebstore.google.com/detail/snapsearch-better-search/aeblbpjamlpjfedjbkhnbiecmepbgkdo",
+    link: 'https://chromewebstore.google.com/detail/snapsearch-better-search/aeblbpjamlpjfedjbkhnbiecmepbgkdo',
   },
   {
-    title: "Stroll",
+    title: 'Stroll',
     description:
-      "Stroll is a browser extension that automatically scrolls your browser to the accepted answer on Stack-Overflow.",
+      'Stroll is a browser extension that automatically scrolls your browser to the accepted answer on Stack-Overflow.',
     image: strollBanner,
-    link: "https://stroll-land.vercel.app",
+    link: 'https://stroll-land.vercel.app',
   },
-];
+]
 ---
 
 <div class="my-8 sm:my-10" id="projects">

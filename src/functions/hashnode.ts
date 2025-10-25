@@ -1,24 +1,24 @@
-import type { HashnodePost, HashnodePostFull } from "../types/hashnode";
+import type { HashnodePost, HashnodePostFull } from '../types/hashnode'
 
-const API_URL = "https://gql.hashnode.com";
+const API_URL = 'https://gql.hashnode.com'
 
 async function fetchGraphQL<T = any>(
   query: string,
   variables: object,
 ): Promise<T> {
   const response = await fetch(API_URL, {
-    method: "POST",
+    method: 'POST',
     headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
     },
     body: JSON.stringify({
       query,
       variables,
     }),
-  });
+  })
 
-  return await response.json();
+  return await response.json()
 }
 
 export const getAllPostByUsername = async (
@@ -44,14 +44,14 @@ export const getAllPostByUsername = async (
         }
       }
     }
-  `;
+  `
 
-  const { data } = await fetchGraphQL(query, { host });
+  const { data } = await fetchGraphQL(query, { host })
   const posts: HashnodePost[] = data.publication.posts.edges.map(
     (post: any) => post.node,
-  );
-  return posts;
-};
+  )
+  return posts
+}
 
 export const getPostBySlug = async (
   slug: string,
@@ -79,11 +79,11 @@ export const getPostBySlug = async (
         }
       }
     }
-  `;
-  const { data } = await fetchGraphQL(query, { slug, hostname });
-  const post: HashnodePostFull = data.publication.post;
-  return post;
-};
+  `
+  const { data } = await fetchGraphQL(query, { slug, hostname })
+  const post: HashnodePostFull = data.publication.post
+  return post
+}
 
 export const getPostMetadataBySlug = async (
   slug: string,
@@ -107,9 +107,9 @@ export const getPostMetadataBySlug = async (
         }
       }
     }
-  `;
+  `
 
-  const { data } = await fetchGraphQL(query, { slug, hostname });
-  const post: HashnodePostFull = data.publication.post;
-  return post;
-};
+  const { data } = await fetchGraphQL(query, { slug, hostname })
+  const post: HashnodePostFull = data.publication.post
+  return post
+}
