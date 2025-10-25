@@ -1,0 +1,101 @@
+<!DOCTYPE html><html lang="en" class="no-js" data-astro-cid-sckkx6r4> <head><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.yCdKshW_.js"></script><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/png" href="/favicon.ico"><meta name="generator" content="Astro v5.15.1"><title>Enable HMR in Remix Cloudflare</title><meta name="description" content="Full-stack developer with a product mindset. Specializes in scalable web products, AI integration, and performance optimization to enhance user experience."><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://kishans.in/blogs/enable-hmr-in-remix-cloudflare/"><meta property="og:title" content="Enable HMR in Remix Cloudflare"><meta property="og:description" content="Full-stack developer with a product mindset. Specializes in scalable web products, AI integration, and performance optimization to enhance user experience."><meta property="og:image" content="https://kishans.in/assets/kishans-og-banner.png"><meta property="og:site_name" content="Kishan Kumar - Full Stack Developer"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://kishans.in/blogs/enable-hmr-in-remix-cloudflare/"><meta property="twitter:title" content="Enable HMR in Remix Cloudflare"><meta property="twitter:description" content="Full-stack developer with a product mindset. Specializes in scalable web products, AI integration, and performance optimization to enhance user experience."><meta property="twitter:image" content="https://kishans.in/assets/kishans-og-banner.png"><meta name="twitter:creator" content="@jst_kishan"><!-- Additional SEO tags --><meta name="author" content="Kishan Kumar"><meta name="robots" content="index, follow"><meta name="keywords" content="full-stack developer, web development, AI integration, performance optimization, Quinence, product engineer"><!-- Theme Color --><meta name="theme-color" content="#ffffff"><script type="module">document.documentElement.classList.remove("no-js");</script><style>@keyframes astroFadeInOut{0%{opacity:1}to{opacity:0}}@keyframes astroFadeIn{0%{opacity:0;mix-blend-mode:plus-lighter}to{opacity:1;mix-blend-mode:plus-lighter}}@keyframes astroFadeOut{0%{opacity:1;mix-blend-mode:plus-lighter}to{opacity:0;mix-blend-mode:plus-lighter}}@keyframes astroSlideFromRight{0%{transform:translate(100%)}}@keyframes astroSlideFromLeft{0%{transform:translate(-100%)}}@keyframes astroSlideToRight{to{transform:translate(100%)}}@keyframes astroSlideToLeft{to{transform:translate(-100%)}}@media(prefers-reduced-motion){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}[data-astro-transition-scope]{animation:none!important}}
+</style>
+<link rel="stylesheet" href="/_astro/about.CWF_lUjh.css">
+<style>.astro-route-announcer{position:absolute;left:0;top:0;clip:rect(0 0 0 0);clip-path:inset(50%);overflow:hidden;white-space:nowrap;width:1px;height:1px}html.dark{background-color:#202125;color:#fff}html{scroll-behavior:smooth}html.no-js #homepage[data-astro-cid-sckkx6r4]{opacity:1!important}
+</style><script type="module" src="/_astro/page.DTPp-pk-.js"></script>
+<script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+		var script = document.createElement('script');
+		script.defer = true;
+		script.src = '/_vercel/insights/script.js';
+		var head = document.querySelector('head');
+		head.appendChild(script);
+	</script><style>[data-astro-transition-scope="astro-z74llvsf-1"] { view-transition-name: title-undefined; }@layer astro { ::view-transition-old(title-undefined) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(title-undefined) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(title-undefined) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(title-undefined) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-z74llvsf-1"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-z74llvsf-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-z74llvsf-1"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-z74llvsf-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-z74llvsf-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-z74llvsf-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-z74llvsf-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-z74llvsf-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style></head> <body data-astro-cid-sckkx6r4> <nav class="flex flex-col sm:flex-row justify-between items-center container my-8 sm:my-12"> <a href="/" class="font-semibold mb-4 sm:mb-0 font-mono">KK</a> <div class="flex gap-4 sm:gap-5 text-sm font-semibold font-mono"> <a data-astro-prefetch="viewport" href="/#projects">Projects</a> <a data-astro-prefetch="viewport" href="/blogs">Writings</a> <a data-astro-prefetch="viewport" href="/contact">Contact</a> </div> </nav>  <div class="container"> <div class="w-full"> <div class="prose dark:prose-invert mb-5"> <h1 class="dark:text-white" data-astro-transition-scope="astro-z74llvsf-1"> Enable HMR in Remix Cloudflare </h1> <p class="-mt-5 text-gray-500">
+Posted: February 24, 2023 </p> </div> <img src="/_vercel/image?url=https%3A%2F%2Fcdn.hashnode.com%2Fres%2Fhashnode%2Fimage%2Fstock%2Funsplash%2F16ep3TGZR-0%2Fupload%2F4053f43ef8727c52dde7a6ce9d4f655e.jpeg&#38;w=1280&#38;q=100" alt="Enable HMR in Remix Cloudflare" loading="lazy" decoding="async" fetchpriority="auto" inputtedWidth="1200" width="1200" height="630" class="mb-5"> </div> <div class="prose dark:prose-invert prose-lg sm:prose-xl prose-zinc prose-code:font-mono prose-pre:bg-black text-zinc-600 max-w-full"><blockquote>
+<p>UPDATE: Since v2.7.0, Remix migrated to Vite as the default compiler. Which means you no longer need to follow this guide to enable HMR as Vite has built-in support for HMR.</p>
+</blockquote>
+<p>Hot Module Replacement (HMR) is a game-changing feature that speeds up the development process by allowing to add or remove modules while the application is running without the need for a full reload. It's been one of the most requested features by developers ever since Remix was launched publicly, and now, it's finally coming to v1.14.0.</p>
+<h3 id="heading-what-the-heck-is-hmr-anyway">What the heck is HMR anyway?</h3>
+<p>In simpler terms, HMR allows you to update your code in real-time and instantly see the changes in your browser, making it almost comparable to changing styles directly in the browser's dev tools. This is especially useful for retaining the application state, which is often lost during a full reload, and for saving valuable development time by only updating what's changed.</p>
+<h3 id="heading-how-to-enable-hmr-in-a-remix-app">How to enable HMR in a Remix app?</h3>
+<ol>
+<li><p>Update remix to v1.14.0 (Currently it is live on v1.14.0.pre-1).</p>
+</li>
+<li><p>Enable the new dev server by adding this to your <code>remix.config.js</code>.</p>
+<pre><code class="lang-javascript"> <span class="hljs-built_in">module</span>.exports = {
+ .....
+     future: {
+         <span class="hljs-attr">unstable_dev</span>: {
+             <span class="hljs-attr">appServerPort</span>: <span class="hljs-number">8788</span>, <span class="hljs-comment">// default port in cloudflare</span>
+         },
+     },
+ };
+</code></pre>
+</li>
+<li><p>Update these scripts in your <code>package.json</code>. Add <code>--live-reload</code> in the wrangler command, and change <code>remix watch</code> to <code>remix dev</code>.</p>
+<pre><code class="lang-json">     <span class="hljs-string">"scripts"</span>: {
+         <span class="hljs-attr">"build"</span>: <span class="hljs-string">"remix build"</span>,
+         <span class="hljs-attr">"dev:remix"</span>: <span class="hljs-string">"remix dev"</span>,
+         <span class="hljs-attr">"dev:wrangler"</span>: <span class="hljs-string">"cross-env NODE_ENV=development npm run wrangler"</span>,
+         <span class="hljs-attr">"dev"</span>: <span class="hljs-string">"remix build &amp;&amp; concurrently \"npm:dev:*\""</span>,
+         <span class="hljs-attr">"start"</span>: <span class="hljs-string">"cross-env NODE_ENV=production npm run dev:wrangler"</span>,
+         <span class="hljs-attr">"wrangler"</span>: <span class="hljs-string">"wrangler pages dev --live-reload ./public"</span>
+     },
+</code></pre>
+</li>
+<li><p>Right now HMR is provided through React Refresh. So, you will have to <code>react-refresh</code> to your packages.</p>
+<pre><code class="lang-bash"> npm i react-refresh
+ yarn add react-refresh
+ pnpm i react-refresh
+</code></pre>
+</li>
+<li><p>Done, now run the app locally and try to make some changes, and save the file, you will see the changes are reflected almost instantly without any reload.</p>
+</li>
+</ol>
+<p>I created a GitHub repo with all this setup, check it out: <a target="_blank" href="https://github.com/kishanhitk/remix-clodflare-hmr">https://github.com/kishanhitk/remix-clodflare-hmr</a></p>
+<p>Overall, HMR is a powerful tool that can help developers save time and streamline their workflow. With the release of v1.14.0, Remix users can now take advantage of this feature and enjoy a smoother, more efficient development experience. So why wait? Give it a try and see how much time and frustration it can save you!</p>
+</div> </div>  <footer class="flex justify-between my-5 items-center container text-sm text-black/70 border-t border-black/10 pt-8"> <p>
+&copy; 2025 Kishan
+</p> <a rel="noopener noreferrer" target="_blank" href="https://github.com/kishanhitk/kishans.in">
+View Source
+</a> </footer>  <script>
+  document.addEventListener("astro:after-swap", () => {
+    const homepage = document.getElementById("homepage");
+    homepage.classList.remove("opacity-0");
+  });
+</script></body></html>

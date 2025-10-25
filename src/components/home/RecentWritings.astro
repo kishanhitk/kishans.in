@@ -1,10 +1,12 @@
 ---
-import type { HashnodePost } from '@/types/hashnode'
-import { getAllPostByUsername } from '@/functions/hashnode'
-import { Separator } from '@/components/ui/separator'
+
 import { MoveRight } from 'lucide-react'
-import { Button } from '@/components/ui/button'
 import Writing from '@/components/home/WritingItem.astro'
+import { Button } from '@/components/ui/button'
+import { Separator } from '@/components/ui/separator'
+import { getAllPostByUsername } from '@/functions/hashnode'
+import type { HashnodePost } from '@/types/hashnode'
+
 const posts = await getAllPostByUsername('blog.kishans.in')
 ---
 

@@ -26,6 +26,10 @@
       "correctness": {
         "noUnusedVariables": "off",
         "noUnusedImports": "off"
+      },
+      "complexity": {
+        "noArguments": "off",
+        "noImportantStyles": "off"
       }
     }
   },
@@ -56,7 +60,17 @@
       "selfCloseVoidElements": "always"
     }
   },
-  "overrides": [{ "includes": ["*.astro"] }],
+  "overrides": [
+    {
+      "includes": ["*.astro"],
+      "linter": {
+        "enabled": false
+      },
+      "formatter": {
+        "enabled": true
+      }
+    }
+  ],
   "assist": {
     "enabled": true,
     "actions": { "source": { "organizeImports": "on" } }

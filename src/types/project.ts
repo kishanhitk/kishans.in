@@ -5,7 +5,6 @@ export type Project = {
   sourceUrl?: string
   liveUrl: string
   tags: string[]
-  // @ts-ignore
   img: any
   imgSrc?: string
   priority: number
