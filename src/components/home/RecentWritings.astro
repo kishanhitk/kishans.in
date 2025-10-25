@@ -1,11 +1,11 @@
 ---
-import type { HashnodePost } from "@/types/hashnode";
-import { getAllPostByUsername } from "@/functions/hashnode";
-import { Separator } from "@/components/ui/separator";
-import { MoveRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import Writing from "@/components/home/WritingItem.astro";
-const posts = await getAllPostByUsername("blog.kishans.in");
+import type { HashnodePost } from '@/types/hashnode'
+import { getAllPostByUsername } from '@/functions/hashnode'
+import { Separator } from '@/components/ui/separator'
+import { MoveRight } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import Writing from '@/components/home/WritingItem.astro'
+const posts = await getAllPostByUsername('blog.kishans.in')
 ---
 
 <div class="container my-12 sm:my-20">

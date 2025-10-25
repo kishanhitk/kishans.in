@@ -1,25 +1,25 @@
 ---
-import "@/styles/global.css";
-import { ViewTransitions } from "astro:transitions";
-import Header from "@/components/Header.astro";
-import Footer from "@/components/Footer.astro";
+import '@/styles/global.css'
+import { ViewTransitions } from 'astro:transitions'
+import Header from '@/components/Header.astro'
+import Footer from '@/components/Footer.astro'
 
 interface Props {
-  title: string;
-  description?: string;
-  image?: string;
-  canonicalURL?: string;
+  title: string
+  description?: string
+  image?: string
+  canonicalURL?: string
 }
 
 const {
   title,
-  description = "Full-stack developer with a product mindset. Specializes in scalable web products, AI integration, and performance optimization to enhance user experience.",
-  image = "/assets/kishans-og-banner.png",
+  description = 'Full-stack developer with a product mindset. Specializes in scalable web products, AI integration, and performance optimization to enhance user experience.',
+  image = '/assets/kishans-og-banner.png',
   canonicalURL,
-} = Astro.props;
+} = Astro.props
 
-const siteName = "Kishan Kumar - Full Stack Developer";
-const siteURL = new URL(Astro.url.pathname, Astro.site || "https://kishans.in");
+const siteName = 'Kishan Kumar - Full Stack Developer'
+const siteURL = new URL(Astro.url.pathname, Astro.site || 'https://kishans.in')
 ---
 
 <!doctype html>

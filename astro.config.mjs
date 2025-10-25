@@ -1,11 +1,11 @@
 // @ts-check
-import { defineConfig } from "astro/config";
+import { defineConfig } from 'astro/config'
 
-import tailwind from "@astrojs/tailwind";
+import tailwind from '@astrojs/tailwind'
 
-import react from "@astrojs/react";
+import react from '@astrojs/react'
 
-import vercel from "@astrojs/vercel/static";
+import vercel from '@astrojs/vercel/static'
 
 // https://astro.build/config
 export default defineConfig({
@@ -18,13 +18,13 @@ export default defineConfig({
     react(),
   ],
 
-  output: "static",
+  output: 'static',
   image: {
-    domains: ["images.unsplash.com", "hashnode.com", "cdn.hashnode.com"],
+    domains: ['images.unsplash.com', 'hashnode.com', 'cdn.hashnode.com'],
     remotePatterns: [
       {
-        protocol: "https",
-        hostname: "hashnode.com",
+        protocol: 'https',
+        hostname: 'hashnode.com',
       },
     ],
   },
@@ -35,4 +35,4 @@ export default defineConfig({
       sizes: [320, 640, 1280],
     },
   }),
-});
+})

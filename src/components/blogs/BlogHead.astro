@@ -1,17 +1,17 @@
 ---
-import type { HashnodePostFull } from "@/types/hashnode";
-import { Image } from "astro:assets";
+import type { HashnodePostFull } from '@/types/hashnode'
+import { Image } from 'astro:assets'
 interface BlogPageProps {
-  post: HashnodePostFull;
+  post: HashnodePostFull
 }
 
-const { post } = Astro.props as BlogPageProps;
-const { title, coverImage, slug, publishedAt } = post;
-const userLocalDate = new Date(publishedAt).toLocaleDateString("en-US", {
-  year: "numeric",
-  month: "long",
-  day: "numeric",
-});
+const { post } = Astro.props as BlogPageProps
+const { title, coverImage, slug, publishedAt } = post
+const userLocalDate = new Date(publishedAt).toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+})
 ---
 
 <div class="w-full">
