@@ -19,16 +19,19 @@ export default defineConfig({
   ],
 
   output: "static",
+  image: {
+    domains: ["images.unsplash.com", "hashnode.com", "cdn.hashnode.com"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "hashnode.com",
+      },
+    ],
+  },
   adapter: vercel({
     webAnalytics: { enabled: true },
     imageService: true,
     imagesConfig: {
-      domains: ["images.unsplash.com", "hashnode.com", "cdn.hashnode.com"],
-      remotePatterns: [
-        {
-          hostname: "hashnode.com",
-        },
-      ],
       sizes: [320, 640, 1280],
     },
   }),
