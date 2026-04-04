@@ -6,9 +6,16 @@ import jumsBanner from '@/assets/jumsbanner.webp'
 import myPRsBanner from '@/assets/myprs-banner.png'
 import snapsearchBanner from '@/assets/snapsearch.png'
 import strollBanner from '@/assets/stroll.webp'
+import suniyeBanner from '@/assets/suniye-banner.png'
 import ProjectCard from './ProjectCard.astro'
 
 const projects = [
+  {
+    title: 'Suniye',
+    description: 'Open-source, local-first dictation for macOS. Speech recognition runs entirely on-device — nothing leaves your machine.',
+    image: suniyeBanner,
+    link: 'https://suniye.kishans.in',
+  },
   {
     title: 'MyPRs',
     description: 'One link to highlight your Open-Source Contributions.',
@@ -42,13 +49,13 @@ const projects = [
     image: snapsearchBanner,
     link: 'https://chromewebstore.google.com/detail/snapsearch-better-search/aeblbpjamlpjfedjbkhnbiecmepbgkdo',
   },
-  {
-    title: 'Stroll',
-    description:
-      'Stroll is a browser extension that automatically scrolls your browser to the accepted answer on Stack-Overflow.',
-    image: strollBanner,
-    link: 'https://stroll-land.vercel.app',
-  },
+  // {
+  //   title: 'Stroll',
+  //   description:
+  //     'Stroll is a browser extension that automatically scrolls your browser to the accepted answer on Stack-Overflow.',
+  //   image: strollBanner,
+  //   link: 'https://stroll-land.vercel.app',
+  // },
 ]
 ---
 
