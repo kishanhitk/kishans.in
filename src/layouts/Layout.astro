@@ -89,6 +89,6 @@ const siteURL = new URL(Astro.url.pathname, Astro.site || 'https://kishans.in')
 <script is:inline>
   document.addEventListener("astro:after-swap", () => {
     const homepage = document.getElementById("homepage");
-    homepage.classList.remove("opacity-0");
+    homepage?.classList.remove("opacity-0");
   });
 </script>
