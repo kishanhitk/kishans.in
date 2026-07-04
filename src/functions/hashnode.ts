@@ -4,7 +4,10 @@ import type { HashnodePost, HashnodePostFull } from '../types/hashnode'
 const parser = new XMLParser({
   ignoreAttributes: false,
   attributeNamePrefix: '',
+  parseTagValue: false,
 })
+
+const feedCache = new Map<string, Promise<HashnodePostFull[]>>()
 
 const getRssUrl = (host: string) => `https://${host}/rss.xml`
 
@@ -18,7 +21,9 @@ const getSlugFromUrl = (url: string) => {
   return pathname.split('/').filter(Boolean).at(-1) ?? ''
 }
 
-const getRssPosts = async (host: string): Promise<HashnodePostFull[]> => {
+const fetchAndParseFeed = async (
+  host: string,
+): Promise<HashnodePostFull[]> => {
   const response = await fetch(getRssUrl(host), {
     headers: {
       Accept: 'application/rss+xml, application/xml, text/xml',
@@ -32,12 +37,18 @@ const getRssPosts = async (host: string): Promise<HashnodePostFull[]> => {
   const feed = parser.parse(await response.text())
   const items = normalizeItems(feed.rss?.channel?.item)
 
-  return items.map((item: any) => {
+  return items.flatMap((item: any) => {
     const url = item.link
-    const publishedAt = new Date(item.pubDate).toISOString()
+    const pubDate = item.pubDate
+    if (typeof url !== 'string' || typeof pubDate !== 'string') return []
+
+    const date = new Date(pubDate)
+    if (Number.isNaN(date.getTime())) return []
+
+    const publishedAt = date.toISOString()
 
     return {
-      title: item.title,
+      title: item.title ?? '',
       slug: getSlugFromUrl(url),
       brief: item.description ?? '',
       url,
@@ -52,6 +63,14 @@ const getRssPosts = async (host: string): Promise<HashnodePostFull[]> => {
       },
     }
   })
+}
+
+const getRssPosts = (host: string): Promise<HashnodePostFull[]> => {
+  const cached = feedCache.get(host)
+  if (cached) return cached
+  const promise = fetchAndParseFeed(host)
+  feedCache.set(host, promise)
+  return promise
 }
 
 export const getAllPostByUsername = async (
