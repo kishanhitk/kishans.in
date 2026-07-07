@@ -1,54 +1,31 @@
-# Astro Starter Kit: Basics
+# Kishan Kumar
 
-```sh
-npm create astro@latest -- --template basics
-```
+Product engineer building AI agents, native AI apps, and full-stack products that move from idea to production fast.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+[Website](https://kishans.in) · [Resume](https://kishans.in/resume) · [LinkedIn](https://www.linkedin.com/in/kishanju/) · [GitHub](https://github.com/kishanhitk) · [MyPRs](https://myprs.dev/kishanhitk)
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## About
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+I am a software engineer at [Plivo](https://www.plivo.com), where I work on AI agent systems: builder workflows, simulations, evaluations, debugging tools, and reliability layers that help teams ship agents with more confidence.
 
-## 🚀 Project Structure
+I like building products end to end: the interface, backend, infra, agent behavior, evaluation loop, launch surface, and the last 10% of polish that makes something feel real.
 
-Inside of your Astro project, you'll see the following folders and files:
+## Proof
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+- Built Vibe Agent, a Claude Code-like agentic workflow system for creating and improving AI agents, reducing production-ready setup time from about 5 days to about 20 minutes.
+- Developed Truman, a simulation and evaluation system that runs automated calls across generated personas and scenarios with diagnostics for failures.
+- Fine-tuned a barge-in detection model, reducing false interruptions by 95% in voice-agent conversations.
+- Created [Suniye](https://suniye.kishans.in), a privacy-first native macOS dictation app with local/offline ASR options and sub-210ms transcription latency.
+- Created [GitaGPT](https://gita.kishans.in), a viral AI advisor that reached 13M+ views and 120K+ users.
+- Shipped products across AI, developer tools, consumer apps, education, and Web3, including systems that processed 2,200+ transactions and about $369K in sales.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Selected Work
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+- [Suniye](https://suniye.kishans.in): Native macOS dictation with Apple Speech, offline ASR models, local cleanup, and no cloud audio processing.
+- [GitaGPT](https://gita.kishans.in): AI advisor inspired by The Bhagavad Gita, featured by Times Now, Economic Times, News18, and Moneycontrol.
+- [MyPRs](https://myprs.dev): A cleaner way to showcase open-source contributions.
+- [JUMS Reboot](https://play.google.com/store/apps/details?id=com.kishans.jumsRebootFlutter): Student utility app for admit cards, grade cards, and exam schedules.
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Contact
 
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+If you are building something ambitious around AI agents, product engineering, or developer tools, reach me at [hello@kishans.in](mailto:hello@kishans.in).
