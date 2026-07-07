@@ -40,8 +40,10 @@ const siteURL = new URL(Astro.url.pathname, Astro.site || 'https://kishans.in')
           const prefersDark = window.matchMedia(
             "(prefers-color-scheme: dark)",
           ).matches;
+          // Default (no stored choice) is light; only follow the OS when the
+          // visitor has explicitly picked "system".
           const isDark =
-            stored === "dark" || (stored !== "light" && prefersDark);
+            stored === "dark" || (stored === "system" && prefersDark);
           document.documentElement.classList.toggle("dark", isDark);
           document
             .querySelector('meta[name="theme-color"]')
@@ -54,7 +56,7 @@ const siteURL = new URL(Astro.url.pathname, Astro.site || 'https://kishans.in')
         window
           .matchMedia("(prefers-color-scheme: dark)")
           .addEventListener("change", () => {
-            if (!localStorage.getItem(STORAGE_KEY)) applyTheme();
+            if (localStorage.getItem(STORAGE_KEY) === "system") applyTheme();
           });
       })();
     </script>

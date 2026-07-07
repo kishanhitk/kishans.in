@@ -17,9 +17,11 @@ function getStoredTheme(): Theme {
   // Guard on `window`, not `localStorage`: Node 24 exposes a global
   // `localStorage` stub during SSR whose methods throw, so a typeof-localStorage
   // check passes on the server and then blows up on the first getItem call.
-  if (typeof window === 'undefined') return 'system'
+  if (typeof window === 'undefined') return 'light'
   const stored = localStorage.getItem(STORAGE_KEY)
-  return stored === 'light' || stored === 'dark' ? stored : 'system'
+  return stored === 'light' || stored === 'dark' || stored === 'system'
+    ? stored
+    : 'light'
 }
 
 // Mirror of the inline <head> script in Layout.astro. Kept in sync so a click
@@ -47,8 +49,9 @@ export default function ThemeSwitcher() {
   }, [])
 
   const select = (next: Theme) => {
-    if (next === 'system') localStorage.removeItem(STORAGE_KEY)
-    else localStorage.setItem(STORAGE_KEY, next)
+    // Persist all three states explicitly: a missing key is the light default,
+    // so "system" must be stored rather than implied by absence.
+    localStorage.setItem(STORAGE_KEY, next)
     setTheme(next)
     applyTheme(next)
   }
