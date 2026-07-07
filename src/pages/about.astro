@@ -2,6 +2,12 @@
 
 import { Separator } from '@/components/ui/separator'
 import Layout from '@/layouts/Layout.astro'
+import { Image } from 'astro:assets'
+import digimallLogo from '@/assets/logos/digimall.png'
+import increffLogo from '@/assets/logos/increff.png'
+import ncrLogo from '@/assets/logos/ncr.png'
+import plivoLogo from '@/assets/logos/plivo.jpg'
+import quinenceLogo from '@/assets/logos/quinence.png'
 ---
 
 <Layout title="About">
@@ -53,9 +59,11 @@ import Layout from '@/layouts/Layout.astro'
     </h2>
     <ul class="space-y-4 sm:space-y-6">
       <li class="flex flex-col sm:flex-row items-start sm:items-center">
-        <img
-          src="assets/logos/plivo.jpg"
+        <Image
+          src={plivoLogo}
           alt="Plivo logo"
+          width={112}
+          height={112}
           class="w-12 h-12 sm:w-14 sm:h-14 mb-2 sm:mb-0 sm:mr-4 rounded-lg shadow-xs"
         />
         <div>
@@ -68,9 +76,11 @@ import Layout from '@/layouts/Layout.astro'
       </li>
       <Separator className="my-5 sm:my-7" />
       <li class="flex flex-col sm:flex-row items-start sm:items-center">
-        <img
-          src="assets/logos/quinence.png"
+        <Image
+          src={quinenceLogo}
           alt="Quinence logo"
+          width={112}
+          height={112}
           class="w-12 h-12 sm:w-14 sm:h-14 mb-2 sm:mb-0 sm:mr-4 rounded-lg shadow-xs"
         />
         <div>
@@ -83,9 +93,11 @@ import Layout from '@/layouts/Layout.astro'
       </li>
       <Separator className="my-5 sm:my-7" />
       <li class="flex flex-col sm:flex-row items-start sm:items-center">
-        <img
-          src="assets/logos/increff.png"
+        <Image
+          src={increffLogo}
           alt="Increff logo"
+          width={112}
+          height={112}
           class="w-12 h-12 sm:w-14 sm:h-14 mb-2 sm:mb-0 sm:mr-4 rounded-lg shadow-xs"
         />
         <div>
@@ -99,9 +111,11 @@ import Layout from '@/layouts/Layout.astro'
       <Separator className="my-5 sm:my-7" />
 
       <li class="flex flex-col sm:flex-row items-start sm:items-center">
-        <img
-          src="assets/logos/ncr.png"
+        <Image
+          src={ncrLogo}
           alt="NCR Technologies logo"
+          width={112}
+          height={112}
           class="w-12 h-12 sm:w-14 sm:h-14 mb-2 sm:mb-0 sm:mr-4 rounded-lg shadow-xs"
         />
         <div>
@@ -115,9 +129,11 @@ import Layout from '@/layouts/Layout.astro'
       <Separator className="my-5 sm:my-7" />
 
       <li class="flex flex-col sm:flex-row items-start sm:items-center">
-        <img
-          src="assets/logos/digimall.png"
+        <Image
+          src={digimallLogo}
           alt="Digimall logo"
+          width={112}
+          height={112}
           class="w-12 h-12 sm:w-14 sm:h-14 mb-2 sm:mb-0 sm:mr-4 rounded-lg shadow-xs"
         />
         <div>
