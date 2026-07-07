@@ -1,6 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="KK">
-  <circle cx="32" cy="32" r="30" fill="#fff" />
-  <g fill="#111" transform="translate(11.12 44.78) scale(.036 -.036)">
+  <style>
+    .favicon-bg { fill: #fff; }
+    .favicon-fg { fill: #111; }
+    @media (prefers-color-scheme: dark) {
+      .favicon-bg { fill: #202125; }
+      .favicon-fg { fill: #fff; }
+    }
+  </style>
+  <circle class="favicon-bg" cx="32" cy="32" r="30" />
+  <g class="favicon-fg" transform="translate(11.12 44.78) scale(.036 -.036)">
     <path d="M166 203L166 384L410 710L558 710ZM52 0L52 710L176 710L176 0ZM424 0L220 340L304 421L564 0Z" />
     <path transform="translate(600 0)" d="M166 203L166 384L410 710L558 710ZM52 0L52 710L176 710L176 0ZM424 0L220 340L304 421L564 0Z" />
   </g>
