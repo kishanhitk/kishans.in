@@ -30,7 +30,7 @@ function applyTheme(theme: Theme) {
   document.documentElement.classList.toggle('dark', isDark)
   document
     .querySelector('meta[name="theme-color"]')
-    ?.setAttribute('content', isDark ? '#202125' : '#ffffff')
+    ?.setAttribute('content', isDark ? '#0a0a0a' : '#ffffff')
 }
 
 export default function ThemeSwitcher() {

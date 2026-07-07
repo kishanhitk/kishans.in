@@ -45,7 +45,7 @@ const siteURL = new URL(Astro.url.pathname, Astro.site || 'https://kishans.in')
           document.documentElement.classList.toggle("dark", isDark);
           document
             .querySelector('meta[name="theme-color"]')
-            ?.setAttribute("content", isDark ? "#202125" : "#ffffff");
+            ?.setAttribute("content", isDark ? "#0a0a0a" : "#ffffff");
         };
         applyTheme();
         // Re-apply after Astro swaps the DOM on client-side navigation.
@@ -105,8 +105,10 @@ const siteURL = new URL(Astro.url.pathname, Astro.site || 'https://kishans.in')
 
 <style>
   html.dark {
-    background-color: #202125;
-    color: #fff;
+    /* Track the same token the body paints, so margin-collapse at the top
+       of the page doesn't reveal a mismatched grey bar. */
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
   }
   html {
     scroll-behavior: smooth;
