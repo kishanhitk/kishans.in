@@ -15,7 +15,7 @@ const { title, subtitle, description, image, link } = Astro.props
 
 <a
   href={link}
-  class="rounded-xl overflow-hidden p-6 sm:p-10 bg-gray-50 m-4 group"
+  class="rounded-xl overflow-hidden p-6 sm:p-10 bg-secondary dark:bg-white/[0.03] m-4 group"
   target="_blank"
   rel="noreferrer"
 >
@@ -29,9 +29,9 @@ const { title, subtitle, description, image, link } = Astro.props
   <div class="mt-4">
     <h5 class="text-lg sm:text-xl font-semibold">
       {title}
-      <span class="text-sm text-black/60 ml-2">{subtitle}</span>
+      <span class="text-sm text-foreground/60 ml-2">{subtitle}</span>
     </h5>
-    <p class="text-sm sm:text-base text-black/70 mt-1">
+    <p class="text-sm sm:text-base text-foreground/70 mt-1">
       {description}
     </p>
   </div>

@@ -29,6 +29,37 @@ const siteURL = new URL(Astro.url.pathname, Astro.site || 'https://kishans.in')
     <ClientRouter />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Theme init: applies before paint to avoid a flash of the wrong theme.
+         Runs on first load, on every View Transition swap, and on OS theme change. -->
+    <script is:inline>
+      (() => {
+        const STORAGE_KEY = "theme";
+        const applyTheme = () => {
+          const stored = localStorage.getItem(STORAGE_KEY);
+          const prefersDark = window.matchMedia(
+            "(prefers-color-scheme: dark)",
+          ).matches;
+          // Default (no stored choice) is light; only follow the OS when the
+          // visitor has explicitly picked "system".
+          const isDark =
+            stored === "dark" || (stored === "system" && prefersDark);
+          document.documentElement.classList.toggle("dark", isDark);
+          document
+            .querySelector('meta[name="theme-color"]')
+            ?.setAttribute("content", isDark ? "#0a0a0a" : "#ffffff");
+        };
+        applyTheme();
+        // Re-apply after Astro swaps the DOM on client-side navigation.
+        document.addEventListener("astro:after-swap", applyTheme);
+        // Live-update while following the OS (no explicit preference stored).
+        window
+          .matchMedia("(prefers-color-scheme: dark)")
+          .addEventListener("change", () => {
+            if (localStorage.getItem(STORAGE_KEY) === "system") applyTheme();
+          });
+      })();
+    </script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="alternate icon" type="image/png" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
@@ -76,8 +107,10 @@ const siteURL = new URL(Astro.url.pathname, Astro.site || 'https://kishans.in')
 
 <style>
   html.dark {
-    background-color: #202125;
-    color: #fff;
+    /* Track the same token the body paints, so margin-collapse at the top
+       of the page doesn't reveal a mismatched grey bar. */
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
   }
   html {
     scroll-behavior: smooth;

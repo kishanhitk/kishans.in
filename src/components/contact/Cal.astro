@@ -2,6 +2,29 @@
 <div style="width:100%;height:570px;overflow:scroll" id="my-cal-inline"></div>
 <script is:inline>
   (function () {
+    var themeObserver;
+
+    // Mirror the site theme (the .dark class on <html>) rather than the OS,
+    // so the widget follows the in-app switcher, not just prefers-color-scheme.
+    function currentTheme() {
+      return document.documentElement.classList.contains("dark")
+        ? "dark"
+        : "light";
+    }
+
+    function applyCalTheme() {
+      if (!window.Cal || !Cal.ns || !Cal.ns["15min"]) return;
+      var theme = currentTheme();
+      Cal.ns["15min"]("ui", {
+        theme: theme,
+        styles: {
+          branding: { brandColor: theme === "dark" ? "#ffffff" : "#000000" },
+        },
+        hideEventTypeDetails: false,
+        layout: "month_view",
+      });
+    }
+
     function initCal() {
       var container = document.getElementById("my-cal-inline");
       if (!container) return;
@@ -46,17 +69,22 @@
             p(cal, ar);
           };
       })(window, "https://app.cal.com/embed/embed.js", "init");
+
+      var theme = currentTheme();
       Cal("init", "15min", { origin: "https://cal.com" });
       Cal.ns["15min"]("inline", {
         elementOrSelector: "#my-cal-inline",
-        config: { layout: "month_view", theme: "light" },
+        config: { layout: "month_view", theme: theme },
         calLink: "jst-kishan/15min",
       });
-      Cal.ns["15min"]("ui", {
-        theme: "light",
-        styles: { branding: { brandColor: "#000000" } },
-        hideEventTypeDetails: false,
-        layout: "month_view",
+      applyCalTheme();
+
+      // Re-theme the widget whenever the site theme toggles.
+      if (themeObserver) themeObserver.disconnect();
+      themeObserver = new MutationObserver(applyCalTheme);
+      themeObserver.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ["class"],
       });
     }
 
