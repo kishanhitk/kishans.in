@@ -54,9 +54,9 @@
               cal.loaded = true;
             }
             if (ar[0] === L) {
-              var api = function () {
+              function api() {
                 p(api, arguments);
-              };
+              }
               var namespace = ar[1];
               api.q = api.q || [];
               if (typeof namespace === "string") {
