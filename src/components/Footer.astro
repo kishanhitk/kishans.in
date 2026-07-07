@@ -1,14 +1,22 @@
+---
+import ThemeSwitcher from '@/components/ThemeSwitcher.tsx'
+---
+
 <footer
-  class="flex justify-between my-5 items-center container text-sm text-black/70 border-t border-black/10 pt-8"
+  class="flex justify-between my-5 items-center container text-sm text-muted-foreground border-t border-border pt-8"
 >
   <p>
     &copy; {new Date().getFullYear()} Kishan
   </p>
-  <a
-    rel="noopener noreferrer"
-    target="_blank"
-    href="https://github.com/kishanhitk/kishans.in"
-  >
-    View Source
-  </a>
+  <div class="flex items-center gap-4 sm:gap-5">
+    <a
+      class="transition-colors hover:text-foreground"
+      rel="noopener noreferrer"
+      target="_blank"
+      href="https://github.com/kishanhitk/kishans.in"
+    >
+      View Source
+    </a>
+    <ThemeSwitcher client:load />
+  </div>
 </footer>
