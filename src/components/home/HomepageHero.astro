@@ -1,7 +1,6 @@
 ---
 
 import { MoveRight } from 'lucide-react'
-import { Button } from '@/components/ui/button'
 ---
 
 <div class="container">
@@ -20,16 +19,190 @@ import { Button } from '@/components/ui/button'
     Plivo on tools that help teams build, test, and improve AI agents, including
     voice agents, before they reach production.
   </p>
-  <a href="/about">
-    <Button
-      className="mt-6 sm:mt-8 px-6 sm:px-8 rounded-full py-4 sm:py-5 font-mono text-sm sm:text-base group"
-      id="hero-button"
-    >
-      More About Me
-      <MoveRight
-        strokeWidth={1.2}
-        className="ml-2 group-hover:translate-x-2 transition-all duration-100"
-      />
-    </Button>
+
+  <a href="/about" id="hero-button" class="hero-glass mt-6 sm:mt-8">
+    <span class="liquidGlass-wrapper group">
+      <span class="liquidGlass-effect"></span>
+      <span class="liquidGlass-tint"></span>
+      <span class="liquidGlass-shine"></span>
+      <span class="liquidGlass-text">
+        More About Me
+        <MoveRight
+          strokeWidth={1.5}
+          className="lg-arrow group-hover:translate-x-1 transition-transform duration-200"
+        />
+      </span>
+    </span>
   </a>
 </div>
+
+<!-- Hidden SVG: the liquid-glass refraction filter referenced by .liquidGlass-effect -->
+<svg class="lg-svg" aria-hidden="true" focusable="false" width="0" height="0">
+  <filter
+    id="glass-distortion"
+    x="0%"
+    y="0%"
+    width="100%"
+    height="100%"
+    filterUnits="objectBoundingBox"
+  >
+    <feTurbulence
+      type="fractalNoise"
+      baseFrequency="0.008 0.008"
+      numOctaves="2"
+      seed="5"
+      result="turbulence"
+    />
+    <feGaussianBlur in="turbulence" stdDeviation="3" result="softMap" />
+    <feDisplacementMap
+      in="SourceGraphic"
+      in2="softMap"
+      scale="40"
+      xChannelSelector="R"
+      yChannelSelector="G"
+    />
+  </filter>
+</svg>
+
+<style>
+  .lg-svg {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
+
+  /* Outer link: entrance animation (Motion) drives its transform. Kept
+     separate from the hover transform below so the two never fight. */
+  .hero-glass {
+    display: inline-block;
+    border-radius: 9999px;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .liquidGlass-wrapper {
+    position: relative;
+    display: inline-flex;
+    isolation: isolate;
+    border-radius: 9999px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow:
+      0 8px 24px rgba(0, 0, 0, 0.12),
+      0 2px 6px rgba(0, 0, 0, 0.08);
+    transition:
+      transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.4),
+      box-shadow 0.4s ease;
+  }
+
+  .liquidGlass-wrapper:hover {
+    transform: scale(1.03);
+    box-shadow:
+      0 12px 34px rgba(0, 0, 0, 0.16),
+      0 3px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .liquidGlass-wrapper:active {
+    transform: scale(0.98);
+  }
+
+  /* Layer 0: frost + refraction. The SVG filter warps whatever sits behind. */
+  .liquidGlass-effect {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    border-radius: inherit;
+    backdrop-filter: blur(6px) saturate(1.6);
+    -webkit-backdrop-filter: blur(6px) saturate(1.6);
+    filter: url(#glass-distortion);
+  }
+
+  /* Layer 1: near-clear tint so the pill stays glassy, not solid. */
+  .liquidGlass-tint {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    border-radius: inherit;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.45),
+      rgba(255, 255, 255, 0.1) 45%,
+      rgba(255, 255, 255, 0.28)
+    );
+  }
+
+  /* Layer 2: beveled inner shine — light catching the inner glass surface. */
+  .liquidGlass-shine {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    border-radius: inherit;
+    box-shadow:
+      inset 1px 1px 1px 0 rgba(255, 255, 255, 0.9),
+      inset -1px -1px 1px 0 rgba(255, 255, 255, 0.6);
+  }
+
+  /* Layer 3: reflective rim. A diagonal white gradient clipped to a 1.5px
+     ring via mask-composite, so the edge is bright at opposite corners. */
+  .liquidGlass-wrapper::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    border-radius: inherit;
+    padding: 1.5px;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.95) 0%,
+      rgba(255, 255, 255, 0.2) 30%,
+      rgba(255, 255, 255, 0.08) 55%,
+      rgba(255, 255, 255, 0.85) 100%
+    );
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  /* Layer 4: label. Dark text with a white text-shadow reads as embossed
+     glass and stays legible over the near-clear pill. */
+  .liquidGlass-text {
+    position: relative;
+    z-index: 4;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.75rem;
+    font-family: var(--font-mono, ui-monospace, monospace);
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    color: hsl(0, 0%, 12%);
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.65);
+    white-space: nowrap;
+  }
+
+  .lg-arrow {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  @media (width >= 40rem) {
+    .liquidGlass-text {
+      padding: 0.9rem 2rem;
+      font-size: 1rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .liquidGlass-wrapper,
+    .lg-arrow {
+      transition: none;
+    }
+  }
+</style>
