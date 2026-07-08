@@ -63,7 +63,7 @@ const projects = [
 ---
 
 <div class="my-8 sm:my-10" id="projects">
-  <div class="container" id="projects-header">
+  <div class="container" id="projects-header" data-reveal>
     <h3 class="text-xl sm:text-2xl font-semibold">Personal Projects</h3>
     <h4 class="text-lg sm:text-xl text-foreground/70 mt-3 sm:mt-4">
       Building things is my therapy.
@@ -76,3 +76,15 @@ const projects = [
     {projects.map((project) => <ProjectCard {...project} />)}
   </div>
 </div>
+
+<style is:global>
+  /* Cards reveal individually on scroll (each is [data-reveal]); nudging the
+     right column of each row a touch later gives a gentle left→right cascade
+     instead of a whole row popping at once. is:global because the cards render
+     from a child component, so a scoped selector wouldn't reach them. */
+  @media (prefers-reduced-motion: no-preference) {
+    #projects-grid > [data-reveal]:nth-child(even) {
+      transition-delay: 70ms;
+    }
+  }
+</style>

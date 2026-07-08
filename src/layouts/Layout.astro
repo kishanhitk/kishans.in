@@ -94,7 +94,11 @@ const siteURL = new URL(Astro.url.pathname, Astro.site || 'https://kishans.in')
 
     <!-- Theme Color -->
     <meta name="theme-color" content="#ffffff" />
-    <script>
+    <!-- Runs before paint (is:inline) so `html:not(.no-js)` is stable from the
+         first frame. [data-reveal] elements are then reliably hidden before the
+         reveal observer runs, so their entrance transitions instead of snapping.
+         JS-disabled visitors keep `no-js` and see everything unhidden. -->
+    <script is:inline>
       document.documentElement.classList.remove("no-js");
     </script>
   </head>
@@ -112,17 +116,53 @@ const siteURL = new URL(Astro.url.pathname, Astro.site || 'https://kishans.in')
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
   }
-  html {
-    scroll-behavior: smooth;
-  }
-  html.no-js #homepage {
-    opacity: 1 !important;
+  /* Smooth anchor scrolling (e.g. header → /#projects), but not for visitors
+     who asked for reduced motion. */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
   }
 </style>
 
-<script is:inline>
-  document.addEventListener("astro:after-swap", () => {
-    const homepage = document.getElementById("homepage");
-    homepage?.classList.remove("opacity-0");
-  });
+<script>
+  // Scroll-triggered reveal for any [data-reveal] element. Runs on first load
+  // and after every View Transition swap (astro:page-load fires for both).
+  // Reduced-motion users still get the reveal, as an opacity-only fade handled
+  // in CSS; no-JS users never have content hidden in the first place.
+  let revealObserver: IntersectionObserver | undefined;
+
+  function setupReveal() {
+    revealObserver?.disconnect();
+    const targets = document.querySelectorAll("[data-reveal]:not(.is-revealed)");
+    if (!targets.length) return;
+
+    // No IntersectionObserver support → reveal everything; never leave hidden.
+    if (!("IntersectionObserver" in window)) {
+      for (const el of targets) el.classList.add("is-revealed");
+      return;
+    }
+
+    revealObserver = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          entry.target.classList.add("is-revealed");
+          revealObserver?.unobserve(entry.target);
+        }
+      },
+      { rootMargin: "0px 0px -8% 0px", threshold: 0.12 },
+    );
+
+    // Observe only after the hidden state has painted. Otherwise an element
+    // already in view is revealed in the same frame it's hidden and skips the
+    // transition ("just appears"). Two rAFs guarantees a committed paint first.
+    requestAnimationFrame(() =>
+      requestAnimationFrame(() => {
+        for (const el of targets) revealObserver?.observe(el);
+      }),
+    );
+  }
+
+  document.addEventListener("astro:page-load", setupReveal);
 </script>
