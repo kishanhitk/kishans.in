@@ -1,17 +1,55 @@
 ---
-
+const site = Astro.site ?? new URL('https://kishans.in')
+const canonical = new URL('/resume', site)
+const pdfURL = '/assets/Kishan_Kumar_SDE_FullStack_Resume.pdf'
+const ogImage = new URL('/assets/kishans-og-banner.png', site)
+const title = 'Kishan Kumar - Resume'
+const description =
+  'Product engineer building AI agent systems, simulation & evaluation, and full-stack products.'
 ---
 
-<meta
-  http-equiv="refresh"
-  content="0;url=/assets/Kishan_Kumar_SDE_FullStack_Resume.pdf"
-/>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<noscript>
-  <p>
-    If you are not redirected automatically, please <a
-      href="/assets/Kishan_Kumar_SDE_FullStack_Resume.pdf"
-      >click here to view the resume</a
-    >.
-  </p>
-</noscript>
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Kishan Kumar" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:site_name" content="Kishan Kumar - Product Engineer" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonical} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={ogImage} />
+    <meta name="twitter:creator" content="@jst_kishan" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- Humans go straight to the PDF; crawlers read the meta tags above first,
+         so shared /resume links still unfurl with a title, image, and blurb. -->
+    <meta http-equiv="refresh" content={`0;url=${pdfURL}`} />
+  </head>
+  <body>
+    <noscript>
+      <p>
+        If you are not redirected automatically, <a href={pdfURL}
+          >view the resume here</a
+        >.
+      </p>
+    </noscript>
+  </body>
+</html>
