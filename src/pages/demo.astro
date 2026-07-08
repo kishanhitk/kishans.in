@@ -1,25 +1,37 @@
 ---
-
+// Utility page used only to generate the OG banner (og-banner.png) — screenshot
+// this route at 1200x630. Renders the card as the full page (no Layout header)
+// so the capture is clean.
+import '@/styles/global.css'
 import RetroGrid from '@/components/ui/retro-grid'
-import Layout from '@/layouts/Layout.astro'
 ---
 
-<Layout title="">
-  <div class="h-screen w-screen bg-black flex justify-center items-center">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      html,
+      body {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
     <div
-      class="h-[630px] w-[1200px] bg-white flex justify-center items-center flex-col relative"
+      class="relative flex h-[630px] w-[1200px] flex-col items-center justify-center overflow-hidden bg-white"
     >
       <RetroGrid />
       <div class="z-10 flex flex-col items-center">
-        <h1 class="text-black text-[9.3rem] font-bold">
+        <h1 class="text-[9.3rem] font-bold text-black">
           Kishan <span class="text-black/70">Kumar</span>
         </h1>
-        <div class="text-gray-600 text-4xl mt-1 text-center space-y-3">
-          <div>Product Focused</div>
-          <div>Full Stack Engineer</div>
-          <div>Web Performance Enthusiast</div>
+        <div class="mt-1 space-y-3 text-center text-4xl text-gray-600">
+          <div>Product Engineer</div>
+          <div>AI Agents &amp; Voice AI</div>
+          <div>Simulation &amp; Evaluation</div>
         </div>
       </div>
     </div>
-  </div>
-</Layout>
+  </body>
+</html>
