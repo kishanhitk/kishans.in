@@ -36,6 +36,20 @@
   --animate-grid: grid 15s linear infinite;
 }
 
+/* Motion system. A non-inline @theme so these override Tailwind's built-in
+   (too-weak) easing tokens at the source AND get emitted as :root custom
+   properties — usable via the `ease-out` utility, arbitrary values like
+   `duration-[var(--dur-base)]`, raw component CSS, and JS. Strong curves have
+   the punch that makes motion feel intentional; the duration scale keeps UI
+   motion under the 300ms responsiveness ceiling. */
+@theme {
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --dur-fast: 140ms;
+  --dur-base: 220ms;
+  --dur-slow: 320ms;
+}
+
 @layer utilities {
   .container {
     width: 100%;
@@ -152,4 +166,73 @@
 
 .debug {
   border: 1px solid red;
+}
+
+/* ---------------------------------------------------------------------------
+   Motion primitives
+   Two entrance mechanisms that share the tokens above and degrade safely:
+
+   .enter        One-shot entrance for ABOVE-the-fold content. Pure CSS via
+                 @starting-style — no JS, no library, no FOUC. The element's
+                 normal state is visible; if @starting-style is unsupported it
+                 simply appears. Stagger comes from --enter-index.
+
+   [data-reveal] Scroll-triggered reveal for BELOW-the-fold content. Needs the
+                 IntersectionObserver in Layout.astro. Hidden only when JS is
+                 present (html:not(.no-js)), so no-JS users always see content.
+
+   Both keep an opacity-only fade under prefers-reduced-motion (gentler, not
+   zero) and never animate layout properties — transform + opacity only.
+--------------------------------------------------------------------------- */
+
+.enter {
+  transition: opacity var(--dur-base) var(--ease-out);
+}
+@starting-style {
+  .enter {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .enter {
+    transition:
+      opacity var(--dur-slow) var(--ease-out),
+      transform var(--dur-slow) var(--ease-out);
+    transition-delay: calc(var(--enter-index, 0) * 60ms);
+  }
+  @starting-style {
+    .enter {
+      opacity: 0;
+      transform: translateY(8px) scale(0.99);
+    }
+  }
+}
+
+html:not(.no-js) [data-reveal] {
+  opacity: 0;
+  transition: opacity var(--dur-slow) var(--ease-out);
+}
+html:not(.no-js) [data-reveal].is-revealed {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html:not(.no-js) [data-reveal] {
+    transform: translateY(12px);
+    transition:
+      opacity var(--dur-slow) var(--ease-out),
+      transform var(--dur-slow) var(--ease-out);
+  }
+  html:not(.no-js) [data-reveal].is-revealed {
+    transform: none;
+  }
+}
+
+/* The infinite retro grid is decorative constant motion — stop it for users
+   who asked for reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  .animate-grid {
+    animation: none;
+  }
 }

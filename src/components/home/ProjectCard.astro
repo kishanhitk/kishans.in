@@ -15,6 +15,7 @@ const { title, subtitle, description, image, link } = Astro.props
 
 <a
   href={link}
+  data-reveal
   class="rounded-xl overflow-hidden p-6 sm:p-10 bg-secondary dark:bg-white/[0.03] m-4 group"
   target="_blank"
   rel="noreferrer"
@@ -24,7 +25,7 @@ const { title, subtitle, description, image, link } = Astro.props
     alt={title}
     width={600}
     height={400}
-    class="rounded-xl w-full shadow-lg object-cover group-hover:scale-105 transition-all duration-500"
+    class="rounded-xl w-full shadow-lg object-cover transition-transform duration-300 ease-[var(--ease-out)] group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
   />
   <div class="mt-4">
     <h5 class="text-lg sm:text-xl font-semibold">

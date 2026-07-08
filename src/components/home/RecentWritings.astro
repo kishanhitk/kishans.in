@@ -10,7 +10,7 @@ import type { HashnodePost } from '@/types/hashnode'
 const posts = await getAllPostByUsername('blog.kishans.in')
 ---
 
-<div class="container my-12 sm:my-20">
+<div class="container my-12 sm:my-20" data-reveal>
   <h3 class="text-xl sm:text-2xl font-semibold">Recent Writings</h3>
   <div class="mt-4 sm:mt-6">
     {
@@ -32,7 +32,7 @@ const posts = await getAllPostByUsername('blog.kishans.in')
         View All Posts
         <MoveRight
           strokeWidth={1.2}
-          className="ml-2 group-hover:translate-x-2 transition-all duration-100"
+          className="ml-2 transition-transform duration-200 ease-[var(--ease-out)] group-hover:translate-x-1"
         />
       </Button>
     </a>
