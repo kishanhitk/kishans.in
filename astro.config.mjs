@@ -17,6 +17,9 @@ export default defineConfig({
     // old URL alive for links already shared in applications and DMs.
     '/assets/Kishan_Kumar_SDE_FullStack_Resume.pdf':
       '/assets/Kishan_Kumar_AI_Engineer_Resume.pdf',
+    // Direct raw-PDF route: /resume renders the themed viewer, /resume-pdf
+    // hands the light PDF straight to the browser's native viewer.
+    '/resume-pdf': '/assets/Kishan_Kumar_AI_Engineer_Resume.pdf',
   },
 
   integrations: [
