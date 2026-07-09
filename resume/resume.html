@@ -6,7 +6,7 @@
     <!-- All links open in a new tab (modern browsers apply noopener for
          target=_blank automatically). -->
     <base target="_blank" />
-    <title>Kishan Kumar Resume</title>
+    <title>Kishan Kumar — AI Engineer Resume</title>
     <style>
       /* Saans — the same typeface the site ships (public/fonts/Saans-VF.woff,
          copied into resume/fonts/). The -VF file is variable, so one file
@@ -52,7 +52,7 @@
         --fs-small: 8.4pt;
         --lh: 1.32;
 
-        --gap-section: 6pt;
+        --gap-section: 5.5pt;
         --gap-entry: 4.2pt;
         --gap-bullet: 2pt;
       }
@@ -92,11 +92,14 @@
         -webkit-font-smoothing: antialiased;
         /* Saans + Chrome's print-to-PDF collapses some inter-word gaps in the
            TEXT layer (e.g. "Winnerteam") on kerned pairs like r+t, even though
-           it renders fine. Disabling kerning and forcing explicit space width
-           keeps every word separate for ATS parsing and copy-paste.
+           it renders fine. font-kerning:none keeps word gaps uniform so
+           layout-aware extractors (what real ATS parsers use) recover every
+           space. Chrome emits each word as its own positioned run with no
+           space glyphs in the raw stream no matter the CSS (word-spacing /
+           text-rendering don't change this), so raw-order extractors will
+           always see joined words — position-based ones are the target.
            (optimizeLegibility makes it worse, so it's intentionally omitted.) */
         font-kerning: none;
-        word-spacing: 0.35pt;
       }
 
       /* Emphasis is rationed: product names + one metric per bullet. Same
@@ -123,8 +126,10 @@
 
       /* ---- Masthead: compact + left-aligned (recovers the vertical space
               the old centered header + QR block was eating). ---- */
+      /* Deliberately NOT positioned: Chrome prints positioned elements in a
+         later paint phase, which would push the name/contacts to the end of
+         the PDF text stream (bad for ATS reading order). QR anchors to .page. */
       .masthead {
-        position: relative;
         margin-bottom: 3pt;
       }
       .masthead-text {
@@ -132,12 +137,13 @@
            floating QR. */
         padding-right: 66pt;
       }
-      /* Floated out of flow: pinned to the masthead's top-right corner, so it
-         adds no height and the spacing below stays airy regardless of QR size. */
+      /* Out of flow: pinned to the page's top-right content corner (0.5in =
+         the .page inset, so it sits exactly where the masthead starts), adding
+         no height — the spacing below stays airy regardless of QR size. */
       .qr {
         position: absolute;
-        top: 0;
-        right: 0;
+        top: 0.5in;
+        right: 0.5in;
         width: 58pt;
         height: 58pt;
       }
@@ -224,9 +230,16 @@
         list-style: none;
         margin-top: 1pt;
       }
+      /* Hanging indent WITHOUT absolute positioning: a positioned ::before
+         paints in a later phase, so every bullet glyph would land after all
+         paragraph text in the PDF stream (garbled copy-paste / cheap ATS).
+         Inline-block keeps marker-then-text order. Geometry matches the old
+         absolute version: first line starts at 1.5pt (12pt padding − 10.5pt
+         indent); the 10.5pt marker box puts body text back at 12pt, aligned
+         with wrapped lines. */
       li {
-        position: relative;
         padding-left: 12pt;
+        text-indent: -10.5pt;
         margin-bottom: var(--gap-bullet);
       }
       li:last-child {
@@ -234,8 +247,9 @@
       }
       li::before {
         content: "•";
-        position: absolute;
-        left: 1.5pt;
+        display: inline-block;
+        width: 10.5pt;
+        text-indent: 0;
         color: #9a9a9a;
       }
 
@@ -300,7 +314,7 @@
         </p>
         <p class="contacts">
           <a href="https://kishans.in">kishans.in</a><span class="sep">•</span
-          ><a href="mailto:hello@kishans.in?cc=kishansharma1231@gmail.com&amp;subject=Hey%20Kishan%2C%20we%20have%20some%20exciting%20opportunity%20for%20you">hello@kishans.in</a
+          ><a href="mailto:hello@kishans.in?cc=kishansharma1231@gmail.com&amp;subject=Hey%20Kishan%2C%20let%27s%20build%20something%20together">hello@kishans.in</a
           ><span class="sep">•</span><span>+91 95218 75124</span
           ><span class="sep">•</span
           ><a href="https://github.com/kishanhitk">GitHub</a
@@ -334,40 +348,39 @@
               <strong>~5 days to ~20 minutes</strong>.
             </li>
             <li>
-              Architected detachable builder runs that execute as server-owned
-              async background tasks decoupled from the request, surviving client
-              disconnects via per-turn PostgreSQL snapshots and cursor-based
+              Architected agent builder runs as server-owned background tasks
+              that survive client disconnects and resume mid-turn — zero lost
+              sessions — via per-turn PostgreSQL snapshots and cursor-based
               replay over Redis Streams.
             </li>
             <li>
               Developed <strong>Truman</strong>, a voice AI agent testing system
-              that runs automated calls in parallel across hundreds of
-              AI-generated caller personas and auto-generated use-case-specific
-              scenarios, with agent
-              skills, a CLI, and failure diagnostics.
+              that runs automated calls in parallel across <strong>100s</strong>
+              of AI-generated caller personas and auto-generated
+              use-case-specific scenarios, with agent skills, a CLI, and failure
+              diagnostics.
             </li>
             <li>
-              Built the distributed simulation &amp; evaluation engine powering
+              Engineered the distributed simulation &amp; evaluation engine powering
               it, fanning out each test case as an SQS message to Go worker
               pools with at-least-once delivery, dead-letter queues, and Redis +
-              Lua atomic barriers coordinating fan-in completion across
-              workers.
+              Lua atomic barriers coordinating fan-in completion.
             </li>
             <li>
               Fine-tuned the barge-in detection model, reducing false
-              interruptions by <strong>95%</strong> in voice-agent
+              interruptions by <strong>95%</strong> in voice AI agent
               conversations.
             </li>
             <li>
-              Built <strong>Akhada</strong>, a debugging and evaluation
-              environment for testing every layer of a voice AI agent (VAD,
-              EoU, STT, LLM, TTS, prompts, configs, and agent behavior) in an
-              isolated environment before production.
+              Designed <strong>Akhada</strong>, a debugging and evaluation
+              sandbox for testing every layer of a voice AI agent (VAD, EoU,
+              STT, LLM, TTS, prompts, configs, and agent behavior) before
+              production.
             </li>
             <li>
-              Implemented agent versioning with rollback support and
-              autogenerated change summaries, enabling users to improve voice AI
-              agents without affecting live production agents.
+              Implemented agent versioning with rollback and autogenerated
+              change summaries, so users iterate on voice AI agents without
+              touching live production traffic.
             </li>
           </ul>
         </div>
@@ -379,24 +392,25 @@
           </div>
           <div class="row sub">
             <span class="role">Software Engineer</span>
-            <span class="date">June 2022 – Nov 2024</span>
+            <span class="date">Jun 2022 – Nov 2024</span>
           </div>
           <ul>
             <li>
               Led redevelopment of Fuschia Careers' high-volume ATS and talent
-              pipeline, improving functionality, performance, reliability, and
-              recruiter workflows; integrated LLM-assisted features.
+              pipeline, improving performance, reliability, and recruiter
+              workflows; added LLM resume autofill that cut candidate
+              application time from <strong>~30 minutes to ~2 minutes</strong>.
             </li>
             <li>
-              Built <strong>Modern Fullstack</strong>, an interactive
+              Shipped <strong>Modern Fullstack</strong>, an interactive
               personalized tech training platform, using Remix, GraphQL,
               PostgreSQL/Supabase, AWS, and Cloudflare; mentored interns.
             </li>
             <li>
-              Built The Soulless Citadel's NFT marketplace and minting contracts
-              with bids, listings, fiat payments, discount logic,
-              <strong>2,200+</strong> transactions, and
-              <strong>~$368,940</strong> in sales.
+              Launched The Soulless Citadel's NFT marketplace and minting
+              contracts with bids, listings, fiat payments, discount logic,
+              <strong>2,200+</strong> transactions, and <strong>~$369K</strong>
+              in sales.
             </li>
           </ul>
         </div>
@@ -418,16 +432,15 @@
           <ul>
             <li>
               Privacy-first native macOS dictation app in Swift with Apple
-              Speech and a curated offline ASR model catalog (sherpa-onnx),
-              <strong>sub-210ms</strong> transcription latency, and no cloud
+              Speech and a curated offline ASR model catalog (sherpa-onnx), a
+              p50 transcription latency of <strong>210ms</strong>, and no cloud
               audio processing.
             </li>
             <li>
-              Production stack includes Apple Intelligence / local Gemma
-              transcript cleanup, resilient Core Audio capture, vocabulary
-              learning from corrections, and a pseudonymous usage analytics
-              system with durable offline queueing, Cloudflare ingest, Analytics
-              Engine, and D1.
+              Production stack: Apple Intelligence / local Gemma transcript
+              cleanup, resilient Core Audio capture, vocabulary learning from
+              corrections, and pseudonymous analytics with durable offline
+              queueing (Cloudflare Analytics Engine + D1).
             </li>
           </ul>
         </div>
@@ -439,7 +452,7 @@
               <a href="https://gita.kishans.in">Visit</a>
               <span class="sep">·</span>
               <a href="https://play.google.com/store/apps/details?id=com.kishans.gitagpt&amp;hl=en_IN">Download</a>
-              <span class="muted">(10k+ downloads)</span>
+              <span class="muted">(10K+ downloads)</span>
               <span class="sep">·</span>
               <a href="https://github.com/kishanhitk/gita-gpt-native">Source</a>
             </span>
@@ -447,8 +460,8 @@
           <ul>
             <li>
               Created a viral AI advisor that answers life questions through the
-              lens of The Bhagavad Gita, reaching <strong>13M+ views</strong> and
-              <strong>120k+ users</strong>. Featured in
+              lens of the Bhagavad Gita, reaching <strong>13M+ views</strong> and
+              <strong>120K+ users</strong>. Featured in
               <a href="https://www.timesnownews.com/spiritual/gita-gpt-inspired-by-bhagavad-gita-these-ai-app-helps-you-find-answers-hidden-in-the-sacred-text-article-97540815?from=mdr#:~:text=gita.kishans.in">TimesNow</a>,
               <a href="https://economictimes.indiatimes.com/news/new-updates/google-software-engineer-develops-gita-gpt-ai-chatbot-based-on-bhagavad-gita/articleshow/97700285.cms?from=mdr#:~:text=https%3A//gita.kishans.in">Economic Times</a>,
               <a href="https://www.news18.com/news/lifestyle/what-is-gita-gpt-that-desi-twitter-is-raving-about-and-how-can-you-use-it-7010173.html?from=mdr#:~:text=gita.kishans.in">News18</a>,
@@ -472,7 +485,7 @@
           </div>
           <ul>
             <li>
-              Developed this highly-rated app (<strong>1,000+ downloads, 5-star
+              Developed this app (<strong>1K+ downloads, 5-star
               rating</strong>) for Jadavpur University students, enabling instant
               access to admit
               cards, grade cards, and exam schedules. Tech: Flutter, Node.js,
@@ -492,7 +505,7 @@
           </dd>
           <dt>Stack</dt>
           <dd>
-            Python, FastAPI, TypeScript, Node.js, PostgreSQL, Redis, AWS, SQS,
+            Python, Go, FastAPI, TypeScript, Node.js, PostgreSQL, Redis, AWS, SQS,
             Lambda, Cloudflare, GraphQL, Supabase, React, Next.js
           </dd>
         </dl>
@@ -520,11 +533,11 @@
               href="https://www.linkedin.com/posts/samuel-lawrentz_last-week-we-conducted-a-internal-hackathon-activity-7466889903671365632-OpTY"
               >Won</a
             > Plivo's internal "Plivo for Agents, Plivo by Agents" AI agent
-            hackathon (24 hours, ~50 engineers).
+            hackathon (2026; 24 hours, ~50 engineers).
           </li>
           <li>
-            <a href="https://devpost.com/software/finlearn">Winner team</a> in
-            HooHacks 2021 hackathon by MLH and the University of Virginia.
+            <a href="https://devpost.com/software/finlearn">Won</a> Best Finance
+            Hack (Capital One prize) at HooHacks 2021, an MLH hackathon.
           </li>
         </ul>
       </section>

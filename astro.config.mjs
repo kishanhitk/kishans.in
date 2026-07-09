@@ -12,6 +12,13 @@ export default defineConfig({
   site: 'https://www.kishans.in',
   prefetch: true,
 
+  redirects: {
+    // Resume PDF was renamed to match the AI-engineer positioning; keep the
+    // old URL alive for links already shared in applications and DMs.
+    '/assets/Kishan_Kumar_SDE_FullStack_Resume.pdf':
+      '/assets/Kishan_Kumar_AI_Engineer_Resume.pdf',
+  },
+
   integrations: [
     react(),
     sitemap({
