@@ -129,8 +129,11 @@
       /* Deliberately NOT positioned: Chrome prints positioned elements in a
          later paint phase, which would push the name/contacts to the end of
          the PDF text stream (bad for ATS reading order). QR anchors to .page. */
+      /* Collapses with the first section's 6pt top margin (max wins), so this
+         must exceed 6pt to have any effect. 7.5pt lands the masthead -> first
+         title boundary at ~10.5pt visual, matching the other section gaps. */
       .masthead {
-        margin-bottom: 3pt;
+        margin-bottom: 7.5pt;
       }
       .masthead-text {
         /* Reserve room on the right so name/intro/contacts never run under the
