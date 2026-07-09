@@ -7,9 +7,11 @@ import Layout from '@/layouts/Layout.astro'
 import type { HashnodePost } from '@/types'
 
 const posts = await getAllPostByUsername('blog.kishans.in')
+const description =
+  'Writing by Kishan Kumar on AI agents, developer tools, product engineering, native apps, and building reliable software.'
 ---
 
-<Layout title="Blogs">
+<Layout title="Writing on AI Agents, Developer Tools & Product Engineering | Kishan Kumar" {description}>
   <div class="container mb-12 sm:mb-20 min-h-screen">
     <h1 class="text-3xl sm:text-4xl font-bold text-foreground">
       Recent Writings

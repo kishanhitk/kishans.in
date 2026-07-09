@@ -10,6 +10,10 @@ interface Props {
   description?: string
   image?: string
   canonicalURL?: string
+  pageType?: 'website' | 'article'
+  publishedTime?: string
+  modifiedTime?: string
+  structuredData?: Record<string, unknown> | Record<string, unknown>[]
 }
 
 const {
@@ -17,10 +21,22 @@ const {
   description = 'Product engineer building AI agent systems, native apps, and full-stack web products that feel fast, reliable, and thoughtfully made.',
   image = '/assets/kishans-og-banner.png',
   canonicalURL,
+  pageType = 'website',
+  publishedTime,
+  modifiedTime,
+  structuredData,
 } = Astro.props
 
 const siteName = 'Kishan Kumar - Product Engineer'
 const siteURL = new URL(Astro.url.pathname, Astro.site || 'https://kishans.in')
+const canonical = canonicalURL
+  ? new URL(canonicalURL, Astro.site || 'https://kishans.in')
+  : siteURL
+const schemas = structuredData
+  ? Array.isArray(structuredData)
+    ? structuredData
+    : [structuredData]
+  : []
 ---
 
 <!doctype html>
@@ -66,22 +82,24 @@ const siteURL = new URL(Astro.url.pathname, Astro.site || 'https://kishans.in')
 
     <title>{title}</title>
     <meta name="description" content={description} />
-    {canonicalURL && <link rel="canonical" href={canonicalURL} />}
+    <link rel="canonical" href={canonical} />
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={siteURL} />
+    <meta property="og:type" content={pageType} />
+    <meta property="og:url" content={canonical} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={new URL(image, siteURL)} />
     <meta property="og:site_name" content={siteName} />
+    {publishedTime && <meta property="article:published_time" content={publishedTime} />}
+    {modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={siteURL} />
-    <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={new URL(image, siteURL)} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonical} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(image, siteURL)} />
     <meta name="twitter:creator" content="@jst_kishan" />
 
     <!-- Additional SEO tags -->
@@ -94,6 +112,15 @@ const siteURL = new URL(Astro.url.pathname, Astro.site || 'https://kishans.in')
 
     <!-- Theme Color -->
     <meta name="theme-color" content="#ffffff" />
+    {
+      schemas.map((schema) => (
+        <script
+          is:inline
+          type="application/ld+json"
+          set:html={JSON.stringify(schema).replace(/</g, '\\u003c')}
+        />
+      ))
+    }
     <script>
       document.documentElement.classList.remove("no-js");
     </script>

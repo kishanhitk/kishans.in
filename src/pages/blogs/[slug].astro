@@ -15,9 +15,46 @@ export async function getStaticPaths() {
 const { slug } = Astro.params
 
 const blog = await getPostBySlug(slug, 'blog.kishans.in')
+const brief = blog.brief
+  .replace(/<[^>]*>/g, ' ')
+  .replace(/\s+/g, ' ')
+  .trim()
+const description =
+  brief.length > 160
+    ? `${brief.slice(0, 157).replace(/\s+\S*$/, '')}…`
+    : brief
+const canonicalURL = `/blogs/${slug}`
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: blog.title,
+  description,
+  image: blog.coverImage?.url || 'https://kishans.in/assets/kishans-og-banner.png',
+  datePublished: blog.publishedAt,
+  dateModified: blog.updatedAt,
+  mainEntityOfPage: `https://kishans.in${canonicalURL}`,
+  author: {
+    '@type': 'Person',
+    name: 'Kishan Kumar',
+    url: 'https://kishans.in',
+  },
+  publisher: {
+    '@type': 'Person',
+    name: 'Kishan Kumar',
+  },
+}
 ---
 
-<Layout title={blog.title}>
+<Layout
+  title={`${blog.title} | Kishan Kumar`}
+  {description}
+  image={blog.coverImage?.url || '/assets/kishans-og-banner.png'}
+  {canonicalURL}
+  pageType="article"
+  publishedTime={blog.publishedAt}
+  modifiedTime={blog.updatedAt}
+  structuredData={articleSchema}
+>
   <div class="container">
     <BlogHead post={blog} />
     <div
