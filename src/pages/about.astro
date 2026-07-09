@@ -8,9 +8,25 @@ import increffLogo from '@/assets/logos/increff.png'
 import ncrLogo from '@/assets/logos/ncr.png'
 import plivoLogo from '@/assets/logos/plivo.jpg'
 import quinenceLogo from '@/assets/logos/quinence.png'
+
+const description =
+  'Learn about Kishan Kumar, a product engineer building AI agent systems, developer tools, native apps, and full-stack products.'
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Kishan Kumar',
+  url: 'https://www.kishans.in/about',
+  jobTitle: 'Product Engineer',
+  worksFor: { '@type': 'Organization', name: 'Plivo' },
+  sameAs: [
+    'https://github.com/kishanhitk',
+    'https://www.linkedin.com/in/kishanju/',
+    'https://twitter.com/jst_kishan',
+  ],
+}
 ---
 
-<Layout title="About">
+<Layout title="About Kishan Kumar | Product Engineer and AI Systems Builder" {description} structuredData={personSchema}>
   <div class="mb-12 sm:mb-20 min-h-screen container">
     <h1 class="text-3xl sm:text-4xl font-bold text-foreground">About Me</h1>
     <Separator className="my-5 sm:my-7" />

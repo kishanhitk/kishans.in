@@ -1,6 +1,6 @@
 ---
-const site = Astro.site ?? new URL('https://kishans.in')
-const canonical = new URL('/resume', site)
+const site = Astro.site ?? new URL('https://www.kishans.in')
+const canonical = new URL('/resume/', site)
 const pdfURL = '/assets/Kishan_Kumar_SDE_FullStack_Resume.pdf'
 const ogImage = new URL('/assets/kishans-og-banner.png', site)
 const title = 'Kishan Kumar - Resume'
@@ -29,11 +29,11 @@ const description =
     <meta property="og:site_name" content="Kishan Kumar - Product Engineer" />
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={canonical} />
-    <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonical} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
     <meta name="twitter:creator" content="@jst_kishan" />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />

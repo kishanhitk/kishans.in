@@ -1,9 +1,36 @@
 ---
 import Homepage from "@/components/home/Homepage.astro";
 import Layout from "@/layouts/Layout.astro";
+
+const description =
+  'Product engineer building AI agent systems, native apps, and full-stack web products that feel fast, reliable, and thoughtfully made.'
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Kishan Kumar',
+  url: 'https://www.kishans.in',
+  jobTitle: 'Product Engineer',
+  worksFor: { '@type': 'Organization', name: 'Plivo' },
+  sameAs: [
+    'https://github.com/kishanhitk',
+    'https://www.linkedin.com/in/kishanju/',
+    'https://twitter.com/jst_kishan',
+  ],
+}
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Kishan Kumar',
+  url: 'https://www.kishans.in',
+  description,
+}
 ---
 
-<Layout title="Kishan Kumar">
+<Layout
+  title="Kishan Kumar — Product Engineer for AI Agents & Developer Tools"
+  {description}
+  structuredData={[personSchema, websiteSchema]}
+>
   <main id="homepage" class="opacity-0">
     <Homepage />
   </main>
