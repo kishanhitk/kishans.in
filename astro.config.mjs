@@ -9,10 +9,15 @@ import { defineConfig } from 'astro/config'
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://kishans.in',
+  site: 'https://www.kishans.in',
   prefetch: true,
 
-  integrations: [react(), sitemap()],
+  integrations: [
+    react(),
+    sitemap({
+      filter: (page) => !page.endsWith('/demo/'),
+    }),
+  ],
   vite: {
     plugins: [tailwindcss()],
   },

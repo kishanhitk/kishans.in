@@ -28,9 +28,9 @@ const {
 } = Astro.props
 
 const siteName = 'Kishan Kumar - Product Engineer'
-const siteURL = new URL(Astro.url.pathname, Astro.site || 'https://kishans.in')
+const siteURL = new URL(Astro.url.pathname, Astro.site || 'https://www.kishans.in')
 const canonical = canonicalURL
-  ? new URL(canonicalURL, Astro.site || 'https://kishans.in')
+  ? new URL(canonicalURL, Astro.site || 'https://www.kishans.in')
   : siteURL
 const schemas = structuredData
   ? Array.isArray(structuredData)

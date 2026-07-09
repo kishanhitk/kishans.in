@@ -23,20 +23,22 @@ const description =
   brief.length > 160
     ? `${brief.slice(0, 157).replace(/\s+\S*$/, '')}…`
     : brief
-const canonicalURL = `/blogs/${slug}`
+const canonicalURL = `/blogs/${slug}/`
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'BlogPosting',
   headline: blog.title,
   description,
-  image: blog.coverImage?.url || 'https://kishans.in/assets/kishans-og-banner.png',
+  image:
+    blog.coverImage?.url ||
+    'https://www.kishans.in/assets/kishans-og-banner.png',
   datePublished: blog.publishedAt,
   dateModified: blog.updatedAt,
-  mainEntityOfPage: `https://kishans.in${canonicalURL}`,
+  mainEntityOfPage: `https://www.kishans.in${canonicalURL}`,
   author: {
     '@type': 'Person',
     name: 'Kishan Kumar',
-    url: 'https://kishans.in',
+    url: 'https://www.kishans.in',
   },
   publisher: {
     '@type': 'Person',
