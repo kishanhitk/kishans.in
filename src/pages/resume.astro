@@ -1,7 +1,8 @@
 ---
 const site = Astro.site ?? new URL('https://www.kishans.in')
 const canonical = new URL('/resume/', site)
-const pdfURL = '/assets/Kishan_Kumar_AI_Engineer_Resume.pdf'
+const lightPDF = '/assets/Kishan_Kumar_AI_Engineer_Resume.pdf'
+const darkPDF = '/assets/Kishan_Kumar_AI_Engineer_Resume_Dark.pdf'
 const ogImage = new URL('/assets/kishans-og-banner.png', site)
 const title = 'Kishan Kumar - Resume'
 const description =
@@ -37,19 +38,153 @@ const description =
     <meta name="twitter:creator" content="@jst_kishan" />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="theme-color" content="#ffffff" />
+    <meta name="theme-color" content="#fffdf9" />
 
-    <!-- Humans go straight to the PDF; crawlers read the meta tags above first,
-         so shared /resume links still unfurl with a title, image, and blurb. -->
-    <meta http-equiv="refresh" content={`0;url=${pdfURL}`} />
+    <style>
+      :root {
+        --bg: #fffdf9;
+        --pill-bg: rgba(255, 255, 255, 0.9);
+        --pill-ink: #1a1a1a;
+        --pill-border: rgba(0, 0, 0, 0.12);
+        --pill-active-bg: #1a1a1a;
+        --pill-active-ink: #fffdf9;
+      }
+      html[data-theme='dark'] {
+        --bg: #000000;
+        --pill-bg: rgba(14, 14, 14, 0.9);
+        --pill-ink: #bab7af;
+        --pill-border: rgba(255, 255, 255, 0.16);
+        --pill-active-bg: #d0cdc5;
+        --pill-active-ink: #000000;
+      }
+      * {
+        margin: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+        background: var(--bg);
+      }
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      }
+      .viewer {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+      .controls {
+        position: fixed;
+        right: 16px;
+        bottom: 16px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px;
+        border-radius: 999px;
+        background: var(--pill-bg);
+        border: 1px solid var(--pill-border);
+        backdrop-filter: blur(8px);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+        font-size: 13px;
+      }
+      .controls button,
+      .controls a {
+        appearance: none;
+        border: 0;
+        background: transparent;
+        color: var(--pill-ink);
+        font: inherit;
+        padding: 6px 12px;
+        border-radius: 999px;
+        cursor: pointer;
+        text-decoration: none;
+        line-height: 1;
+      }
+      .controls button[aria-pressed='true'] {
+        background: var(--pill-active-bg);
+        color: var(--pill-active-ink);
+      }
+      .fallback {
+        padding: 24px;
+        color: var(--pill-ink);
+      }
+      .fallback a {
+        color: inherit;
+      }
+    </style>
   </head>
   <body>
+    <!-- Default src is the light PDF so the page works without JS; the inline
+         script below swaps it before first paint for dark-theme visitors.
+         Chrome's viewer reads #zoom= in PDF points (72dpi) but displays zoom
+         in CSS pixels (96dpi), so 120 here shows as "90%" in its toolbar; the
+         script below corrects the value per engine. Safari ignores it. -->
+    <iframe
+      id="viewer"
+      class="viewer"
+      src={`${lightPDF}#zoom=120`}
+      title="Kishan Kumar's resume PDF"></iframe>
+
+    <div class="controls" id="controls" hidden>
+      <button id="btn-light" type="button" aria-pressed="true">Light</button>
+      <button id="btn-dark" type="button" aria-pressed="false">Dark</button>
+      <a id="download" href={lightPDF} download>Download</a>
+    </div>
+
     <noscript>
-      <p>
-        If you are not redirected automatically, <a href={pdfURL}
-          >view the resume here</a
-        >.
+      <p class="fallback">
+        View the resume: <a href={lightPDF}>light</a> ·
+        <a href={darkPDF}>dark</a>
       </p>
     </noscript>
+
+    <script
+      is:inline
+      define:vars={{ lightPDF, darkPDF }}
+    >
+      const viewer = document.getElementById('viewer')
+      const controls = document.getElementById('controls')
+      const btnLight = document.getElementById('btn-light')
+      const btnDark = document.getElementById('btn-dark')
+      const download = document.getElementById('download')
+
+      // Same localStorage key the site's ThemeSwitcher writes, so a visitor
+      // who picked dark on the site lands on the dark resume by default.
+      const stored = localStorage.getItem('theme')
+      const prefersDark = window.matchMedia(
+        '(prefers-color-scheme: dark)',
+      ).matches
+      const initial =
+        stored === 'dark' || ((stored === 'system' || !stored) && prefersDark)
+          ? 'dark'
+          : 'light'
+
+      function apply(theme) {
+        const dark = theme === 'dark'
+        document.documentElement.dataset.theme = theme
+        const src = dark ? darkPDF : lightPDF
+        // Target a displayed 90%: Chromium interprets #zoom= at 72dpi while
+        // showing 96dpi percentages (x0.75), pdf.js shows the value as-is.
+        const zoom = /firefox/i.test(navigator.userAgent) ? 90 : 120
+        const viewSrc = `${src}#zoom=${zoom}`
+        if (viewer.getAttribute('src') !== viewSrc)
+          viewer.setAttribute('src', viewSrc)
+        download.href = src
+        btnLight.setAttribute('aria-pressed', String(!dark))
+        btnDark.setAttribute('aria-pressed', String(dark))
+        document
+          .querySelector('meta[name="theme-color"]')
+          ?.setAttribute('content', dark ? '#000000' : '#fffdf9')
+      }
+
+      apply(initial)
+      controls.hidden = false
+      btnLight.addEventListener('click', () => apply('light'))
+      btnDark.addEventListener('click', () => apply('dark'))
+    </script>
   </body>
 </html>
