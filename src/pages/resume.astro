@@ -119,14 +119,11 @@ const description =
   </head>
   <body>
     <!-- Default src is the light PDF so the page works without JS; the inline
-         script below swaps it before first paint for dark-theme visitors.
-         Chrome's viewer reads #zoom= in PDF points (72dpi) but displays zoom
-         in CSS pixels (96dpi), so 120 here shows as "90%" in its toolbar; the
-         script below corrects the value per engine. Safari ignores it. -->
+         script below swaps it before first paint for dark-theme visitors. -->
     <iframe
       id="viewer"
       class="viewer"
-      src={`${lightPDF}#zoom=120`}
+      src={lightPDF}
       title="Kishan Kumar's resume PDF"></iframe>
 
     <div class="controls" id="controls" hidden>
@@ -167,12 +164,8 @@ const description =
         const dark = theme === 'dark'
         document.documentElement.dataset.theme = theme
         const src = dark ? darkPDF : lightPDF
-        // Target a displayed 90%: Chromium interprets #zoom= at 72dpi while
-        // showing 96dpi percentages (x0.75), pdf.js shows the value as-is.
-        const zoom = /firefox/i.test(navigator.userAgent) ? 90 : 120
-        const viewSrc = `${src}#zoom=${zoom}`
-        if (viewer.getAttribute('src') !== viewSrc)
-          viewer.setAttribute('src', viewSrc)
+        if (viewer.getAttribute('src') !== src)
+          viewer.setAttribute('src', src)
         download.href = src
         btnLight.setAttribute('aria-pressed', String(!dark))
         btnDark.setAttribute('aria-pressed', String(dark))
