@@ -148,6 +148,7 @@ const description =
       const btnLight = document.getElementById('btn-light')
       const btnDark = document.getElementById('btn-dark')
       const download = document.getElementById('download')
+      const narrowViewport = window.matchMedia('(max-width: 600px)')
 
       // Same localStorage key the site's ThemeSwitcher writes, so a visitor
       // who picked dark on the site lands on the dark resume by default.
@@ -160,12 +161,17 @@ const description =
           ? 'dark'
           : 'light'
 
+      function viewerSrc(src) {
+        return narrowViewport.matches ? `${src}#view=FitH` : src
+      }
+
       function apply(theme) {
         const dark = theme === 'dark'
         document.documentElement.dataset.theme = theme
         const src = dark ? darkPDF : lightPDF
-        if (viewer.getAttribute('src') !== src)
-          viewer.setAttribute('src', src)
+        const fittedSrc = viewerSrc(src)
+        if (viewer.getAttribute('src') !== fittedSrc)
+          viewer.setAttribute('src', fittedSrc)
         download.href = src
         btnLight.setAttribute('aria-pressed', String(!dark))
         btnDark.setAttribute('aria-pressed', String(dark))
@@ -178,6 +184,9 @@ const description =
       controls.hidden = false
       btnLight.addEventListener('click', () => apply('light'))
       btnDark.addEventListener('click', () => apply('dark'))
+      narrowViewport.addEventListener('change', () =>
+        apply(document.documentElement.dataset.theme),
+      )
     </script>
   </body>
 </html>
