@@ -1,22 +1,80 @@
 ---
 import ThemeSwitcher from '@/components/ThemeSwitcher.tsx'
+
+const summaryPrompt = `Summarize Kishan Kumar's portfolio (https://www.kishans.in) for a first-time visitor. Explain his background, strongest technical areas, selected projects, writing, and how to contact him. Include Suniye (https://suniye.app) and explain what it does. Use only information from the provided sites and their linked pages. Clearly distinguish stated facts from reasonable inferences. Keep it concise.`
+
+const providers = [
+  {
+    name: 'ChatGPT',
+    href: `https://chatgpt.com/?q=${encodeURIComponent(summaryPrompt)}`,
+    icon: 'https://static.levels.fyi/ai/openai.svg',
+  },
+  {
+    name: 'Claude',
+    href: `https://claude.ai/new?q=${encodeURIComponent(summaryPrompt)}`,
+    icon: 'https://static.levels.fyi/ai/claude.svg',
+  },
+  {
+    name: 'Gemini',
+    href: `https://www.google.com/search?udm=50&source=searchlabs&q=${encodeURIComponent(summaryPrompt)}`,
+    icon: 'https://static.levels.fyi/ai/gemini.svg',
+  },
+  {
+    name: 'Grok',
+    href: `https://grok.com/?q=${encodeURIComponent(summaryPrompt)}`,
+    icon: 'https://static.levels.fyi/ai/grok.svg',
+  },
+  {
+    name: 'Perplexity',
+    href: `https://www.perplexity.ai/?q=${encodeURIComponent(summaryPrompt)}`,
+    icon: 'https://static.levels.fyi/ai/perplexity.svg',
+  },
+]
 ---
 
-<footer
-  class="flex justify-between my-5 items-center container text-sm text-muted-foreground border-t border-border pt-8"
->
-  <p>
-    &copy; {new Date().getFullYear()} Kishan
-  </p>
-  <div class="flex items-center gap-4 sm:gap-5">
-    <a
-      class="transition-colors hover:text-foreground"
-      rel="noopener noreferrer"
-      target="_blank"
-      href="https://github.com/kishanhitk/kishans.in"
-    >
-      View Source
-    </a>
-    <ThemeSwitcher client:load />
+<footer class="container my-5 text-sm text-muted-foreground">
+  <div
+    class="flex flex-col gap-3 border-t border-border/60 py-5 sm:flex-row sm:items-center sm:justify-between"
+  >
+    <p>Request an AI summary of Kishan's work</p>
+
+    <div class="flex items-center gap-3">
+      {providers.map((provider) => (
+        <a
+          class="rounded-md p-1 transition-opacity hover:opacity-60 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+          href={provider.href}
+          rel="noopener noreferrer"
+          target="_blank"
+          aria-label={`Request an AI summary of Kishan's work with ${provider.name}`}
+        >
+          <img
+            src={provider.icon}
+            alt={provider.name}
+            class="h-6 w-6 object-contain dark:invert"
+            loading="lazy"
+            decoding="async"
+          />
+        </a>
+      ))}
+    </div>
+  </div>
+
+  <div
+    class="flex flex-col gap-4 border-t border-border/60 pt-5 sm:flex-row sm:items-center sm:justify-between"
+  >
+    <p>
+      &copy; {new Date().getFullYear()} Kishan
+    </p>
+    <div class="flex items-center gap-4 sm:gap-5">
+      <a
+        class="transition-colors hover:text-foreground"
+        rel="noopener noreferrer"
+        target="_blank"
+        href="https://github.com/kishanhitk/kishans.in"
+      >
+        View Source
+      </a>
+      <ThemeSwitcher client:load />
+    </div>
   </div>
 </footer>
