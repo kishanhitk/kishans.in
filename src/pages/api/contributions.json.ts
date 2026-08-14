@@ -39,7 +39,15 @@ async function fetchCalendar(
     signal: AbortSignal.timeout(8000),
   })
   const json = await response.json()
-  return json?.data?.user?.contributionsCollection?.contributionCalendar ?? null
+  const calendar =
+    json?.data?.user?.contributionsCollection?.contributionCalendar ?? null
+  if (!calendar) {
+    console.error('contributions fetch failed', login, response.status, {
+      errors: json?.errors,
+      message: json?.message,
+    })
+  }
+  return calendar
 }
 
 // GitHub buckets nonzero days into quartiles per user; after merging two
@@ -54,7 +62,9 @@ function levelFor(count: number, thresholds: [number, number, number]): number {
 }
 
 export const GET: APIRoute = async () => {
-  const token = import.meta.env.GITHUB_TOKEN
+  // process.env, not import.meta.env: Vite only injects PUBLIC_-prefixed
+  // vars into the server bundle, so secrets must come from the runtime env.
+  const token = process.env.GITHUB_TOKEN ?? import.meta.env.GITHUB_TOKEN
   if (!token) {
     return new Response(JSON.stringify({ error: 'not configured' }), {
       status: 503,
@@ -66,7 +76,13 @@ export const GET: APIRoute = async () => {
       ACCOUNTS.map((login) => fetchCalendar(token, login)),
     )
   )
-    .map((r) => (r.status === 'fulfilled' ? r.value : null))
+    .map((r, i) => {
+      if (r.status === 'rejected') {
+        console.error('contributions fetch rejected', ACCOUNTS[i], r.reason)
+        return null
+      }
+      return r.value
+    })
     .filter((c): c is Calendar => c !== null)
 
   if (!calendars.length) {
