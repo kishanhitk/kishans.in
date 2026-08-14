@@ -1,5 +1,6 @@
 ---
 
+import ContributionGraph from '@/components/home/ContributionGraph'
 import HomeProjects from '@/components/home/HomeProjects.astro'
 import HomepageHero from '@/components/home/HomepageHero.astro'
 import RecentWritings from '@/components/home/RecentWritings.astro'
@@ -8,6 +9,9 @@ import { Separator } from '@/components/ui/separator'
 
 <div>
   <HomepageHero />
+  <div class="container mt-8 sm:mt-12">
+    <ContributionGraph client:load />
+  </div>
   <Separator className="my-8 sm:my-12 container" id="projects-separator" />
   <HomeProjects />
   <RecentWritings />

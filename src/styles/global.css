@@ -153,3 +153,50 @@
 .debug {
   border: 1px solid red;
 }
+
+/* Glass chip for the contribution-graph tooltip. Theme-aware through the
+   background/border vars, so no separate dark override is needed. */
+.tooltip-glass {
+  background: hsl(var(--background) / 0.5);
+  -webkit-backdrop-filter: blur(12px) saturate(1.6);
+  backdrop-filter: blur(12px) saturate(1.6);
+  border: 1px solid hsl(var(--border) / 0.6);
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+}
+@media (prefers-reduced-transparency: reduce), (prefers-contrast: more) {
+  .tooltip-glass {
+    background: hsl(var(--background));
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+
+/* Contribution cell: chronological entrance (per-column --d delay) and a
+   subtle hover pop. @starting-style keeps cells from stranding invisible. */
+.contrib-cell {
+  transform-box: fill-box;
+  transform-origin: center;
+  opacity: 1;
+  transition:
+    transform 120ms cubic-bezier(0.23, 1, 0.32, 1),
+    opacity 350ms ease-out;
+  transition-delay: 0ms, var(--d, 0ms);
+}
+@starting-style {
+  .contrib-cell {
+    opacity: 0;
+  }
+}
+@media (hover: hover) and (pointer: fine) {
+  .contrib-cell:hover {
+    transform: scale(1.15);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .contrib-cell {
+    transition: none;
+  }
+  .contrib-cell:hover {
+    transform: none;
+  }
+}
